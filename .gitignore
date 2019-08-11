@@ -22,6 +22,11 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
+#OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
