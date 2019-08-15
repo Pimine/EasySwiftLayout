@@ -1,8 +1,8 @@
-###EasySwiftLayout
+### EasySwiftLayout
 
 Easy Swift Layout - simple lightweight Swift framework. It creates a great API for `UIView` as well as some methods and types which will helps you build UI using Apple's AutoLayout in more effient way.
 
-####Usage :
+#### Usage:
 
 Initialize the view using `setupForAutoLayout()` method:
 ```swift
