@@ -70,7 +70,7 @@ public extension UIView {
         }
     }
     
-    func pinEdge(_ edge: ESLEdge, to pinningEdge: ESLEdge, ofView view: UIView, withMargin margin: CGFloat = .zero) {
+    func pinEdge(_ edge: ESLEdge, toEdge pinningEdge: ESLEdge, ofView view: UIView, withMargin margin: CGFloat = .zero) {
         switch edge {
         
         case .left, .right:
@@ -89,13 +89,13 @@ public extension UIView {
         for edge in edges {
             switch edge {
             case .left:
-                pinEdge(.left, to: .left, ofView: view, withMargin: margins.left)
+                pinEdge(.left, toEdge: .left, ofView: view, withMargin: margins.left)
             case .right:
-                pinEdge(.right, to: .right, ofView: view, withMargin: margins.right)
+                pinEdge(.right, toEdge: .right, ofView: view, withMargin: margins.right)
             case .top:
-                pinEdge(.top, to: .top, ofView: view, withMargin: margins.top)
+                pinEdge(.top, toEdge: .top, ofView: view, withMargin: margins.top)
             case .bottom:
-                pinEdge(.bottom, to: .bottom, ofView: view, withMargin: margins.bottom)
+                pinEdge(.bottom, toEdge: .bottom, ofView: view, withMargin: margins.bottom)
             }
         }
     }
