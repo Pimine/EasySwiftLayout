@@ -18,9 +18,9 @@ public extension UIView {
         withMargins margins: UIEdgeInsets = .zero
     ) {
         if top == nil && left == nil && bottom == nil, right == nil {
-            fatalError("You should pass at least one anchor")
+            print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
         }
-        
+
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: margins.top).isActive = true
         }
@@ -39,53 +39,49 @@ public extension UIView {
     }
     
     func pin(
-        topTo top: ESLEdge? = nil, ofView topView: UIView? = nil,
-        leftTo left: ESLEdge? = nil, ofView leftView: UIView? = nil,
-        bottomTo bottom: ESLEdge? = nil, ofView bottomView: UIView? = nil,
-        rightTo right : ESLEdge? = nil, ofView rightView: UIView? = nil,
+        topTo top: ESLAnchor? = nil,
+        leftTo left: ESLAnchor? = nil,
+        bottomTo bottom: ESLAnchor? = nil,
+        rightTo right: ESLAnchor? = nil,
         withMargins margins: UIEdgeInsets = .zero
     ) {
         if top == nil && left == nil && bottom == nil, right == nil {
-            fatalError("You should pass at least one edge")
+            print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
         }
         
         if let top = top {
-            let topView = Utils.tryForceUnwrap(view: topView, failMessage: "You should pass pinning view with edge")
-            let anchor = top.convertToNSLayoutYAnchor(ofView: topView)
+            let anchor = top.convertToNSLayoutYAnchor()
             topAnchor.constraint(equalTo: anchor, constant: margins.top).isActive = true
         }
         
         if let left = left {
-            let leftView = Utils.tryForceUnwrap(view: leftView, failMessage: "You should pass pinning view with edge")
-            let anchor = left.convertToNSLayoutXAnchor(ofView: leftView)
+            let anchor = left.convertToNSLayoutXAnchor()
             leftAnchor.constraint(equalTo: anchor, constant: margins.left).isActive = true
         }
         
         if let bottom = bottom {
-            let bottomView = Utils.tryForceUnwrap(view: bottomView, failMessage: "You should pass pinning view with edge")
-            let anchor = bottom.convertToNSLayoutYAnchor(ofView: bottomView)
+            let anchor = bottom.convertToNSLayoutYAnchor()
             bottomAnchor.constraint(equalTo: anchor, constant: -margins.bottom).isActive = true
         }
         
         if let right = right {
-            let rightView = Utils.tryForceUnwrap(view: rightView, failMessage: "You should pass pinning view with edge")
-            let anchor = right.convertToNSLayoutXAnchor(ofView: rightView)
+            let anchor = right.convertToNSLayoutXAnchor()
             rightAnchor.constraint(equalTo: anchor, constant: -margins.right).isActive = true
         }
     }
     
     func pinEdge(_ edge: ESLEdge, to pinningEdge: ESLEdge, ofView view: UIView, withMargin margin: CGFloat = .zero) {
         switch edge {
-
+        
         case .left, .right:
-            let anchor = edge.convertToNSLayoutXAnchor(ofView: self)
-            let pinningAnchor = pinningEdge.convertToNSLayoutXAnchor(ofView: view)
-            anchor.constraint(equalTo: pinningAnchor, constant: margin)
-
+            let selfNSLayoutXAnchor = ESLAnchor(edge, ofView: self).convertToNSLayoutXAnchor()
+            let pinningNSLayoutXAnchor = ESLAnchor(pinningEdge, ofView: view).convertToNSLayoutXAnchor()
+            selfNSLayoutXAnchor.constraint(equalTo: pinningNSLayoutXAnchor, constant: margin)
+            
         case .top, .bottom:
-            let anchor = edge.convertToNSLayoutYAnchor(ofView: self)
-            let pinningAnchor = pinningEdge.convertToNSLayoutYAnchor(ofView: view)
-            anchor.constraint(equalTo: pinningAnchor, constant: margin)
+            let selfNSLayoutYAnchor = ESLAnchor(edge, ofView: self).convertToNSLayoutYAnchor()
+            let pinningNSLayoutYAnchor = ESLAnchor(pinningEdge, ofView: view).convertToNSLayoutYAnchor()
+            selfNSLayoutYAnchor.constraint(equalTo: pinningNSLayoutYAnchor, constant: margin)
         }
     }
     

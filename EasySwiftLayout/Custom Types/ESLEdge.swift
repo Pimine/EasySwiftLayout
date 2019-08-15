@@ -20,5 +20,7 @@ public enum ESLEdge {
     case left
     case right
     
+    //MARK: - Helpers
+    
     public static let all: [ESLEdge] = [.top, .bottom, .left, .right]
 }

@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */; };
 		B7B6606722FF122B006FDD7E /* EasySwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7B6606F22FF1289006FDD7E /* ESMarginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6606E22FF1289006FDD7E /* ESMarginAxis.swift */; };
+		B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */; };
 		B7B6608422FF18C7006FDD7E /* UIView + Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608322FF18C7006FDD7E /* UIView + Axis.swift */; };
 		B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */; };
-		B7B6608922FF61EE006FDD7E /* ESAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608822FF61EE006FDD7E /* ESAxis.swift */; };
+		B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608822FF61EE006FDD7E /* ESLAxis.swift */; };
 		B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */; };
 		B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */; };
-		B7B6609222FF7490006FDD7E /* ESLEdge + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6609122FF7490006FDD7E /* ESLEdge + Helpers.swift */; };
 		B7B6609623002A69006FDD7E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6609523002A69006FDD7E /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAnchor.swift; sourceTree = "<group>"; };
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasySwiftLayout.h; sourceTree = "<group>"; };
 		B7B6606622FF122B006FDD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B6606E22FF1289006FDD7E /* ESMarginAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESMarginAxis.swift; sourceTree = "<group>"; };
+		B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLMarginAxis.swift; sourceTree = "<group>"; };
 		B7B6608322FF18C7006FDD7E /* UIView + Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Axis.swift"; sourceTree = "<group>"; };
 		B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Auto Layout.swift"; sourceTree = "<group>"; };
-		B7B6608822FF61EE006FDD7E /* ESAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESAxis.swift; sourceTree = "<group>"; };
+		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
 		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
 		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
-		B7B6609122FF7490006FDD7E /* ESLEdge + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ESLEdge + Helpers.swift"; sourceTree = "<group>"; };
 		B7B6609523002A69006FDD7E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7B3FD6F2305D5040077B90E /* Axis */ = {
+			isa = PBXGroup;
+			children = (
+				B7B6608822FF61EE006FDD7E /* ESLAxis.swift */,
+				B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */,
+			);
+			path = Axis;
+			sourceTree = "<group>";
+		};
 		B7B6605822FF122B006FDD7E = {
 			isa = PBXGroup;
 			children = (
@@ -74,9 +83,9 @@
 		B7B6606D22FF1263006FDD7E /* Custom Types */ = {
 			isa = PBXGroup;
 			children = (
-				B7B6606E22FF1289006FDD7E /* ESMarginAxis.swift */,
-				B7B6608822FF61EE006FDD7E /* ESAxis.swift */,
+				B7B3FD6F2305D5040077B90E /* Axis */,
 				B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */,
+				B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */,
 			);
 			path = "Custom Types";
 			sourceTree = "<group>";
@@ -84,7 +93,6 @@
 		B7B6608C22FF6ABB006FDD7E /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
-				B7B6609122FF7490006FDD7E /* ESLEdge + Helpers.swift */,
 				B7B6608F22FF7471006FDD7E /* UIView */,
 			);
 			path = Extenstions;
@@ -180,13 +188,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */,
-				B7B6609222FF7490006FDD7E /* ESLEdge + Helpers.swift in Sources */,
-				B7B6608922FF61EE006FDD7E /* ESAxis.swift in Sources */,
-				B7B6606F22FF1289006FDD7E /* ESMarginAxis.swift in Sources */,
+				B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */,
+				B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */,
 				B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */,
 				B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */,
 				B7B6608422FF18C7006FDD7E /* UIView + Axis.swift in Sources */,
 				B7B6609623002A69006FDD7E /* Utils.swift in Sources */,
+				B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
