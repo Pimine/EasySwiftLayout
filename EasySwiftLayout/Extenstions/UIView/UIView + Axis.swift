@@ -30,7 +30,7 @@ public extension UIView {
         centerInView(superview, withMargins: margins)
     }
     
-    func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat) {
+    func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat = .zero) {
         guard let superview = superview else { return }
         centerInView(superview, axis: axis, withMargin: margin)
     }
