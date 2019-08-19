@@ -9,6 +9,12 @@
 import Foundation
 
 public extension UIView {
+    convenience init(forAutoLayout: Void) {
+        self.init()
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
     @discardableResult
     func setupForAutoLayout() -> Self {
         translatesAutoresizingMaskIntoConstraints = false

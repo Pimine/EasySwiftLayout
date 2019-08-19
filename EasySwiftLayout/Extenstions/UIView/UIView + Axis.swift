@@ -10,16 +10,16 @@ import Foundation
 
 public extension UIView {
     func centerInView(_ view: UIView, withMargins margins: ESLAxisMargin = .zero) {
-        centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: margins.x)
-        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: margins.y)
+        centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: margins.x).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: margins.y).isActive = true
     }
     
     func centerInView(_ view: UIView, axis: ESLAxis, withMargin margin: CGFloat = .zero) {
         switch axis {
         case .x:
-            centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: margin)
+            centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: margin).isActive = true
         case .y:
-            centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: margin)
+            centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: margin).isActive = true
         }
     }
     
