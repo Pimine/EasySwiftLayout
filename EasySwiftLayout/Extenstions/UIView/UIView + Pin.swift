@@ -10,6 +10,8 @@ import Foundation
 
 public extension UIView {
     
+    //MARK: - Abstraction for default
+    
     func pin(
         topTo top: NSLayoutYAxisAnchor? = nil,
         leftTo left: NSLayoutXAxisAnchor? = nil,
@@ -17,8 +19,9 @@ public extension UIView {
         rightTo right : NSLayoutXAxisAnchor? = nil,
         withMargins margins: UIEdgeInsets = .zero
     ) {
-        if top == nil && left == nil && bottom == nil, right == nil {
+        guard top != nil || left != nil || bottom != nil || right != nil else {
             print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
+            return
         }
         translatesAutoresizingMaskIntoConstraints = false
 
@@ -39,6 +42,8 @@ public extension UIView {
         }
     }
     
+    //MARK: - Pin Methods
+    
     func pin(
         topTo top: ESLAnchor? = nil,
         leftTo left: ESLAnchor? = nil,
@@ -46,8 +51,9 @@ public extension UIView {
         rightTo right: ESLAnchor? = nil,
         withMargins margins: UIEdgeInsets = .zero
     ) {
-        if top == nil && left == nil && bottom == nil, right == nil {
+        guard top != nil || left != nil || bottom != nil || right != nil else {
             print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
+            return
         }
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -111,8 +117,21 @@ public extension UIView {
         }
     }
     
+    //MARK: - Superview Methods
+    
+    func pinToSuperview(_ edge: ESLEdge, withMargin margin: CGFloat = .zero) {
+        guard let superview = superview else {
+            print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(withMarign:) has no effect.")
+            return
+        }
+        pinEdge(edge, toEdge: edge, ofView: superview, withMargin: margin)
+    }
+    
     func pinToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withMargins margins: UIEdgeInsets = .zero) {
-        guard let superview = superview else { return }
+        guard let superview = superview else {
+            print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(:withMarigns:) has no effect.")
+            return
+        }
         pin(edges, toSameEdgesOfView: superview, withMargins: margins)
     }
 }

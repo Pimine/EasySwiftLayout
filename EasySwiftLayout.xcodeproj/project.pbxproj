@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
 		B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */; };
 		B7B6606722FF122B006FDD7E /* EasySwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7B0692B230B17BA00CB6386 /* UIView + Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Size.swift"; sourceTree = "<group>"; };
 		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAnchor.swift; sourceTree = "<group>"; };
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasySwiftLayout.h; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */,
 				B7B6608322FF18C7006FDD7E /* UIView + Axis.swift */,
 				B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */,
+				B7B0692B230B17BA00CB6386 /* UIView + Size.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */,
 				B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */,
 				B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */,
+				B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */,
 				B7B6608422FF18C7006FDD7E /* UIView + Axis.swift in Sources */,
 				B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */,
 			);

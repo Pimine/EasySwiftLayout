@@ -25,13 +25,19 @@ public extension UIView {
         }
     }
     
-    func centerInSuperview(withMargins margins: ESLAxisMargin = .zero) {
-        guard let superview = superview else { return }
-        centerInView(superview, withMargins: margins)
+    func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat = .zero) {
+        guard let superview = superview else {
+            print("[EasySwiftLayout] WARNING: Cannot find superview. Method centerInSuperview(:withMarign:) has no effect.")
+            return
+        }
+        centerInView(superview, axis: axis, withMargin: margin)
     }
     
-    func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat = .zero) {
-        guard let superview = superview else { return }
-        centerInView(superview, axis: axis, withMargin: margin)
+    func centerInSuperview(withMargins margins: ESLAxisMargin = .zero) {
+        guard let superview = superview else {
+            print("[EasySwiftLayout] WARNING: Cannot find superview. Method centerInSuperview(withMarigns:) has no effect.")
+            return
+        }
+        centerInView(superview, withMargins: margins)
     }
 }
