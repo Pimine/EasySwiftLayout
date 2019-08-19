@@ -17,7 +17,7 @@ public extension UIView {
         leftTo left: NSLayoutXAxisAnchor? = nil,
         bottomTo bottom: NSLayoutYAxisAnchor? = nil,
         rightTo right : NSLayoutXAxisAnchor? = nil,
-        withMargins margins: UIEdgeInsets = .zero
+        withInsets insets: UIEdgeInsets = .zero
     ) {
         guard top != nil || left != nil || bottom != nil || right != nil else {
             print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
@@ -26,19 +26,19 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
 
         if let top = top {
-            topAnchor.constraint(equalTo: top, constant: margins.top).isActive = true
+            topAnchor.constraint(equalTo: top, constant: insets.top).isActive = true
         }
 
         if let left = left {
-            leftAnchor.constraint(equalTo: left, constant: margins.left).isActive = true
+            leftAnchor.constraint(equalTo: left, constant: insets.left).isActive = true
         }
 
         if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: -margins.bottom).isActive = true
+            bottomAnchor.constraint(equalTo: bottom, constant: -insets.bottom).isActive = true
         }
 
         if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: -margins.right).isActive = true
+            rightAnchor.constraint(equalTo: right, constant: -insets.right).isActive = true
         }
     }
     
@@ -49,7 +49,7 @@ public extension UIView {
         leftTo left: ESLAnchor? = nil,
         bottomTo bottom: ESLAnchor? = nil,
         rightTo right: ESLAnchor? = nil,
-        withMargins margins: UIEdgeInsets = .zero
+        withInsets insets: UIEdgeInsets = .zero
     ) {
         guard top != nil || left != nil || bottom != nil || right != nil else {
             print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
@@ -59,26 +59,26 @@ public extension UIView {
         
         if let top = top {
             let anchor = top.convertToNSLayoutYAnchor()
-            topAnchor.constraint(equalTo: anchor, constant: margins.top).isActive = true
+            topAnchor.constraint(equalTo: anchor, constant: insets.top).isActive = true
         }
         
         if let left = left {
             let anchor = left.convertToNSLayoutXAnchor()
-            leftAnchor.constraint(equalTo: anchor, constant: margins.left).isActive = true
+            leftAnchor.constraint(equalTo: anchor, constant: insets.left).isActive = true
         }
         
         if let bottom = bottom {
             let anchor = bottom.convertToNSLayoutYAnchor()
-            bottomAnchor.constraint(equalTo: anchor, constant: -margins.bottom).isActive = true
+            bottomAnchor.constraint(equalTo: anchor, constant: -insets.bottom).isActive = true
         }
         
         if let right = right {
             let anchor = right.convertToNSLayoutXAnchor()
-            rightAnchor.constraint(equalTo: anchor, constant: -margins.right).isActive = true
+            rightAnchor.constraint(equalTo: anchor, constant: -insets.right).isActive = true
         }
     }
     
-    func pinEdge(_ edge: ESLEdge, toEdge pinningEdge: ESLEdge, ofView view: UIView, withMargin margin: CGFloat = .zero) {
+    func pinEdge(_ edge: ESLEdge, toEdge pinningEdge: ESLEdge, ofView view: UIView, withInset inset: CGFloat = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         switch edge {
         case .left, .right:
@@ -87,7 +87,7 @@ public extension UIView {
             
             selfNSLayoutXAnchor.constraint(
                 equalTo: pinningNSLayoutXAnchor,
-                constant: margin * edge.marginMultiplier
+                constant: inset * edge.insetMultiplier
             ).isActive = true
             
         case .top, .bottom:
@@ -96,42 +96,42 @@ public extension UIView {
             
             selfNSLayoutYAnchor.constraint(
                 equalTo: pinningNSLayoutYAnchor,
-                constant: margin * edge.marginMultiplier
+                constant: inset * edge.insetMultiplier
             ).isActive = true
             
         }
     }
     
-    func pin(_ edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView view: UIView, withMargins margins: UIEdgeInsets = .zero) {
+    func pin(_ edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView view: UIView, withInsets insets: UIEdgeInsets = .zero) {
         for edge in edges {
             switch edge {
             case .left:
-                pinEdge(.left, toEdge: .left, ofView: view, withMargin: margins.left)
+                pinEdge(.left, toEdge: .left, ofView: view, withInset: insets.left)
             case .right:
-                pinEdge(.right, toEdge: .right, ofView: view, withMargin: margins.right)
+                pinEdge(.right, toEdge: .right, ofView: view, withInset: insets.right)
             case .top:
-                pinEdge(.top, toEdge: .top, ofView: view, withMargin: margins.top)
+                pinEdge(.top, toEdge: .top, ofView: view, withInset: insets.top)
             case .bottom:
-                pinEdge(.bottom, toEdge: .bottom, ofView: view, withMargin: margins.bottom)
+                pinEdge(.bottom, toEdge: .bottom, ofView: view, withInset: insets.bottom)
             }
         }
     }
     
     //MARK: - Superview Methods
     
-    func pinToSuperview(_ edge: ESLEdge, withMargin margin: CGFloat = .zero) {
+    func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) {
         guard let superview = superview else {
             print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(withMarign:) has no effect.")
             return
         }
-        pinEdge(edge, toEdge: edge, ofView: superview, withMargin: margin)
+        pinEdge(edge, toEdge: edge, ofView: superview, withInset: inset)
     }
     
-    func pinToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withMargins margins: UIEdgeInsets = .zero) {
+    func pinEdgesToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withInsets insets: UIEdgeInsets = .zero) {
         guard let superview = superview else {
             print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(:withMarigns:) has no effect.")
             return
         }
-        pin(edges, toSameEdgesOfView: superview, withMargins: margins)
+        pin(edges, toSameEdgesOfView: superview, withInsets: insets)
     }
 }

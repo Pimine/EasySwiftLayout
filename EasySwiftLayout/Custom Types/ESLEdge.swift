@@ -24,7 +24,7 @@ public enum ESLEdge {
     
     public static let all: [ESLEdge] = [.top, .bottom, .left, .right]
     
-    public var marginMultiplier: CGFloat {
+    public var insetMultiplier: CGFloat {
         switch self {
         case .left, .top:
             return 1.0
