@@ -20,6 +20,7 @@ public extension UIView {
         if top == nil && left == nil && bottom == nil, right == nil {
             print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
         }
+        translatesAutoresizingMaskIntoConstraints = false
 
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: margins.top).isActive = true
@@ -48,6 +49,7 @@ public extension UIView {
         if top == nil && left == nil && bottom == nil, right == nil {
             print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
         }
+        translatesAutoresizingMaskIntoConstraints = false
         
         if let top = top {
             let anchor = top.convertToNSLayoutYAnchor()
@@ -71,13 +73,12 @@ public extension UIView {
     }
     
     func pinEdge(_ edge: ESLEdge, toEdge pinningEdge: ESLEdge, ofView view: UIView, withMargin margin: CGFloat = .zero) {
+        translatesAutoresizingMaskIntoConstraints = false
         switch edge {
-        
         case .left, .right:
             let selfNSLayoutXAnchor = ESLAnchor(edge, ofView: self).convertToNSLayoutXAnchor()
             let pinningNSLayoutXAnchor = ESLAnchor(pinningEdge, ofView: view).convertToNSLayoutXAnchor()
             selfNSLayoutXAnchor.constraint(equalTo: pinningNSLayoutXAnchor, constant: margin).isActive = true
-            
         case .top, .bottom:
             let selfNSLayoutYAnchor = ESLAnchor(edge, ofView: self).convertToNSLayoutYAnchor()
             let pinningNSLayoutYAnchor = ESLAnchor(pinningEdge, ofView: view).convertToNSLayoutYAnchor()
