@@ -78,11 +78,21 @@ public extension UIView {
         case .left, .right:
             let selfNSLayoutXAnchor = ESLAnchor(edge, ofView: self).convertToNSLayoutXAnchor()
             let pinningNSLayoutXAnchor = ESLAnchor(pinningEdge, ofView: view).convertToNSLayoutXAnchor()
-            selfNSLayoutXAnchor.constraint(equalTo: pinningNSLayoutXAnchor, constant: margin).isActive = true
+            
+            selfNSLayoutXAnchor.constraint(
+                equalTo: pinningNSLayoutXAnchor,
+                constant: margin * edge.marginMultiplier
+            ).isActive = true
+            
         case .top, .bottom:
             let selfNSLayoutYAnchor = ESLAnchor(edge, ofView: self).convertToNSLayoutYAnchor()
             let pinningNSLayoutYAnchor = ESLAnchor(pinningEdge, ofView: view).convertToNSLayoutYAnchor()
-            selfNSLayoutYAnchor.constraint(equalTo: pinningNSLayoutYAnchor, constant: margin).isActive = true
+            
+            selfNSLayoutYAnchor.constraint(
+                equalTo: pinningNSLayoutYAnchor,
+                constant: margin * edge.marginMultiplier
+            ).isActive = true
+            
         }
     }
     
