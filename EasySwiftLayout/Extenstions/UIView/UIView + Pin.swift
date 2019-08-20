@@ -127,6 +127,14 @@ public extension UIView {
         pinEdge(edge, toEdge: edge, ofView: superview, withInset: inset)
     }
     
+    func pinEdge(_ edge: ESLEdge, toSuperviewEdge superviewEdge: ESLEdge, withInset inset: CGFloat = .zero) {
+        guard let superview = superview else {
+            print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinEdge(:toSuperviewEdge:withInset:) has no effect.")
+            return
+        }
+        pinEdge(edge, toEdge: superviewEdge, ofView: superview)
+    }
+    
     func pinEdgesToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withInsets insets: UIEdgeInsets = .zero) {
         guard let superview = superview else {
             print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(:withMarigns:) has no effect.")
