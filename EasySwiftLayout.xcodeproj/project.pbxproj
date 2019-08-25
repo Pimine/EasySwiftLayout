@@ -6,7 +6,22 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B7B06934230C274B00CB6386 /* EasySwiftLayout-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B7B06935230C274B00CB6386 /* Build configuration list for PBXAggregateTarget "EasySwiftLayout-Universal" */;
+			buildPhases = (
+				B7B06938230C278C00CB6386 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "EasySwiftLayout-Universal";
+			productName = "EasySwiftLayout-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		B79FF4342312BE0900DBDD14 /* Logable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FF4332312BE0900DBDD14 /* Logable.swift */; };
 		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
 		B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */; };
 		B7B6606722FF122B006FDD7E /* EasySwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B79FF4332312BE0900DBDD14 /* Logable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logable.swift; sourceTree = "<group>"; };
 		B7B0692B230B17BA00CB6386 /* UIView + Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Size.swift"; sourceTree = "<group>"; };
 		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAnchor.swift; sourceTree = "<group>"; };
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B79FF4352312D6A200DBDD14 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B79FF4332312BE0900DBDD14 /* Logable.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		B7B3FD6F2305D5040077B90E /* Axis */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +95,7 @@
 		B7B6606422FF122B006FDD7E /* EasySwiftLayout */ = {
 			isa = PBXGroup;
 			children = (
+				B79FF4352312D6A200DBDD14 /* Shared */,
 				B7B6608C22FF6ABB006FDD7E /* Extenstions */,
 				B7B6606D22FF1263006FDD7E /* Custom Types */,
 				B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */,
@@ -102,8 +127,8 @@
 			children = (
 				B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */,
 				B7B6608322FF18C7006FDD7E /* UIView + Axis.swift */,
-				B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */,
 				B7B0692B230B17BA00CB6386 /* UIView + Size.swift */,
+				B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -149,6 +174,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Денис Андрейчук";
 				TargetAttributes = {
+					B7B06934230C274B00CB6386 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					B7B6606122FF122B006FDD7E = {
 						CreatedOnToolsVersion = 10.2;
 						LastSwiftMigration = 1020;
@@ -168,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				B7B6606122FF122B006FDD7E /* EasySwiftLayout */,
+				B7B06934230C274B00CB6386 /* EasySwiftLayout-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +211,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B7B06938230C278C00CB6386 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B7B6605E22FF122B006FDD7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,6 +240,7 @@
 				B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */,
 				B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */,
 				B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */,
+				B79FF4342312BE0900DBDD14 /* Logable.swift in Sources */,
 				B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */,
 				B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */,
 				B7B6608422FF18C7006FDD7E /* UIView + Axis.swift in Sources */,
@@ -201,6 +251,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		B7B06936230C274B00CB6386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7NGW4S7J5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B7B06937230C274B00CB6386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7NGW4S7J5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B7B6606822FF122B006FDD7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -379,6 +447,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B7B06935230C274B00CB6386 /* Build configuration list for PBXAggregateTarget "EasySwiftLayout-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B06936230C274B00CB6386 /* Debug */,
+				B7B06937230C274B00CB6386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B7B6605C22FF122B006FDD7E /* Build configuration list for PBXProject "EasySwiftLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -31,7 +31,7 @@ public struct ESLAnchor {
         case .right:
             return view.rightAnchor
         default:
-            fatalError("You cannot convert horizontal axis to NSLayoutYAxisAnchor")
+            fatalError("🛑 [EasySwiftLayout] You cannot convert horizontal axis to NSLayoutXAxisAnchor")
         }
     }
     
@@ -41,8 +41,8 @@ public struct ESLAnchor {
             return view.topAnchor
         case .bottom:
             return view.bottomAnchor
-        case .left, .right:
-            fatalError("You cannot convert vertical axis to NSLayoutXAxisAnchor")
+        default:
+            fatalError("🛑 [EasySwiftLayout] You cannot convert horizontal axis to NSLayoutYAxisAnchor")
         }
     }
 }

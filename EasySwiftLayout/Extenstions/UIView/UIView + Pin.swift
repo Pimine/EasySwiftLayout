@@ -20,7 +20,7 @@ public extension UIView {
         withInsets insets: UIEdgeInsets = .zero
     ) {
         guard top != nil || left != nil || bottom != nil || right != nil else {
-            print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
+            log("You should pass at least one anchor. For now, nothing to pin. Method \(#function) has no effect.")
             return
         }
         translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ public extension UIView {
         withInsets insets: UIEdgeInsets = .zero
     ) {
         guard top != nil || left != nil || bottom != nil || right != nil else {
-            print("[EasySwiftLayout] WARNING: You should pass at least one anchor. For now, nothing to pin. Method has no effect.")
+            log("You should pass at least one anchor. For now, nothing to pin. Method \(#function) has no effect.")
             return
         }
         translatesAutoresizingMaskIntoConstraints = false
@@ -102,44 +102,49 @@ public extension UIView {
         }
     }
     
-    func pin(_ edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView view: UIView, withInsets insets: UIEdgeInsets = .zero) {
+    func pinEdge(_ edge: ESLEdge, toSameEdgeOfView view: UIView, withInset inset: CGFloat = .zero) {
+        pinEdge(edge, toEdge: edge, ofView: view, withInset: inset)
+    }
+    
+    func pinEdges(_ edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView view: UIView, withInsets insets: UIEdgeInsets = .zero) {
         for edge in edges {
             switch edge {
             case .left:
-                pinEdge(.left, toEdge: .left, ofView: view, withInset: insets.left)
+                pinEdge(.left, toSameEdgeOfView: view, withInset: insets.left)
             case .right:
-                pinEdge(.right, toEdge: .right, ofView: view, withInset: insets.right)
+                pinEdge(.right, toSameEdgeOfView: view, withInset: insets.right)
             case .top:
-                pinEdge(.top, toEdge: .top, ofView: view, withInset: insets.top)
+                pinEdge(.top, toSameEdgeOfView: view, withInset: insets.top)
             case .bottom:
-                pinEdge(.bottom, toEdge: .bottom, ofView: view, withInset: insets.bottom)
+                pinEdge(.bottom, toSameEdgeOfView: view, withInset: insets.bottom)
             }
         }
     }
     
     //MARK: - Superview Methods
     
-    func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) {
-        guard let superview = superview else {
-            print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(withMarign:) has no effect.")
-            return
-        }
-        pinEdge(edge, toEdge: edge, ofView: superview, withInset: inset)
-    }
     
     func pinEdge(_ edge: ESLEdge, toSuperviewEdge superviewEdge: ESLEdge, withInset inset: CGFloat = .zero) {
         guard let superview = superview else {
-            print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinEdge(:toSuperviewEdge:withInset:) has no effect.")
+            log("Cannot find superview. Method \(#function) has no effect.")
             return
         }
         pinEdge(edge, toEdge: superviewEdge, ofView: superview)
     }
     
-    func pinEdgesToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withInsets insets: UIEdgeInsets = .zero) {
+    func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) {
         guard let superview = superview else {
-            print("[EasySwiftLayout] WARNING: Cannot find superview. Method pinToSuperview(:withMarigns:) has no effect.")
+            log("Cannot find superview. Method \(#function) has no effect.")
             return
         }
-        pin(edges, toSameEdgesOfView: superview, withInsets: insets)
+        pinEdge(edge, toSameEdgeOfView: superview, withInset: inset)
+    }
+    
+    func pinEdgesToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withInsets insets: UIEdgeInsets = .zero) {
+        guard let superview = superview else {
+            log("Cannot find superview. Method \(#function) has no effect.")
+            return
+        }
+        pinEdges(edges, toSameEdgesOfView: superview, withInsets: insets)
     }
 }
