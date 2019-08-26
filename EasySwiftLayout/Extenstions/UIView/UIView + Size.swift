@@ -9,20 +9,20 @@
 import Foundation
 
 public extension UIView {
-    func setSize(to size: CGSize) {
+    func setSize(_ size: CGSize) {
         guard size.height != .zero || size.width != .zero else {
             print("[EasySwiftLayout] WARNING: You should pass at least one non-zero dimension. For now, method setWidth(to:) has no effect.")
             return
         }
         if size.height != 0 {
-            setHeight(to: size.height)
+            setHeight(size.height)
         }
         if size.width != 0 {
-            setWidth(to: size.width)
+            setWidth(size.width)
         }
     }
     
-    func setWidth(to size: CGFloat) {
+    func setWidth(_ size: CGFloat) {
         guard size != 0 else {
             print("[EasySwiftLayout] WARNING: You should pass non-zero size. For now, method setWidth(to:) has no effect.")
             return
@@ -31,7 +31,7 @@ public extension UIView {
         widthAnchor.constraint(equalToConstant: size).isActive = true
     }
     
-    func setHeight(to size: CGFloat) {
+    func setHeight(_ size: CGFloat) {
         guard size != 0 else {
             print("[EasySwiftLayout] WARNING: You should pass non-zero size. For now, method setHeight(to:) has no effect.")
             return
