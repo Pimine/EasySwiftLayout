@@ -12,16 +12,16 @@ public extension UIView {
     
     //MARK: - Abstraction for default
     
-    func pin(
+    @discardableResult func pin(
         topTo top: NSLayoutYAxisAnchor? = nil,
         leftTo left: NSLayoutXAxisAnchor? = nil,
         bottomTo bottom: NSLayoutYAxisAnchor? = nil,
         rightTo right : NSLayoutXAxisAnchor? = nil,
         withInsets insets: UIEdgeInsets = .zero
-    ) {
+    ) -> Self {
         guard top != nil || left != nil || bottom != nil || right != nil else {
             log("You should pass at least one anchor. For now, nothing to pin. Method \(#function) has no effect.")
-            return
+            return self
         }
         translatesAutoresizingMaskIntoConstraints = false
 
@@ -40,20 +40,21 @@ public extension UIView {
         if let right = right {
             rightAnchor.constraint(equalTo: right, constant: -insets.right).isActive = true
         }
+        return self
     }
     
     //MARK: - Pin Methods
     
-    func pin(
+    @discardableResult func pin(
         topTo top: ESLAnchor? = nil,
         leftTo left: ESLAnchor? = nil,
         bottomTo bottom: ESLAnchor? = nil,
         rightTo right: ESLAnchor? = nil,
         withInsets insets: UIEdgeInsets = .zero
-    ) {
+    ) -> Self {
         guard top != nil || left != nil || bottom != nil || right != nil else {
             log("You should pass at least one anchor. For now, nothing to pin. Method \(#function) has no effect.")
-            return
+            return self
         }
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -76,9 +77,15 @@ public extension UIView {
             let anchor = right.convertToNSLayoutXAnchor()
             rightAnchor.constraint(equalTo: anchor, constant: -insets.right).isActive = true
         }
+        return self
     }
     
-    func pinEdge(_ edge: ESLEdge, toEdge pinningEdge: ESLEdge, ofView view: UIView, withInset inset: CGFloat = .zero) {
+    @discardableResult func pinEdge(
+        _ edge: ESLEdge,
+        toEdge pinningEdge: ESLEdge,
+        ofView view: UIView,
+        withInset inset: CGFloat = .zero
+    ) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         switch edge {
         case .left, .right:
@@ -98,15 +105,20 @@ public extension UIView {
                 equalTo: pinningNSLayoutYAnchor,
                 constant: inset * edge.insetMultiplier
             ).isActive = true
-            
         }
+        return self
     }
     
-    func pinEdge(_ edge: ESLEdge, toSameEdgeOfView view: UIView, withInset inset: CGFloat = .zero) {
+    @discardableResult func pinEdge(_ edge: ESLEdge, toSameEdgeOfView view: UIView, withInset inset: CGFloat = .zero) -> Self {
         pinEdge(edge, toEdge: edge, ofView: view, withInset: inset)
+        return self
     }
     
-    func pinEdges(_ edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView view: UIView, withInsets insets: UIEdgeInsets = .zero) {
+    @discardableResult func pinEdges(
+        _ edges: [ESLEdge] = ESLEdge.all,
+        toSameEdgesOfView view: UIView,
+        withInsets insets: UIEdgeInsets = .zero
+    ) -> Self {
         for edge in edges {
             switch edge {
             case .left:
@@ -119,32 +131,42 @@ public extension UIView {
                 pinEdge(.bottom, toSameEdgeOfView: view, withInset: insets.bottom)
             }
         }
+        return self
     }
     
     //MARK: - Superview Methods
     
-    
-    func pinEdge(_ edge: ESLEdge, toSuperviewEdge superviewEdge: ESLEdge, withInset inset: CGFloat = .zero) {
+    @discardableResult func pinEdge(
+        _ edge: ESLEdge,
+        toSuperviewEdge superviewEdge: ESLEdge,
+        withInset inset: CGFloat = .zero
+    ) -> Self {
         guard let superview = superview else {
             log("Cannot find superview. Method \(#function) has no effect.")
-            return
+            return self
         }
         pinEdge(edge, toEdge: superviewEdge, ofView: superview)
+        return self
     }
     
-    func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) {
+    @discardableResult func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) -> Self {
         guard let superview = superview else {
             log("Cannot find superview. Method \(#function) has no effect.")
-            return
+            return self
         }
         pinEdge(edge, toSameEdgeOfView: superview, withInset: inset)
+        return self
     }
     
-    func pinEdgesToSuperview(_ edges: [ESLEdge] = ESLEdge.all, withInsets insets: UIEdgeInsets = .zero) {
+    @discardableResult func pinEdgesToSuperview(
+        _ edges: [ESLEdge] = ESLEdge.all,
+        withInsets insets: UIEdgeInsets = .zero
+    ) -> Self {
         guard let superview = superview else {
             log("Cannot find superview. Method \(#function) has no effect.")
-            return
+            return self
         }
         pinEdges(edges, toSameEdgesOfView: superview, withInsets: insets)
+        return self
     }
 }

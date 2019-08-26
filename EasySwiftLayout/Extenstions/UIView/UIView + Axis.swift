@@ -9,13 +9,14 @@
 import Foundation
 
 public extension UIView {
-    func centerInView(_ view: UIView, withMargins margins: ESLAxisMargin = .zero) {
+    @discardableResult func centerInView(_ view: UIView, withMargins margins: ESLAxisMargin = .zero) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: margins.x).isActive = true
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: margins.y).isActive = true
+        return self
     }
     
-    func centerInView(_ view: UIView, axis: ESLAxis, withMargin margin: CGFloat = .zero) {
+    @discardableResult func centerInView(_ view: UIView, axis: ESLAxis, withMargin margin: CGFloat = .zero) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         switch axis {
         case .x:
@@ -23,21 +24,24 @@ public extension UIView {
         case .y:
             centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: margin).isActive = true
         }
+        return self
     }
     
-    func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat = .zero) {
+    @discardableResult func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat = .zero) -> Self {
         guard let superview = superview else {
             print("[EasySwiftLayout] WARNING: Cannot find superview. Method centerInSuperview(:withMarign:) has no effect.")
-            return
+            return self
         }
         centerInView(superview, axis: axis, withMargin: margin)
+        return self
     }
     
-    func centerInSuperview(withMargins margins: ESLAxisMargin = .zero) {
+    @discardableResult func centerInSuperview(withMargins margins: ESLAxisMargin = .zero) -> Self {
         guard let superview = superview else {
             print("[EasySwiftLayout] WARNING: Cannot find superview. Method centerInSuperview(withMarigns:) has no effect.")
-            return
+            return self
         }
         centerInView(superview, withMargins: margins)
+        return self
     }
 }
