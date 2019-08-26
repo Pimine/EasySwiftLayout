@@ -20,7 +20,7 @@ public extension UIView {
         withInsets insets: UIEdgeInsets = .zero
     ) -> Self {
         guard top != nil || left != nil || bottom != nil || right != nil else {
-            log("You should pass at least one anchor. For now, nothing to pin. Method \(#function) has no effect.")
+            log("You should pass at least one anchor. Method \(#function) has no effect.")
             return self
         }
         translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +53,7 @@ public extension UIView {
         withInsets insets: UIEdgeInsets = .zero
     ) -> Self {
         guard top != nil || left != nil || bottom != nil || right != nil else {
-            log("You should pass at least one anchor. For now, nothing to pin. Method \(#function) has no effect.")
+            log("You should pass at least one anchor. Method \(#function) has no effect.")
             return self
         }
         translatesAutoresizingMaskIntoConstraints = false

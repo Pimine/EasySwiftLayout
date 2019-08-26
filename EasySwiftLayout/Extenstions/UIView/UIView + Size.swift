@@ -9,10 +9,10 @@
 import Foundation
 
 public extension UIView {
-    func setSize(_ size: CGSize) {
+    @discardableResult func setSize(_ size: CGSize) -> Self {
         guard size.height != .zero || size.width != .zero else {
-            print("[EasySwiftLayout] WARNING: You should pass at least one non-zero dimension. For now, method setWidth(to:) has no effect.")
-            return
+            log("You should pass at least one non-zero dimension. Method \(#function) has no effect.")
+            return self
         }
         if size.height != 0 {
             setHeight(size.height)
@@ -20,23 +20,26 @@ public extension UIView {
         if size.width != 0 {
             setWidth(size.width)
         }
+        return self
     }
     
-    func setWidth(_ size: CGFloat) {
+    @discardableResult func setWidth(_ size: CGFloat) -> Self {
         guard size != 0 else {
-            print("[EasySwiftLayout] WARNING: You should pass non-zero size. For now, method setWidth(to:) has no effect.")
-            return
+            log("You should pass non-zero size. For now, method \(#function) has no effect.")
+            return self
         }
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalToConstant: size).isActive = true
+        return self
     }
     
-    func setHeight(_ size: CGFloat) {
+    @discardableResult func setHeight(_ size: CGFloat) -> Self{
         guard size != 0 else {
-            print("[EasySwiftLayout] WARNING: You should pass non-zero size. For now, method setHeight(to:) has no effect.")
-            return
+            log("You should pass non-zero size. Method \(#function) has no effect.")
+            return self
         }
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: size).isActive = true
+        return self
     }
 }

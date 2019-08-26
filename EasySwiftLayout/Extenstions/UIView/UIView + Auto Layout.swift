@@ -14,8 +14,8 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    @discardableResult func setupForAutoLayout() -> Self {
-        translatesAutoresizingMaskIntoConstraints = false
+    @discardableResult func translatesAutoresizingMaskIntoConstraints(_ value: Bool) -> Self {
+        translatesAutoresizingMaskIntoConstraints = value
         return self
     }
 }
