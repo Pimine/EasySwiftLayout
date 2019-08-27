@@ -23,6 +23,15 @@ public extension UIView {
         return self
     }
     
+    @discardableResult func setSize(toRectWithDimension dimension: CGFloat) -> Self {
+        guard dimension != .zero else {
+            log("You should pass non-zero dimension. Method \(#function) has no effect.")
+            return self
+        }
+        setSize(.init(width: dimension, height: dimension))
+        return self
+    }
+    
     @discardableResult func setWidth(_ size: CGFloat) -> Self {
         guard size != 0 else {
             log("You should pass non-zero size. For now, method \(#function) has no effect.")
