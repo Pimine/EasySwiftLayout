@@ -9,30 +9,30 @@
 import Foundation
 
 public extension UIView {
-    @discardableResult func setSize(_ size: CGSize) -> Self {
+    @discardableResult func size(_ size: CGSize) -> Self {
         guard size.height != .zero || size.width != .zero else {
             log("You should pass at least one non-zero dimension. Method \(#function) has no effect.")
             return self
         }
         if size.height != 0 {
-            setHeight(size.height)
+            height(size.height)
         }
         if size.width != 0 {
-            setWidth(size.width)
+            width(size.width)
         }
         return self
     }
     
-    @discardableResult func setSize(toRectWithDimension dimension: CGFloat) -> Self {
+    @discardableResult func size(toRectWithDimension dimension: CGFloat) -> Self {
         guard dimension != .zero else {
             log("You should pass non-zero dimension. Method \(#function) has no effect.")
             return self
         }
-        setSize(.init(width: dimension, height: dimension))
+        size(.init(width: dimension, height: dimension))
         return self
     }
     
-    @discardableResult func setWidth(_ size: CGFloat) -> Self {
+    @discardableResult func width(_ size: CGFloat) -> Self {
         guard size != 0 else {
             log("You should pass non-zero size. For now, method \(#function) has no effect.")
             return self
@@ -42,7 +42,7 @@ public extension UIView {
         return self
     }
     
-    @discardableResult func setHeight(_ size: CGFloat) -> Self{
+    @discardableResult func height(_ size: CGFloat) -> Self{
         guard size != 0 else {
             log("You should pass non-zero size. Method \(#function) has no effect.")
             return self
