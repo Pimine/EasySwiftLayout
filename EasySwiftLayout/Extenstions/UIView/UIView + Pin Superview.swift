@@ -112,7 +112,7 @@ public extension UIView {
     /// Pins horizontal edges (left and right) to the same edges of superview with equal inset for both sides
     ///
     /// Small helper method which can speed up work a litle bit. I found it easier to use autocomplete rather than specifying two
-    /// edges by myself. Underhood it uses common `pinEdgesToSuperview(_:withInsets:)`.
+    /// edges by myself. Underhood it uses common `pinEdgesToSuperview(_:withInset:)`.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
@@ -130,7 +130,7 @@ public extension UIView {
     /// Pins vertical edges (top and bottom) to the same edges of superview with equal inset for both sides
     ///
     /// Small helper method which can speed up work a litle bit. I found it easier to use autocomplete rather than specifying two
-    /// edges by myself. Underhood it uses common `pinEdgesToSuperview(_:withInsets:)`.
+    /// edges by myself. Underhood it uses common `pinEdgesToSuperview(_:withInset:)`.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
