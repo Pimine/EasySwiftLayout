@@ -134,39 +134,12 @@ public extension UIView {
         return self
     }
     
-    //MARK: - Superview Methods
-    
-    @discardableResult func pinEdge(
-        _ edge: ESLEdge,
-        toSuperviewEdge superviewEdge: ESLEdge,
-        withInset inset: CGFloat = .zero
-    ) -> Self {
-        guard let superview = superview else {
-            log("Cannot find superview. Method \(#function) has no effect.")
-            return self
-        }
-        pinEdge(edge, toEdge: superviewEdge, ofView: superview)
-        return self
-    }
-    
-    @discardableResult func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) -> Self {
-        guard let superview = superview else {
-            log("Cannot find superview. Method \(#function) has no effect.")
-            return self
-        }
-        pinEdge(edge, toSameEdgeOfView: superview, withInset: inset)
-        return self
-    }
-    
-    @discardableResult func pinEdgesToSuperview(
+    @discardableResult func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
-        withInsets insets: UIEdgeInsets = .zero
+        toSameEdgesOfView view: UIView,
+        withInset inset: CGFloat
     ) -> Self {
-        guard let superview = superview else {
-            log("Cannot find superview. Method \(#function) has no effect.")
-            return self
-        }
-        pinEdges(edges, toSameEdgesOfView: superview, withInsets: insets)
+        pinEdges(edges, toSameEdgesOfView: view, withInsets: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset))
         return self
     }
 }
