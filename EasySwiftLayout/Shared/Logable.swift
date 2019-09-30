@@ -15,8 +15,7 @@ protocol Logable {
 
 extension Logable where Self: UIView {
     func log(_ message: String) {
-        print("🛑 [EasySwiftLayout] \(message)")
-        debugPrint("🐝 [ESL Debugger]:", self)
+        print("[EasySwiftLayout] \(message)")
     }
 }
 
