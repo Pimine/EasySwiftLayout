@@ -161,10 +161,10 @@
 		B7B6608F22FF7471006FDD7E /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */,
+				B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */,
 				B7B6608322FF18C7006FDD7E /* UIView + Axis.swift */,
 				B7B0692B230B17BA00CB6386 /* UIView + Size.swift */,
-				B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */,
+				B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */,
 				B7FC923423422CAA009947A3 /* UIView + Pin Superview.swift */,
 			);
 			path = UIView;

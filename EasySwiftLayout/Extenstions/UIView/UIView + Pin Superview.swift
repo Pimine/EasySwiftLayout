@@ -23,8 +23,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import UIKit
-
 public extension UIView {
     
     /// Pins edge to the given edge of its superview with an inset.
@@ -33,6 +31,8 @@ public extension UIView {
     /// `pinEdgeToSuperview(_:withInset:) would be a better approach.
     /// 2. Consider, that you cannot pin edge to different axis,
     /// otherwise method will throw `fatalError()`. X-axis constraints are not compatible with y-axis.
+    /// 3. To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition:
     ///     - View should have superview, otherwise method will have no effect.
@@ -56,6 +56,9 @@ public extension UIView {
     
     /// Pins the given edge of the view to the corresponding margin of its superview with an inset.
     ///
+    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
     /// - Parameter edge: The edge of this view to pin to the corresponding margin.
@@ -71,7 +74,9 @@ public extension UIView {
     
     /// Pins the given edges of the view to the corresponding margins of its superview with an inset.
     ///
-    /// If you need to pin only one edge, use `pinEdgeToSuperview(_:withInset:)` instead.
+    /// 1. If you need to pin only one edge, use `pinEdgeToSuperview(_:withInset:)` instead.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
@@ -95,6 +100,8 @@ public extension UIView {
     /// `pinEdgeToSuperview(_:withInset:)` would be a better approach.
     /// 2. If you want to customize inset based on edge,
     /// use `pinEdgesToSuperview(_:withInsets:)`.
+    /// 3. To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
@@ -114,7 +121,9 @@ public extension UIView {
     
     /// Pins left and right to the corresponding margins of its superview with equal inset
     ///
-    /// Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
+    /// 1. Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
@@ -130,7 +139,9 @@ public extension UIView {
     
     /// Pins top and bottom to the corresponding margins of its superview with equal inset
     ///
-    /// Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
+    /// 1. Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
