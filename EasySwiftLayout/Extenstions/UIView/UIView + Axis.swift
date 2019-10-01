@@ -28,19 +28,13 @@ public extension UIView {
     }
     
     @discardableResult func centerInSuperview(_ axis: ESLAxis, withMargin margin: CGFloat = .zero) -> Self {
-        guard let superview = superview else {
-            log("Cannot find superview. Method \(#function) has no effect.")
-            return self
-        }
+        guard let superview = superview else { return self }
         centerInView(superview, axis: axis, withMargin: margin)
         return self
     }
     
     @discardableResult func centerInSuperview(withMargins margins: ESLAxisMargin = .zero) -> Self {
-        guard let superview = superview else {
-            log("Cannot find superview. Method \(#function) has no effect.")
-            return self
-        }
+        guard let superview = superview else { return self }
         centerInView(superview, withMargins: margins)
         return self
     }

@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		B79FF4342312BE0900DBDD14 /* Logable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FF4332312BE0900DBDD14 /* Logable.swift */; };
 		B79FF43F2312FA0400DBDD14 /* EasySwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FF43E2312FA0400DBDD14 /* EasySwiftLayoutTests.swift */; };
 		B79FF4412312FA0400DBDD14 /* EasySwiftLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */; };
 		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
@@ -47,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B79FF4332312BE0900DBDD14 /* Logable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logable.swift; sourceTree = "<group>"; };
 		B79FF43C2312FA0400DBDD14 /* EasySwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasySwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79FF43E2312FA0400DBDD14 /* EasySwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySwiftLayoutTests.swift; sourceTree = "<group>"; };
 		B79FF4402312FA0400DBDD14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,14 +82,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B79FF4352312D6A200DBDD14 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				B79FF4332312BE0900DBDD14 /* Logable.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		B79FF43D2312FA0400DBDD14 /* EasySwiftLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +121,6 @@
 		B7B6606422FF122B006FDD7E /* EasySwiftLayout */ = {
 			isa = PBXGroup;
 			children = (
-				B79FF4352312D6A200DBDD14 /* Shared */,
 				B7B6608C22FF6ABB006FDD7E /* Extenstions */,
 				B7B6606D22FF1263006FDD7E /* Custom Types */,
 				B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */,
@@ -317,7 +306,6 @@
 				B7FC923523422CAA009947A3 /* UIView + Pin Superview.swift in Sources */,
 				B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */,
 				B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */,
-				B79FF4342312BE0900DBDD14 /* Logable.swift in Sources */,
 				B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */,
 				B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */,
 				B7B6608422FF18C7006FDD7E /* UIView + Axis.swift in Sources */,
