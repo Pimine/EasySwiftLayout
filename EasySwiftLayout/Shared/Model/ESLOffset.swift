@@ -1,5 +1,5 @@
 //
-//  EasySwiftLayout.h
+//  ESLOffset.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
@@ -23,14 +23,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for EasySwiftLayout.
-FOUNDATION_EXPORT double EasySwiftLayoutVersionNumber;
-
-//! Project version string for EasySwiftLayout.
-FOUNDATION_EXPORT const unsigned char EasySwiftLayoutVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <EasySwiftLayout/PublicHeader.h>
-
-
+public struct ESLOffset {
+    
+    //MARK: - Variables
+    
+    public let x: CGFloat
+    public let y: CGFloat
+    
+    public static let zero = ESLOffset(x: 0, y: 0)
+    
+    //MARK: Life Cycle
+    
+    public init(x: CGFloat, y: CGFloat) {
+        self.x = x
+        self.y = y
+    }
+}

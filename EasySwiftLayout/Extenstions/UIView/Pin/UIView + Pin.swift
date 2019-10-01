@@ -6,8 +6,6 @@
 //  Copyright © 2019 Денис Андрейчук. All rights reserved.
 //
 
-import Foundation
-
 public extension UIView {
     
     //MARK: - Abstraction for default

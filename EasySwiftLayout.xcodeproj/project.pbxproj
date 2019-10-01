@@ -26,9 +26,8 @@
 		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
 		B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */; };
 		B7B6606722FF122B006FDD7E /* EasySwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */; };
+		B7B6606F22FF1289006FDD7E /* ESLOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6606E22FF1289006FDD7E /* ESLOffset.swift */; };
 		B7B6608422FF18C7006FDD7E /* UIView + Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608322FF18C7006FDD7E /* UIView + Center.swift */; };
-		B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */; };
 		B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608822FF61EE006FDD7E /* ESLAxis.swift */; };
 		B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */; };
 		B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */; };
@@ -54,9 +53,8 @@
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasySwiftLayout.h; sourceTree = "<group>"; };
 		B7B6606622FF122B006FDD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLMarginAxis.swift; sourceTree = "<group>"; };
+		B7B6606E22FF1289006FDD7E /* ESLOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLOffset.swift; sourceTree = "<group>"; };
 		B7B6608322FF18C7006FDD7E /* UIView + Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Center.swift"; sourceTree = "<group>"; };
-		B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Auto Layout.swift"; sourceTree = "<group>"; };
 		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
 		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
 		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
@@ -96,7 +94,7 @@
 			children = (
 				B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */,
 				B7B6608822FF61EE006FDD7E /* ESLAxis.swift */,
-				B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */,
+				B7B6606E22FF1289006FDD7E /* ESLOffset.swift */,
 				B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */,
 			);
 			path = Model;
@@ -162,7 +160,6 @@
 				B77A947D234397FF0005FA3F /* Pin */,
 				B7B0692B230B17BA00CB6386 /* UIView + Size.swift */,
 				B7B6608322FF18C7006FDD7E /* UIView + Center.swift */,
-				B7B6608622FF60C7006FDD7E /* UIView + Auto Layout.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -225,7 +222,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Денис Андрейчук";
+				ORGANIZATIONNAME = "Denis Andreychuk";
 				TargetAttributes = {
 					B79FF43B2312FA0400DBDD14 = {
 						CreatedOnToolsVersion = 10.2;
@@ -312,9 +309,8 @@
 				B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */,
 				B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */,
 				B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */,
-				B7B6606F22FF1289006FDD7E /* ESLMarginAxis.swift in Sources */,
+				B7B6606F22FF1289006FDD7E /* ESLOffset.swift in Sources */,
 				B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */,
-				B7B6608722FF60C7006FDD7E /* UIView + Auto Layout.swift in Sources */,
 				B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */,
 				B7B6608422FF18C7006FDD7E /* UIView + Center.swift in Sources */,
 				B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */,
@@ -515,9 +511,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = F7NGW4S7J5;
+				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -528,7 +525,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ua.pimine.EasySwiftLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -542,9 +539,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = F7NGW4S7J5;
+				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -555,7 +553,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ua.pimine.EasySwiftLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
