@@ -27,21 +27,22 @@ import UIKit
 
 public extension UIView {
     
-    /// Pins edge to superview edge with inset.
+    /// Pins edge to the given edge of its superview with an inset.
     ///
-    /// Use this method, only if you want to pin edge to different superview's edge. Take in mind, that edges should be
-    /// axis compatible (see Precondition), otherwise use `pinEdgeToSuperview(_:withInset:)` instead.
+    /// 1. Use this method only if you want to pin view's edge to opposite margin of its superview, in other cases
+    /// `pinEdgeToSuperview(_:withInset:) would be a better approach.
+    /// 2. Consider, that you cannot pin edge to different axis,
+    /// otherwise method will throw `fatalError()`. X-axis constraints are not compatible with y-axis.
     ///
     /// - Precondition:
-    ///     - View should have superview, otherwise this method will have no effect.
-    ///     - You should pass edges which are axis compatible, which means that you cannot pin `NSLayoutXAxisAnchor` to
-    ///     `NSLayoutYAxisAnchor` (for example `.top` to `.left`). If you do so, method will throw `fatalError()`
+    ///     - View should have superview, otherwise method will have no effect.
+    ///     - Pin edges with same axis or method will throw `fatalError()`
     ///
-    /// - Parameter edge: View's edge which should be pinned.
-    /// - Parameter superviewEdge: Superview's edge to which view's `edge` should be pinned.
-    /// - Parameter inset: Inset from the edge of the superview's bounds
+    /// - Parameter edge: The edge of this view to pin.
+    /// - Parameter superviewEdge: The edge of its superview to pin to.
+    /// - Parameter inset: Inset from the superview's bound
     ///
-    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult func pinEdge(
         _ edge: ESLEdge,
@@ -53,14 +54,14 @@ public extension UIView {
         return self
     }
     
-    /// Pins edge to the same edge of superview with inset
+    /// Pins the given edge of the view to the corresponding margin of its superview with an inset.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
-    /// - Parameter edge: View's edge which should be pinned to same edge of superview.
-    /// - Parameter inset: Inset from the edge of the superview's bounds
+    /// - Parameter edge: The edge of this view to pin to the corresponding margin.
+    /// - Parameter inset: Inset from the superview's bound
     ///
-    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult func pinEdgeToSuperview(_ edge: ESLEdge, withInset inset: CGFloat = .zero) -> Self {
         guard let superview = superview else { return self }
@@ -68,16 +69,16 @@ public extension UIView {
         return self
     }
     
-    /// Pins multiple edges to the same edges of superview with insets
+    /// Pins the given edges of the view to the corresponding margins of its superview with an inset.
     ///
-    /// Use this method only if you want to pin multiple edges, otherwise use `pinEdgeToSuperview(_:withInset:)` instead.
+    /// If you need to pin only one edge, use `pinEdgeToSuperview(_:withInset:)` instead.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
-    /// - Parameter edges: View's edge which should be pinned to same edge of superview.
-    /// - Parameter insets: Inset from the edge of the superview's bounds
+    /// - Parameter edges: The edge of this view to pin to the corresponding margin.
+    /// - Parameter insets: Insets from the superview's bounds
     ///
-    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult func pinEdgesToSuperview(
         _ edges: [ESLEdge] = ESLEdge.all,
@@ -88,17 +89,19 @@ public extension UIView {
         return self
     }
     
-    /// Pins multiple edges to the same edges of superview with equal inset for all sides
+    /// Pins the given edges of the view to the corresponding margins of its superview with equal inset.
     ///
-    /// Use this method only if you want to pin multiple edges, otherwise use `pinEdgeToSuperview(_:withInset:)` instead.
-    /// If you to customize inset for different edges, use `pinEdgesToSuperview(_:withInsets:)` which takes `UIEdgeInsets`.
+    /// 1. This method is intended to pin multiple edge, it is not recommended to use it for a single edge. For these purposes,
+    /// `pinEdgeToSuperview(_:withInset:)` would be a better approach.
+    /// 2. If you want to customize inset based on edge,
+    /// use `pinEdgesToSuperview(_:withInsets:)`.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
-    /// - Parameter edges: View's edge which should be pinned to same edge of superview.
-    /// - Parameter insets: Insets from the edges of the superview's bounds
+    /// - Parameter edges:The edge of this view to pin to the corresponding margin.
+    /// - Parameter inset: Inset from superview's bounds.
     ///
-    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult func pinEdgesToSuperview(
         _ edges: [ESLEdge] = ESLEdge.all,
@@ -109,17 +112,15 @@ public extension UIView {
         return self
     }
     
-    /// Pins horizontal edges (left and right) to the same edges of superview with equal inset for both sides
+    /// Pins left and right to the corresponding margins of its superview with equal inset
     ///
-    /// Small helper method which can speed up work a litle bit. I found it easier to use autocomplete rather than specifying two
-    /// edges by myself. Underhood it uses common `pinEdgesToSuperview(_:withInset:)`.
+    /// Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
-    /// - Parameter edges: View's edge which should be pinned to same edge of superview.
-    /// - Parameter inset: Inset from the horizontal edges of the superview's bounds
+    /// - Parameter inset: Inset from superview's bounds.
     ///
-    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult func pinHorizontalEdgesToSuperview(withInset inset: CGFloat = .zero) -> Self {
         guard let _ = superview else { return self }
@@ -127,17 +128,15 @@ public extension UIView {
         return self
     }
     
-    /// Pins vertical edges (top and bottom) to the same edges of superview with equal inset for both sides
+    /// Pins top and bottom to the corresponding margins of its superview with equal inset
     ///
-    /// Small helper method which can speed up work a litle bit. I found it easier to use autocomplete rather than specifying two
-    /// edges by myself. Underhood it uses common `pinEdgesToSuperview(_:withInset:)`.
+    /// Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
-    /// - Parameter edges: View's edge which should be pinned to same edge of superview.
-    /// - Parameter inset: Inset from the vertical edges of the superview's bounds
+    /// - Parameter inset: Inset from superview's bounds.
     ///
-    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult func pinVerticalEdgesToSuperview(withInset inset: CGFloat = .zero) -> Self {
         guard let _ = superview else { return self }
