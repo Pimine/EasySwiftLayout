@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct ESLAxisMargin {
+public struct ESLOffset {
     
     //MARK: - Variables
     
@@ -17,7 +17,7 @@ public struct ESLAxisMargin {
     
     //MARK: - Static
     
-    public static let zero = ESLAxisMargin(x: 0, y: 0)
+    public static let zero = ESLOffset(x: 0, y: 0)
     
     //MARK: - Life Cycle
     

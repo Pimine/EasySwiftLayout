@@ -1,5 +1,5 @@
 //
-//  UIView + Pin Superview.swift
+//  UIView + Pin(Superview).swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
@@ -74,7 +74,8 @@ public extension UIView {
     
     /// Pins the given edges of the view to the corresponding margins of its superview with an inset.
     ///
-    /// 1. If you need to pin only one edge, use `pinEdgeToSuperview(_:withInset:)` instead.
+    /// 1. This method is intended to pin multiple edge, it is not recommended to use it for a single edge. For these purposes,
+    /// `pinEdgeToSuperview(_:withInset:)` would be a better approach.
     /// 2. To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///

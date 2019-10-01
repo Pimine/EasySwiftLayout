@@ -12,6 +12,21 @@ public extension UIView {
     
     //MARK: - Abstraction for default
     
+    
+    /// Pins edges to `NSLayoutAxisAnchor`.
+    ///
+    /// Small abstraction for default Swift layout. Use this method, only if you need to work with save area, otherwise
+    /// prefer to one of method with higher abstraction and more compact syntax.
+    ///
+    /// - Precondition: You should pass at least one anchor, otherwise this method will have no effect.
+    ///
+    /// - Parameter top: Any Y-axis anchor to which top edge should be pinned.
+    /// - Parameter left: Any X-axis anchor to which left edge should be pinned.
+    /// - Parameter bottom: Any Y-axis anchor to which bottom edge should be pinned.
+    /// - Parameter right: Any X-axis anchor to which right edge should be pinned.
+    ///
+    /// - Returns: This method return `Self` with attribute `@discardableResult`.
+    ///
     @discardableResult func pin(
         topTo top: NSLayoutYAxisAnchor? = nil,
         leftTo left: NSLayoutXAxisAnchor? = nil,
@@ -19,10 +34,7 @@ public extension UIView {
         rightTo right : NSLayoutXAxisAnchor? = nil,
         withInsets insets: UIEdgeInsets = .zero
     ) -> Self {
-        guard top != nil || left != nil || bottom != nil || right != nil else {
-            log("You should pass at least one anchor. Method \(#function) has no effect.")
-            return self
-        }
+        guard top != nil || left != nil || bottom != nil || right != nil else { return self }
         translatesAutoresizingMaskIntoConstraints = false
 
         if let top = top {
@@ -44,42 +56,7 @@ public extension UIView {
     }
     
     //MARK: - Pin Methods
-    
-    @discardableResult func pin(
-        topTo top: ESLAnchor? = nil,
-        leftTo left: ESLAnchor? = nil,
-        bottomTo bottom: ESLAnchor? = nil,
-        rightTo right: ESLAnchor? = nil,
-        withInsets insets: UIEdgeInsets = .zero
-    ) -> Self {
-        guard top != nil || left != nil || bottom != nil || right != nil else {
-            log("You should pass at least one anchor. Method \(#function) has no effect.")
-            return self
-        }
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        if let top = top {
-            let anchor = top.convertToNSLayoutYAnchor()
-            topAnchor.constraint(equalTo: anchor, constant: insets.top).isActive = true
-        }
-        
-        if let left = left {
-            let anchor = left.convertToNSLayoutXAnchor()
-            leftAnchor.constraint(equalTo: anchor, constant: insets.left).isActive = true
-        }
-        
-        if let bottom = bottom {
-            let anchor = bottom.convertToNSLayoutYAnchor()
-            bottomAnchor.constraint(equalTo: anchor, constant: -insets.bottom).isActive = true
-        }
-        
-        if let right = right {
-            let anchor = right.convertToNSLayoutXAnchor()
-            rightAnchor.constraint(equalTo: anchor, constant: -insets.right).isActive = true
-        }
-        return self
-    }
-    
+
     @discardableResult func pinEdge(
         _ edge: ESLEdge,
         toEdge pinningEdge: ESLEdge,
