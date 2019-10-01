@@ -91,6 +91,17 @@
 			path = Pin;
 			sourceTree = "<group>";
 		};
+		B77A947E234398AC0005FA3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */,
+				B7B6608822FF61EE006FDD7E /* ESLAxis.swift */,
+				B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */,
+				B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B79FF43D2312FA0400DBDD14 /* EasySwiftLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,15 +109,6 @@
 				B79FF4402312FA0400DBDD14 /* Info.plist */,
 			);
 			path = EasySwiftLayoutTests;
-			sourceTree = "<group>";
-		};
-		B7B3FD6F2305D5040077B90E /* Axis */ = {
-			isa = PBXGroup;
-			children = (
-				B7B6608822FF61EE006FDD7E /* ESLAxis.swift */,
-				B7B6606E22FF1289006FDD7E /* ESLMarginAxis.swift */,
-			);
-			path = Axis;
 			sourceTree = "<group>";
 		};
 		B7B6605822FF122B006FDD7E = {
@@ -131,21 +133,19 @@
 			isa = PBXGroup;
 			children = (
 				B7B6608C22FF6ABB006FDD7E /* Extenstions */,
-				B7B6606D22FF1263006FDD7E /* Custom Types */,
+				B7B6606D22FF1263006FDD7E /* Shared */,
 				B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */,
 				B7B6606622FF122B006FDD7E /* Info.plist */,
 			);
 			path = EasySwiftLayout;
 			sourceTree = "<group>";
 		};
-		B7B6606D22FF1263006FDD7E /* Custom Types */ = {
+		B7B6606D22FF1263006FDD7E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B7B3FD6F2305D5040077B90E /* Axis */,
-				B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */,
-				B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */,
+				B77A947E234398AC0005FA3F /* Model */,
 			);
-			path = "Custom Types";
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		B7B6608C22FF6ABB006FDD7E /* Extenstions */ = {
