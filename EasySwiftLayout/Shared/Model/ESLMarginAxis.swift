@@ -15,11 +15,9 @@ public struct ESLOffset {
     public let x: CGFloat
     public let y: CGFloat
     
-    //MARK: - Static
-    
     public static let zero = ESLOffset(x: 0, y: 0)
     
-    //MARK: - Life Cycle
+    //MARK: Life Cycle
     
     public init(x: CGFloat, y: CGFloat) {
         self.x = x
