@@ -74,7 +74,7 @@ public extension UIView {
     
     /// Pins the given edges of the view to the corresponding margins of its superview with an inset.
     ///
-    /// 1. This method is intended to pin multiple edge, it is not recommended to use it for a single edge. For these purposes,
+    /// 1. This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes,
     /// `pinEdgeToSuperview(_:withInset:)` would be a better approach.
     /// 2. To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
@@ -97,7 +97,7 @@ public extension UIView {
     
     /// Pins the given edges of the view to the corresponding margins of its superview with equal inset.
     ///
-    /// 1. This method is intended to pin multiple edge, it is not recommended to use it for a single edge. For these purposes,
+    /// 1. This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes,
     /// `pinEdgeToSuperview(_:withInset:)` would be a better approach.
     /// 2. If you want to customize inset based on edge,
     /// use `pinEdgesToSuperview(_:withInsets:)`.
