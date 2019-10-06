@@ -56,7 +56,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 - In the tab bar at the top of that window, open the "General" panel.
 - Click on the `+` button under the "Embedded Binaries" section.
-- Navigate to generated `EasySwiftLayout.framework` file and select it.
+- Select `EasySwiftLayout.framework` in your project folder.
 - And that's it!
 
   > The `EasySwiftLayout.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
