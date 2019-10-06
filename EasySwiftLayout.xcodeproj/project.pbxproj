@@ -48,17 +48,17 @@
 		B79FF43C2312FA0400DBDD14 /* EasySwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasySwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79FF43E2312FA0400DBDD14 /* EasySwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySwiftLayoutTests.swift; sourceTree = "<group>"; };
 		B79FF4402312FA0400DBDD14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B0692B230B17BA00CB6386 /* UIView + Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Size.swift"; sourceTree = "<group>"; };
-		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAnchor.swift; sourceTree = "<group>"; };
+		B7B0692B230B17BA00CB6386 /* UIView + Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Size.swift"; path = "../../UIView + Size.swift"; sourceTree = "<group>"; };
+		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLAnchor.swift; path = ../../ESLAnchor.swift; sourceTree = "<group>"; };
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasySwiftLayout.h; sourceTree = "<group>"; };
 		B7B6606622FF122B006FDD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B6606E22FF1289006FDD7E /* ESLOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLOffset.swift; sourceTree = "<group>"; };
-		B7B6608322FF18C7006FDD7E /* UIView + Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Center.swift"; sourceTree = "<group>"; };
-		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
-		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
-		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
-		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
+		B7B6606E22FF1289006FDD7E /* ESLOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLOffset.swift; path = ../../ESLOffset.swift; sourceTree = "<group>"; };
+		B7B6608322FF18C7006FDD7E /* UIView + Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Center.swift"; path = "../../UIView + Center.swift"; sourceTree = "<group>"; };
+		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLAxis.swift; path = ../../ESLAxis.swift; sourceTree = "<group>"; };
+		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Pin.swift"; path = "../../../UIView + Pin.swift"; sourceTree = "<group>"; };
+		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLEdge.swift; path = ../../ESLEdge.swift; sourceTree = "<group>"; };
+		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Pin(Superview).swift"; path = "../../../UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		B7B6605822FF122B006FDD7E = {
 			isa = PBXGroup;
 			children = (
-				B7B6606422FF122B006FDD7E /* EasySwiftLayout */,
+				B7B6606422FF122B006FDD7E /* Source */,
 				B79FF43D2312FA0400DBDD14 /* EasySwiftLayoutTests */,
 				B7B6606322FF122B006FDD7E /* Products */,
 			);
@@ -127,7 +127,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B7B6606422FF122B006FDD7E /* EasySwiftLayout */ = {
+		B7B6606422FF122B006FDD7E /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				B7B6608C22FF6ABB006FDD7E /* Extenstions */,
@@ -135,7 +135,7 @@
 				B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */,
 				B7B6606622FF122B006FDD7E /* Info.plist */,
 			);
-			path = EasySwiftLayout;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		B7B6606D22FF1263006FDD7E /* Shared */ = {
