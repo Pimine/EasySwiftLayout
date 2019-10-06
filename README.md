@@ -61,6 +61,12 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
   > The `EasySwiftLayout.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
 
+## Quick Overview
+
+```swift
+@discardableResult func pin(topTo top: NSLayoutYAxisAnchor? = nil, leftTo left: NSLayoutXAxisAnchor? = nil, bottomTo bottom: NSLayoutYAxisAnchor? = nil, rightTo right : NSLayoutXAxisAnchor? = nil, withInsets insets: UIEdgeInsets = .zero) -> Self
+```
+
 ## License
 
 EasySwiftLayout is released under the MIT license. [See LICENSE](https://github.com/denandreychuk/EasySwiftLayout/blob/master/LICENSE) for details.
