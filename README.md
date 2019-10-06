@@ -51,7 +51,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
   $ git clone https://github.com/denandreychuk/EasySwiftLayout.git
   ```
 - Navigate to the project folder and open `EasySwiftLayout.xcodeproj`.
-- Select scheme `Build Framework` by pressing `^ + 0` and run it on any device. It will automatically generate `EasySwiftLayout.framework` and open it in `Finder`.
+- Select scheme `Build Framework` by pressing `^ + 0` and run it on any device. It will automatically generate `EasySwiftLayout.framework` and open it in Finder.
 - Move `EasySwiftLayout.framework` file to your project folder.
 - Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 - In the tab bar at the top of that window, open the "General" panel.
