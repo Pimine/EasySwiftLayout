@@ -38,12 +38,12 @@
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasySwiftLayout.h; sourceTree = "<group>"; };
 		B7B6606622FF122B006FDD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7B6606E22FF1289006FDD7E /* ESLOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLOffset.swift; path = ../../ESLOffset.swift; sourceTree = "<group>"; };
-		B7B6608322FF18C7006FDD7E /* UIView + Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Center.swift"; path = "../../UIView + Center.swift"; sourceTree = "<group>"; };
-		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLAxis.swift; path = ../../ESLAxis.swift; sourceTree = "<group>"; };
-		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Pin.swift"; path = "../../../UIView + Pin.swift"; sourceTree = "<group>"; };
-		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ESLEdge.swift; path = ../../ESLEdge.swift; sourceTree = "<group>"; };
-		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Pin(Superview).swift"; path = "../../../UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
+		B7B6606E22FF1289006FDD7E /* ESLOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLOffset.swift; sourceTree = "<group>"; };
+		B7B6608322FF18C7006FDD7E /* UIView + Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Center.swift"; sourceTree = "<group>"; };
+		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
+		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
+		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
+		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
