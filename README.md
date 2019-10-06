@@ -44,6 +44,23 @@ github "denandreychuk/EasySwiftLayout"
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate EasySwiftLayout into your project manually.
 
+#### Embedded Framework
+
+- Clone this repo by running:
+  ```bash
+  $ git clone https://github.com/denandreychuk/EasySwiftLayout.git
+  ```
+- Navigate to the project folder and open `EasySwiftLayout.xcodeproj`.
+- Select scheme `Build Framework` by pressing `^ + 0` and run it on any device. It will automatically generate for you `EasySwiftLayout.framework` file and open it in `Finder`.
+- Move this file to your project folder. Open 
+- Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
+- In the tab bar at the top of that window, open the "General" panel.
+- Click on the `+` button under the "Embedded Binaries" section.
+- Navigate to generated `EasySwiftLayout.framework` file and select it.
+- And that's it!
+
+  > The `EasySwiftLayout.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
+
 ## License
 
 EasySwiftLayout is released under the MIT license. [See LICENSE](https://github.com/denandreychuk/EasySwiftLayout/blob/master/LICENSE) for details.
