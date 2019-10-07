@@ -63,9 +63,21 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ## Quick Overview
 
+<details>
+  <summary>pinEdges(_:toSameEdgesOfView:withInsets:)</summary>
+  
+##### Summary
+Pins the given edges of the view to the corresponding margins of another view with insets.
+##### Declaration
 ```swift
-@discardableResult func pin(topTo top: NSLayoutYAxisAnchor? = nil, leftTo left: NSLayoutXAxisAnchor? = nil, bottomTo bottom: NSLayoutYAxisAnchor? = nil, rightTo right : NSLayoutXAxisAnchor? = nil, withInsets insets: UIEdgeInsets = .zero) -> Self
+func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  view: UIView, withInsets  insets: UIEdgeInsets = .zero) -> Self
 ```
+##### Discussion
+
+1.  This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes,  `pinEdge(_:toSameEdgeOfView:withInset:)`would be a better approach.
+2.  To make Auto-Layout works properly, it automatically sets view’s property  `translatesAutoresizingMaskIntoConstraints`  to  `false`
+
+</details>
 
 ## License
 
