@@ -74,7 +74,7 @@ insets | `UIEdgeInsets` | Insets between edges.
 </details>
 
 <details>
-<summary>pinEdge(_:toEdge:ofView:withInset:)</summary>
+<summary><code>pinEdge(_:toEdge:ofView:withInset:)</code></summary>
   
 ##### Summary
 
@@ -116,7 +116,7 @@ inset | `CGFloat` | Inset between edge of this view and edge of another view.
 </details>
 
 <details>
-<summary>pinEdge(_:toSameEdgeOfView:withInset:)</summary>
+<summary><code>pinEdge(_:toSameEdgeOfView:withInset:)</code></summary>
   
 ##### Summary
 
@@ -153,7 +153,7 @@ inset | `CGFloat` | Inset between edge of this view and edge of another view.
 </details>
 
 <details>
-<summary>pinEdges(_:toSameEdgesOfView:withInsets:)</summary>
+<summary><code>pinEdges(_:toSameEdgesOfView:withInsets:)</code></summary>
   
 ##### Summary
 
