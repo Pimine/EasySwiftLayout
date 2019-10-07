@@ -76,7 +76,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ```swift
 import EasySwiftLayout
 
-class  ViewController: UIViewController {
+class ViewController: UIViewController {
    private let boxView = UIView()
 
    override func viewDidLoad() {
