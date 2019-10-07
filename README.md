@@ -26,21 +26,40 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 ## Quick Overview
 
 <details>
-  <summary>`pinEdges(_:toSameEdgesOfView:withInsets:)`</summary>
+<summary>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</summary>
   
 ##### Summary
-Pins the given edges of the view to the corresponding margins of another view with insets.
+Pins edges to the given `NSLayoutAxisAnchor`s.
 ##### Declaration
 ```swift
-func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  view: UIView, withInsets  insets: UIEdgeInsets = .zero) -> Self
+func  pin(topTo  top: NSLayoutYAxisAnchor? = nil, leftTo  left: NSLayoutXAxisAnchor? = nil, bottomTo  bottom: NSLayoutYAxisAnchor? = nil, rightTo  right: NSLayoutXAxisAnchor? = nil, withInsets  insets: UIEdgeInsets = .zero) -> Self
 ```
 ##### Discussion
 
-1.  This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes,  `pinEdge(_:toSameEdgeOfView:withInset:)`would be a better approach.
-2.  To make Auto-Layout works properly, it automatically sets view’s property  `translatesAutoresizingMaskIntoConstraints`  to  `false`
+- Compact version of default Swift layout. Allows you to edges to specific  `NSLayoutAxisAnchor`.
 
+- To make Auto-Layout works properly, it automatically sets view’s property  `translatesAutoresizingMaskIntoConstraints`  to  `false`
+
+##### Precondition
+
+You should pass at least one anchor, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+top  | `NSLayoutYAxisAnchor` | Anchor to pin top to.
+left  | `NSLayoutXAxisAnchor` | Anchor to pin left to.
+bottom | `NSLayoutYAxisAnchor` | Anchor to pin bottom to.
+right | `NSLayoutXAxisAnchor` | Anchor to pin right to.
+insets | `UIEdgeInsets` | Insets between edges.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin.swift]([https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift))
 </details>
-
 
 ## Installation
 
