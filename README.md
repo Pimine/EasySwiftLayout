@@ -27,9 +27,11 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 ## Quick Overview
 
-All methods in `EasySwiftLayout` designed to be self-explaining, but at the same time all of them includes detail description of usage. You can check it both in code by pressing `⌥ (option)` key and clicking on the method, and in our [API Cheat Sheet](#api-cheat-sheet) section down below.
+All methods in `EasySwiftLayout` designed to be self-explaining, but at the same time all of them includes detail description of usage. You can check it both in code by pressing `⌥` key and clicking on the method, and in our [API Cheat Sheet](#api-cheat-sheet) section down below.
 
 ## API Cheat Sheet
+
+#### Pin Methods
 
 <details>
 <summary><code>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</code></summary>
@@ -182,6 +184,47 @@ Parameter  | Type | Description
 edges  | `[ESLEdge]` | The edges of this view to pin.
 anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
 insets | `UIEdgeInsets` | Insets between edges of this view and corresponding edges of another view
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary><code>pinEdges(_:toSameEdgesOfView:withInset:)</code></summary>
+  
+##### Summary
+
+Pins the given edges of the view to the corresponding margins of another view with equal inset.
+
+##### Declaration
+
+```swift
+func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  anotherView: UIView, withInset  inset: CGFloat) -> Self
+```
+
+##### Discussion
+
+- This method is intended to pin multiple edges, it is not recommended to use it for a single one. For these purposes, `pinEdge(_:toSameEdgeOfView:withInset:)` would be a better approach.
+
+- If you want to customize inset based on edge, use `pinEdges(_:toSameEdgesOfView:withInsets:)`.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edges  | `[ESLEdge]` | The edges of this view to pin.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+insets | `CGFloat` | Inset between edges of this view and corresponding edges of another view
 
 ##### Returns
 `self`  with attribute  `@discardableResult`.
