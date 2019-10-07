@@ -31,6 +31,8 @@ All methods in `EasySwiftLayout` designed to be self-explaining, but at the same
 
 ## API Cheat Sheet
 
+### `UIView` Extenstions:
+
 #### Pin Methods
 
 <details>
