@@ -14,6 +14,7 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Quick Overview](#quick-overview)
 - [License](#license)
 
 ## Requirements
