@@ -467,6 +467,154 @@ inset | `CGFloat` | Inset from superview's bounds.
 
 </details>
 
+#### Center Methods
+
+<details>
+<summary><code>centerInView(_:withOffset:)</code></summary>
+  
+##### Summary
+
+Centers the view in the given view with offset.
+
+##### Declaration
+
+```swift
+func  centerInView(_  anotherView: UIView, withOffset  offset: ESLOffset = .zero) -> Self
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+anotherView | `UIView` | View to center in.
+offset | `ESLOffset` | Axis offset.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
+
+</details>
+
+<details>
+<summary><code>centerInView(_:axis:withOffset:)</code></summary>
+  
+##### Summary
+
+Centers the given axis of the view in another view with offset.
+
+##### Declaration
+
+```swift
+func  centerInView(_  anotherView: UIView, axis: ESLAxis, withOffset  offset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+anotherView | `UIView` | View to center in.
+axis | `ESLAxis` | Axis to center
+offset | `ESLOffset` | Axis offset.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
+
+</details>
+
+<details>
+<summary><code>centerInSuperview(_:withOffset:)</code></summary>
+  
+##### Summary
+
+Centers the given axis of the view in its superview with offset.
+
+##### Declaration
+
+```swift
+func  centerInSuperview(_  axis: ESLAxis, withOffset  offset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+View should have superview, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+axis | `ESLAxis` | Axis to center
+offset | `CGFloat` | Axis offset.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
+
+</details>
+
+<details>
+<summary><code>centerInSuperview(withOffset:)</code></summary>
+  
+##### Summary
+
+Centers the view in its superview with offset.##### Declaration
+
+```swift
+func  centerInSuperview(withOffset  offset: ESLOffset = .zero) -> Self
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+View should have superview, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+offset | `ESLOffset` | Axis offset.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
+
+</details>
+
 ## Installation
 
 ### CocoaPods
