@@ -15,17 +15,12 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 ## Contents
 
-- [Documentation](#documentation)
 - [Requirements](#requirements)
-- [API Cheat Sheet](#api-cheat-sheet)
+- [Documentation](#documentation)
 - [Installation](#installation)
 - [Usage](#usage)
+- [API Cheat Sheet](#api-cheat-sheet)
 - [License](#license)
-
-
-## Documentation
-
-All methods in EasySwiftLayout designed to be self-explaining, but at the same time all of them includes detail description of usage. You can check it both in code by pressing `⌥` key and clicking on the method, and in our [API Cheat Sheet](#api-cheat-sheet) section down below.
 
 ## Requirements
 
@@ -33,6 +28,9 @@ All methods in EasySwiftLayout designed to be self-explaining, but at the same t
 - Xcode 9.0+
 - Swift 4+
 
+## Documentation
+
+All methods in EasySwiftLayout designed to be self-explaining, but at the same time all of them includes detail description of usage. You can check it both in code by pressing `⌥` key and clicking on the method, and in our [API Cheat Sheet](#api-cheat-sheet) section down below.
 
 ## Installation
 
