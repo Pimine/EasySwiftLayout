@@ -63,13 +63,12 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - Navigate to the project folder and open `EasySwiftLayout.xcodeproj`.
 - Select scheme `Build Framework` by pressing `^ + 0` and run it on any device. It will automatically generate for you `EasySwiftLayout.framework` file and open it in `Finder`.
 - Move this file to your project folder.
-- Select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
-- In the tab bar at the top of that window, open the "General" panel.
-- Click on the `+` button under the "Embedded Binaries" section (in Xcode 11 it calls `Frameworks, Libraries, and Embedded Content`).
-- Select moved `EasySwiftLayout.framework` file.
-- And that's it!
+- Select your application in the Project Navigator (blue icon) to navigate to the target configuration window.
+- Select the desired target under the "Targets" heading in the sidebar.
+- In "General" tab click on the `+` button under the "Embedded Binaries" section (in Xcode 11 it calls `Frameworks, Libraries, and Embedded Content`) and select moved `EasySwiftLayout.framework` file.
+- Done.
 
-  > The `EasySwiftLayout.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
+  > The `EasySwiftLayout.framework` is automatically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
 
 ## API Cheat Sheet
 
