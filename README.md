@@ -1,5 +1,6 @@
 
 
+
 ![EasySwiftLayout](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Resources/Logo.png?raw=true)
 
 [![Platform](https://img.shields.io/cocoapods/p/EasySwiftLayout.svg?color=yellow)](https://github.com/denandreychuk/EasySwiftLayout)
@@ -69,6 +70,27 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - Done.
 
   > The `EasySwiftLayout.framework` is automatically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
+
+## Usage
+
+```swift
+import EasySwiftLayout
+
+class  ViewController: UIViewController {
+	private let boxView = UIView()
+
+	override  func  viewDidLoad() {
+		super.viewDidLoad()
+		addAndLayoutSubviews()
+	}
+
+	private  func  addAndLayoutSubviews() {
+		view.addSubview(boxView)
+		boxView.centerInSuperview()
+		boxView.size(toSquareWithSide: 50)
+	}
+}
+```
 
 ## API Cheat Sheet
 
