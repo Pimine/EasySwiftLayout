@@ -25,6 +25,8 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 ## Quick Overview
 
+All methods in `EasySwiftLayout` designed to be self-explaining, but at the same time all of them includes detail description of usage. You can check it both in code by pressing `⌥` key and clicking on the method, and in our `Quick Overview` section down below.
+
 <details>
 <summary>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</summary>
   
