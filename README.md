@@ -29,11 +29,15 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 <summary>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</summary>
   
 ##### Summary
+
 Pins edges to the given `NSLayoutAxisAnchor`s.
+
 ##### Declaration
+
 ```swift
 func  pin(topTo  top: NSLayoutYAxisAnchor? = nil, leftTo  left: NSLayoutXAxisAnchor? = nil, bottomTo  bottom: NSLayoutYAxisAnchor? = nil, rightTo  right: NSLayoutXAxisAnchor? = nil, withInsets  insets: UIEdgeInsets = .zero) -> Self
 ```
+
 ##### Discussion
 
 - Compact version of default Swift layout. Allows you to edges to specific  `NSLayoutAxisAnchor`.
@@ -55,11 +59,14 @@ right | `NSLayoutXAxisAnchor` | Anchor to pin right to.
 insets | `UIEdgeInsets` | Insets between edges.
 
 ##### Returns
+
 `self`  with attribute  `@discardableResult`.
 
 ##### Declared In
-[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
-</details>
+
+<a href="https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift" target="_blank">
+UIView + Pin.swift
+</a>
 
 ## Installation
 
