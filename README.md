@@ -19,6 +19,7 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 - [Requirements](#requirements)
 - [API Cheat Sheet](#api-cheat-sheet)
 - [Installation](#installation)
+- [Usage](#usage)
 - [License](#license)
 
 
