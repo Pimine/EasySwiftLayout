@@ -14,14 +14,14 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 ## Contents
 
-- [Quick Overview](#quick-overview)
+- [Documentation](#documentation)
 - [Requirements](#requirements)
 - [API Cheat Sheet](#api-cheat-sheet)
 - [Installation](#installation)
 - [License](#license)
 
 
-## Quick Overview
+## Documentation
 
 All methods in `EasySwiftLayout` designed to be self-explaining, but at the same time all of them includes detail description of usage. You can check it both in code by pressing `⌥` key and clicking on the method, and in our [API Cheat Sheet](#api-cheat-sheet) section down below.
 
