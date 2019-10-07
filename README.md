@@ -13,8 +13,8 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 ## Contents
 
 - [Requirements](#requirements)
-- [Installation](#installation)
 - [Quick Overview](#quick-overview)
+- [Installation](#installation)
 - [License](#license)
 
 ## Requirements
@@ -22,6 +22,25 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 - iOS 9.0+
 - Xcode 9.0+
 - Swift 4+
+
+## Quick Overview
+
+<details>
+  <summary>pinEdges(_:toSameEdgesOfView:withInsets:)</summary>
+  
+##### Summary
+Pins the given edges of the view to the corresponding margins of another view with insets.
+##### Declaration
+```swift
+func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  view: UIView, withInsets  insets: UIEdgeInsets = .zero) -> Self
+```
+##### Discussion
+
+1.  This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes,  `pinEdge(_:toSameEdgeOfView:withInset:)`would be a better approach.
+2.  To make Auto-Layout works properly, it automatically sets view’s property  `translatesAutoresizingMaskIntoConstraints`  to  `false`
+
+</details>
+
 
 ## Installation
 
@@ -61,24 +80,6 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - And that's it!
 
   > The `EasySwiftLayout.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
-
-## Quick Overview
-
-<details>
-  <summary>pinEdges(_:toSameEdgesOfView:withInsets:)</summary>
-  
-##### Summary
-Pins the given edges of the view to the corresponding margins of another view with insets.
-##### Declaration
-```swift
-func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  view: UIView, withInsets  insets: UIEdgeInsets = .zero) -> Self
-```
-##### Discussion
-
-1.  This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes,  `pinEdge(_:toSameEdgeOfView:withInset:)`would be a better approach.
-2.  To make Auto-Layout works properly, it automatically sets view’s property  `translatesAutoresizingMaskIntoConstraints`  to  `false`
-
-</details>
 
 ## License
 
