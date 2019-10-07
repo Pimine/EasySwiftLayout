@@ -35,11 +35,15 @@ All methods in `EasySwiftLayout` designed to be self-explaining, but at the same
 <summary>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</summary>
   
 ##### Summary
+
 Pins edges to the given `NSLayoutAxisAnchor`s.
+
 ##### Declaration
+
 ```swift
 func  pin(topTo  top: NSLayoutYAxisAnchor? = nil, leftTo  left: NSLayoutXAxisAnchor? = nil, bottomTo  bottom: NSLayoutYAxisAnchor? = nil, rightTo  right: NSLayoutXAxisAnchor? = nil, withInsets  insets: UIEdgeInsets = .zero) -> Self
 ```
+
 ##### Discussion
 
 - Compact version of default Swift layout. Allows you to edges to specific  `NSLayoutAxisAnchor`.
@@ -64,14 +68,134 @@ insets | `UIEdgeInsets` | Insets between edges.
 `self`  with attribute  `@discardableResult`.
 
 ##### Declared In
+
 [UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary>pinEdge(_:toEdge:ofView:withInset:)</summary>
+  
+##### Summary
+
+Pins edge to the given edge of another view with an inset.
+
+##### Declaration
+
+```swift
+func  pinEdge(_  edge: ESLEdge, toEdge  pinningEdge: ESLEdge, ofView  anotherView: UIView, withInset  inset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+- Consider, that you cannot pin edge to different axis, otherwise method will throw `fatalError()`. X-axis constraints are not compatible with y-axis.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+- Another view must be in the same view hierarchy as this view.
+
+- Pin edges with same axis or method will throw `fatalError()`
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edge  | `ESLEdge` | The edge of this view to pin.
+pinningEdge  | `ESLEdge` | The edge of another view to pin to.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+inset | `CGFloat` | Inset between edge of this view and edge of another view.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary>pinEdge(_:toSameEdgeOfView:withInset:)</summary>
+  
+##### Summary
+
+Pins the given edge of the view to the corresponding margin of another view with an inset.
+
+##### Declaration
+
+```swift
+func  pinEdge(_  edge: ESLEdge, toSameEdgeOfView  anotherView: UIView, withInset  inset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edge  | `ESLEdge` | The edge of this view to pin.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+inset | `CGFloat` | Inset between edge of this view and edge of another view.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary>pinEdges(_:toSameEdgesOfView:withInsets:)</summary>
+  
+##### Summary
+
+Pins the given edges of the view to the corresponding margins of another view with insets.
+
+##### Declaration
+
+```swift
+func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  anotherView: UIView, withInsets  insets: UIEdgeInsets = .zero) -> Self
+```
+
+##### Discussion
+
+- This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes, `pinEdge(_:toSameEdgeOfView:withInset:)` would be a better approach.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edges  | `[ESLEdge]` | The edges of this view to pin.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+insets | `UIEdgeInsets` | Insets between edges of this view and corresponding edges of another view
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
 </details>
 
 ## Installation
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate EasySwiftLayout into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'EasySwiftLayout'
@@ -79,7 +203,7 @@ pod 'EasySwiftLayout'
 
 ### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate EasySwiftLayout into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "denandreychuk/EasySwiftLayout"
