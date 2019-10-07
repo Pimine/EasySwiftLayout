@@ -77,18 +77,18 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 import EasySwiftLayout
 
 class  ViewController: UIViewController {
-	private let boxView = UIView()
+   private let boxView = UIView()
 
-	override  func  viewDidLoad() {
-		super.viewDidLoad()
-		addAndLayoutSubviews()
-	}
+   override  func  viewDidLoad() {
+      super.viewDidLoad()
+      addAndLayoutSubviews()
+   }
 
-	private  func  addAndLayoutSubviews() {
-		view.addSubview(boxView)
-		boxView.centerInSuperview()
-		boxView.size(toSquareWithSide: 50)
-	}
+   private  func  addAndLayoutSubviews() {
+      view.addSubview(boxView)
+      boxView.centerInSuperview()
+      boxView.size(toSquareWithSide: 50)
+   }
 }
 ```
 
