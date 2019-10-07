@@ -58,7 +58,7 @@ insets | `UIEdgeInsets` | Insets between edges.
 `self`  with attribute  `@discardableResult`.
 
 ##### Declared In
-[UIView + Pin.swift](https://github.com/Carthage/Carthage)
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
 </details>
 
 ## Installation
