@@ -13,9 +13,9 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 ## Contents
 
+- [Requirements](#requirements)
 - [Quick Overview](#quick-overview)
 - [API Cheat Sheet](#api-cheat-sheet)
-- [Requirements](#requirements)
 - [Installation](#installation)
 - [License](#license)
 
