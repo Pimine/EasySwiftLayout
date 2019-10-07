@@ -32,7 +32,7 @@ All methods in `EasySwiftLayout` designed to be self-explaining, but at the same
 ## API Cheat Sheet
 
 <details>
-<summary>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</summary>
+<summary><code>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</code></summary>
   
 ##### Summary
 
