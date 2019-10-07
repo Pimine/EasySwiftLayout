@@ -234,6 +234,53 @@ insets | `CGFloat` | Inset between edges of this view and corresponding edges of
 
 </details>
 
+#### Pin to Superview Methods
+
+Just to remind, let's say you have a view called `MyView`, which has a `UIButton`(loginButton) over it. In this case, `MyView` is a `superview` for `loginButton` and `loginButton` is a subview of `MyView`.
+
+<details>
+<summary><code>pinEdge(_:toSuperviewEdge:withInset:)</code></summary>
+  
+##### Summary
+
+Pins edge to the given edge of its superview with an inset.
+
+##### Declaration
+
+```swift
+func  pinEdge(_  edge: ESLEdge, toSuperviewEdge  superviewEdge: ESLEdge, withInset  inset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+- Use this method only if you want to pin view's edge to opposite margin of its superview, in other cases `pinEdgeToSuperview(_:withInset:) would be a better approach.
+
+- Consider, that you cannot pin edge to different axis, otherwise method will throw `fatalError()`. X-axis constraints are not compatible with y-axis.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+- View should have superview, otherwise method will have no effect.
+
+- Pin edges with same axis or method will throw `fatalError()`
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edge  | `ESLEdge` | The edge of this view to pin.
+superviewEdge | `ESLEdge` | The edge of its superview to pin to.
+inset | `CGFloat` | Inset from the superview's bound
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin(Superview).swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin(Superview).swift)
+
+</details>
+
 ## Installation
 
 ### CocoaPods
