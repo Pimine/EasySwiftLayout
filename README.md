@@ -95,6 +95,160 @@ class ViewController: UIViewController {
 
 ### `UIView` Extenstions:
 
+#### Size Methods
+
+<details>
+<summary><code>width(_:)</code></summary>
+  
+##### Summary
+
+Sets view's width to a specific size.
+
+##### Declaration
+
+```swift
+func  width(_  size: CGFloat) -> Self
+```
+
+##### Discussion
+
+- Constraints width anchor using `NSLayoutConstraint` to a specific size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Pass non-zero size, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+size | `CGFloat` | The size to set this view's width to.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+<details>
+<summary><code>height(_:)</code></summary>
+  
+##### Summary
+
+Sets view's height to a specific size.
+
+##### Declaration
+
+```swift
+func  height(_  size: CGFloat) -> Self
+```
+
+##### Discussion
+
+- Constraints width anchor using `NSLayoutConstraint` to a specific size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Pass non-zero size, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+size | `CGFloat` | The size to set this view's height to.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+<details>
+<summary><code>size(_:)</code></summary>
+  
+##### Summary
+
+Sets view's dimensions to a specific size.
+
+##### Declaration
+
+```swift
+func  size(_  size: CGSize) -> Self
+```
+
+##### Discussion
+
+- Constraints width and height anchors using `NSLayoutConstraint` to a specific size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Pass non-zero size, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+size | `CGSize` | The size to set this view's dimensions to.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+<details>
+<summary><code>size(toSquareWithSide:)</code></summary>
+  
+##### Summary
+
+Sets view's dimensions to square with side.
+
+##### Declaration
+
+```swift
+func  size(toSquareWithSide  side: CGFloat) -> Self
+```
+
+##### Discussion
+
+- Constraints width and height anchors using `NSLayoutConstraint` to match square size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Pass non-zero side, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+side | `CGFloat` | Square side to set this view's dimensions to.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
 #### Pin Methods
 
 <details>
@@ -678,160 +832,6 @@ offset | `ESLOffset` | Axis offset.
 
 ##### Declared In
 [UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
-
-</details>
-
-#### Size Methods
-
-<details>
-<summary><code>width(_:)</code></summary>
-  
-##### Summary
-
-Sets view's width to a specific size.
-
-##### Declaration
-
-```swift
-func  width(_  size: CGFloat) -> Self
-```
-
-##### Discussion
-
-- Constraints width anchor using `NSLayoutConstraint` to a specific size.
-
-- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass non-zero size, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-size | `CGFloat` | The size to set this view's width to.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
-
-</details>
-
-<details>
-<summary><code>height(_:)</code></summary>
-  
-##### Summary
-
-Sets view's height to a specific size.
-
-##### Declaration
-
-```swift
-func  height(_  size: CGFloat) -> Self
-```
-
-##### Discussion
-
-- Constraints width anchor using `NSLayoutConstraint` to a specific size.
-
-- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass non-zero size, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-size | `CGFloat` | The size to set this view's height to.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
-
-</details>
-
-<details>
-<summary><code>size(_:)</code></summary>
-  
-##### Summary
-
-Sets view's dimensions to a specific size.
-
-##### Declaration
-
-```swift
-func  size(_  size: CGSize) -> Self
-```
-
-##### Discussion
-
-- Constraints width and height anchors using `NSLayoutConstraint` to a specific size.
-
-- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass non-zero size, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-size | `CGSize` | The size to set this view's dimensions to.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
-
-</details>
-
-<details>
-<summary><code>size(toSquareWithSide:)</code></summary>
-  
-##### Summary
-
-Sets view's dimensions to square with side.
-
-##### Declaration
-
-```swift
-func  size(toSquareWithSide  side: CGFloat) -> Self
-```
-
-##### Discussion
-
-- Constraints width and height anchors using `NSLayoutConstraint` to match square size.
-
-- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass non-zero side, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-side | `CGFloat` | Square side to set this view's dimensions to.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
 
 </details>
 
