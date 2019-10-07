@@ -68,6 +68,8 @@ insets | `UIEdgeInsets` | Insets between edges.
 UIView + Pin.swift
 </a>
 
+</details>
+
 ## Installation
 
 ### CocoaPods
