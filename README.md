@@ -26,7 +26,7 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 ## Quick Overview
 
 <details>
-  <summary>pinEdges(_:toSameEdgesOfView:withInsets:)</summary>
+  <summary>`pinEdges(_:toSameEdgesOfView:withInsets:)`</summary>
   
 ##### Summary
 Pins the given edges of the view to the corresponding margins of another view with insets.
