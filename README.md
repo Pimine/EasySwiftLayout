@@ -281,6 +281,192 @@ inset | `CGFloat` | Inset from the superview's bound
 
 </details>
 
+<details>
+<summary><code>pinEdgeToSuperview(_:withInset:)</code></summary>
+  
+##### Summary
+
+Pins the given edge of the view to the corresponding margin of its superview with an inset.
+
+##### Declaration
+
+```swift
+func  pinEdgeToSuperview(_  edge: ESLEdge, withInset  inset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+ View should have superview, otherwise method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edge  | `ESLEdge` | The edge of this view to pin to the corresponding margin.
+inset | `CGFloat` | Inset from the superview's bound
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin(Superview).swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin(Superview).swift)
+
+</details>
+
+<details>
+<summary><code>pinEdgesToSuperview(_:withInsets:)</code></summary>
+  
+##### Summary
+
+Pins the given edges of the view to the corresponding margins of its superview with an inset.
+
+##### Declaration
+
+```swift
+func  pinEdgesToSuperview(_  edges: [ESLEdge] = ESLEdge.all, withInsets  insets: UIEdgeInsets = .zero) -> Self
+```
+
+##### Discussion
+
+- This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes, `pinEdgeToSuperview(_:withInset:)` would be a better approach.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+ View should have superview, otherwise method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edges  | `[ESLEdge]` | The edges of this view to pin to the corresponding margins.
+insets | `UIEdgeInsets` | Insets from the superview's bounds.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin(Superview).swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin(Superview).swift)
+
+</details>
+
+<details>
+<summary><code>pinEdgesToSuperview(_:withInset:)</code></summary>
+  
+##### Summary
+
+Pins the given edges of the view to the corresponding margins of its superview with equal inset.
+
+##### Declaration
+
+```swift
+func  pinEdgesToSuperview(_  edges: [ESLEdge] = ESLEdge.all, withInset  inset: CGFloat) -> Self
+```
+
+##### Discussion
+
+- This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes, `pinEdgeToSuperview(_:withInset:)` would be a better approach.
+
+- If you want to customize inset based on edge, use `pinEdgesToSuperview(_:withInsets:)`.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+ View should have superview, otherwise method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edges  | `[ESLEdge]` | The edges of this view to pin to the corresponding margins.
+inset | `CGFloat` | Inset from superview's bounds.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin(Superview).swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin(Superview).swift)
+
+</details>
+
+<details>
+<summary><code>pinHorizontalEdgesToSuperview(withInset:)</code></summary>
+  
+##### Summary
+
+Pins left and right to the corresponding margins of its superview with equal inset.
+
+##### Declaration
+
+```swift
+func  pinHorizontalEdgesToSuperview(withInset  inset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+- Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+ View should have superview, otherwise method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+inset | `CGFloat` | Inset from superview's bounds.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin(Superview).swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin(Superview).swift)
+
+</details>
+
+<details>
+<summary><code>pinVerticalEdgesToSuperview(withInset:)</code></summary>
+  
+##### Summary
+
+Pins top and bottom to the corresponding margins of its superview with equal inset.
+
+##### Declaration
+
+```swift
+func  pinVerticalEdgesToSuperview(withInset  inset: CGFloat = .zero) -> Self
+```
+
+##### Discussion
+
+- Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+ View should have superview, otherwise method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+inset | `CGFloat` | Inset from superview's bounds.
+
+##### Returns
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Pin(Superview).swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin(Superview).swift)
+
+</details>
+
 ## Installation
 
 ### CocoaPods
