@@ -79,12 +79,12 @@ import EasySwiftLayout
 class  ViewController: UIViewController {
    private let boxView = UIView()
 
-   override  func  viewDidLoad() {
+   override func viewDidLoad() {
       super.viewDidLoad()
       addAndLayoutSubviews()
    }
 
-   private  func  addAndLayoutSubviews() {
+   private func addAndLayoutSubviews() {
       view.addSubview(boxView)
       boxView.centerInSuperview()
       boxView.size(toSquareWithSide: 50)
