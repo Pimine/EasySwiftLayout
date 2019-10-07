@@ -64,9 +64,7 @@ insets | `UIEdgeInsets` | Insets between edges.
 
 ##### Declared In
 
-<a href="https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift" target="_blank">
-UIView + Pin.swift
-</a>
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
 
 </details>
 
