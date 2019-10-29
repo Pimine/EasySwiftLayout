@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import EasySwiftLayout
 
 class EasySwiftLayoutTests: XCTestCase {
 
