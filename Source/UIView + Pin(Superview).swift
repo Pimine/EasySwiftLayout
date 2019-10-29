@@ -81,7 +81,7 @@ public extension UIView {
     ///
     /// - Precondition: View should have superview, otherwise this method will have no effect.
     ///
-    /// - Parameter edges: The edge of this view to pin to the corresponding margin.
+    /// - Parameter edges: The edges of this view to pin to the corresponding margins.
     /// - Parameter insets: Insets from the superview's bounds
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
@@ -120,7 +120,7 @@ public extension UIView {
         return self
     }
     
-    /// Pins left and right to the corresponding margins of its superview with equal inset
+    /// Pins left and right to the corresponding margins of its superview with equal inset.
     ///
     /// 1. Helper method. Have the same benefits and requirement as `pinEdgesToSuperview(_:withInset:)`.
     /// 2. To make Auto-Layout works properly, it automatically sets view's property
