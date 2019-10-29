@@ -25,22 +25,24 @@
 
 public extension UIView {
     
-    //MARK: Center in given view
+    //MARK: Center in the given view
     
     /// Centers the view in the given view with offset.
     ///
     /// To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Parameter view: View to center in
+    /// - Precondition: Another view must be in the same view hierarchy as this view.
+    ///
+    /// - Parameter anotherView: View to center in
     /// - Parameter offset: Axis offset
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
-    @discardableResult func centerInView(_ view: UIView, withOffset offset: ESLOffset = .zero) -> Self {
+    @discardableResult func centerInView(_ anotherView: UIView, withOffset offset: ESLOffset = .zero) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
-        centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: offset.x).isActive = true
-        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: offset.y).isActive = true
+        centerXAnchor.constraint(equalTo: anotherView.centerXAnchor, constant: offset.x).isActive = true
+        centerYAnchor.constraint(equalTo: anotherView.centerYAnchor, constant: offset.y).isActive = true
         return self
     }
     
@@ -49,19 +51,21 @@ public extension UIView {
     /// To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
+    /// - Precondition: Another view must be in the same view hierarchy as this view.
+    ///
     /// - Parameter view: View to center in
     /// - Parameter axis: Axis to center
     /// - Parameter offset: Axis offset
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
-    @discardableResult func centerInView(_ view: UIView, axis: ESLAxis, withOffset offset: CGFloat = .zero) -> Self {
+    @discardableResult func centerInView(_ anotherView: UIView, axis: ESLAxis, withOffset offset: CGFloat = .zero) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         switch axis {
         case .x:
-            centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: offset).isActive = true
+            centerXAnchor.constraint(equalTo: anotherView.centerXAnchor, constant: offset).isActive = true
         case .y:
-            centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: offset).isActive = true
+            centerYAnchor.constraint(equalTo: anotherView.centerYAnchor, constant: offset).isActive = true
         }
         return self
     }

@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		B7B06934230C274B00CB6386 /* EasySwiftLayout-Universal */ = {
+		B7B06934230C274B00CB6386 /* Build Framework */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = B7B06935230C274B00CB6386 /* Build configuration list for PBXAggregateTarget "EasySwiftLayout-Universal" */;
+			buildConfigurationList = B7B06935230C274B00CB6386 /* Build configuration list for PBXAggregateTarget "Build Framework" */;
 			buildPhases = (
 				B7B06938230C278C00CB6386 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "EasySwiftLayout-Universal";
+			name = "Build Framework";
 			productName = "EasySwiftLayout-Universal";
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		B784771A234B37DD002386DC /* EasySwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */; };
+		B784771C234B37DD002386DC /* EasySwiftLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */; };
 		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
 		B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */; };
 		B7B6606722FF122B006FDD7E /* EasySwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,7 +34,20 @@
 		B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B784771D234B37DD002386DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7B6605922FF122B006FDD7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7B6606122FF122B006FDD7E;
+			remoteInfo = EasySwiftLayout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B7847717234B37DD002386DC /* EasySwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasySwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySwiftLayoutTests.swift; sourceTree = "<group>"; };
+		B784771B234B37DD002386DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B0692B230B17BA00CB6386 /* UIView + Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Size.swift"; sourceTree = "<group>"; };
 		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAnchor.swift; sourceTree = "<group>"; };
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,10 +58,19 @@
 		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
 		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
 		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
+		B7F431AE234A5CF700C7E7C7 /* EasySwiftLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasySwiftLayout.framework; path = ../ContentProtectorKit/EasySwiftLayout.framework; sourceTree = "<group>"; };
 		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B7847714234B37DD002386DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B784771C234B37DD002386DC /* EasySwiftLayout.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7B6605F22FF122B006FDD7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,11 +103,22 @@
 			name = Shared;
 			sourceTree = "<group>";
 		};
+		B7847718234B37DD002386DC /* EasySwiftLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */,
+				B784771B234B37DD002386DC /* Info.plist */,
+			);
+			path = EasySwiftLayoutTests;
+			sourceTree = "<group>";
+		};
 		B7B6605822FF122B006FDD7E = {
 			isa = PBXGroup;
 			children = (
 				B7B6606422FF122B006FDD7E /* Source */,
+				B7847718234B37DD002386DC /* EasySwiftLayoutTests */,
 				B7B6606322FF122B006FDD7E /* Products */,
+				B7F431AD234A5CF700C7E7C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */,
+				B7847717234B37DD002386DC /* EasySwiftLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +140,14 @@
 				B7B6606622FF122B006FDD7E /* Info.plist */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		B7F431AD234A5CF700C7E7C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7F431AE234A5CF700C7E7C7 /* EasySwiftLayout.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +164,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B7847716234B37DD002386DC /* EasySwiftLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7847721234B37DD002386DC /* Build configuration list for PBXNativeTarget "EasySwiftLayoutTests" */;
+			buildPhases = (
+				B7847713234B37DD002386DC /* Sources */,
+				B7847714234B37DD002386DC /* Frameworks */,
+				B7847715234B37DD002386DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B784771E234B37DD002386DC /* PBXTargetDependency */,
+			);
+			name = EasySwiftLayoutTests;
+			productName = EasySwiftLayoutTests;
+			productReference = B7847717234B37DD002386DC /* EasySwiftLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B7B6606122FF122B006FDD7E /* EasySwiftLayout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7B6606A22FF122B006FDD7E /* Build configuration list for PBXNativeTarget "EasySwiftLayout" */;
@@ -144,10 +206,14 @@
 		B7B6605922FF122B006FDD7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Denis Andreychuk";
 				TargetAttributes = {
+					B7847716234B37DD002386DC = {
+						CreatedOnToolsVersion = 11.0;
+						ProvisioningStyle = Automatic;
+					};
 					B7B06934230C274B00CB6386 = {
 						CreatedOnToolsVersion = 10.2;
 						ProvisioningStyle = Automatic;
@@ -173,12 +239,20 @@
 			projectRoot = "";
 			targets = (
 				B7B6606122FF122B006FDD7E /* EasySwiftLayout */,
-				B7B06934230C274B00CB6386 /* EasySwiftLayout-Universal */,
+				B7B06934230C274B00CB6386 /* Build Framework */,
+				B7847716234B37DD002386DC /* EasySwiftLayoutTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B7847715234B37DD002386DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7B6606022FF122B006FDD7E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +283,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B7847713234B37DD002386DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B784771A234B37DD002386DC /* EasySwiftLayoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7B6605E22FF122B006FDD7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,7 +308,45 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B784771E234B37DD002386DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7B6606122FF122B006FDD7E /* EasySwiftLayout */;
+			targetProxy = B784771D234B37DD002386DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B784771F234B37DD002386DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F79SZ7VU87;
+				INFOPLIST_FILE = EasySwiftLayoutTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7847720234B37DD002386DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F79SZ7VU87;
+				INFOPLIST_FILE = EasySwiftLayoutTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B7B06936230C274B00CB6386 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -382,6 +502,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -407,6 +528,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -418,7 +540,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B7B06935230C274B00CB6386 /* Build configuration list for PBXAggregateTarget "EasySwiftLayout-Universal" */ = {
+		B7847721234B37DD002386DC /* Build configuration list for PBXNativeTarget "EasySwiftLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B784771F234B37DD002386DC /* Debug */,
+				B7847720234B37DD002386DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7B06935230C274B00CB6386 /* Build configuration list for PBXAggregateTarget "Build Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B7B06936230C274B00CB6386 /* Debug */,
