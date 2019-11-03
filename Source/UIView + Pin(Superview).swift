@@ -137,11 +137,8 @@ public extension UIView {
         withInset inset: CGFloat,
         priority: UILayoutPriority = .required
     ) {
-        pinEdgesToSuperview(
-            edges, usingRelation: relation,
-            withInsets: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset),
-            priority: priority
-        )
+        let insets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        pinEdgesToSuperview(edges, usingRelation: relation, withInsets: insets, priority: priority)
     }
     
     /// Pins edges of the view of the given group using the specified type of
@@ -197,8 +194,10 @@ public extension UIView {
     ) {
         guard let superview = superview else { return }
         pinEdges(
-            usingRelation: relation, toSameEdgesOfView: superview,
-            withInsets: insets, excludingEdge: excludedEdge,
+            usingRelation: relation,
+            toSameEdgesOfView: superview,
+            withInsets: insets,
+            excludingEdge: excludedEdge,
             priority: priority
         )
     }
@@ -231,8 +230,10 @@ public extension UIView {
     ) {
         guard let superview = superview else { return }
         pinEdges(
-            usingRelation: relation, toSameEdgesOfView: superview,
-            withInset: inset, excludingEdge: excludedEdge,
+            usingRelation: relation,
+            toSameEdgesOfView: superview,
+            withInset: inset,
+            excludingEdge: excludedEdge,
             priority: priority
         )
     }

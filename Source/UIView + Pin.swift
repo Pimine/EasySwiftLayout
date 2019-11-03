@@ -109,8 +109,7 @@ public extension UIView {
     func pinEdge(
         _ edge: ESLEdge,
         usingRelation relation: NSLayoutRelation = .equal,
-        toEdge pinningEdge: ESLEdge,
-        ofView anotherView: UIView,
+        toEdge pinningEdge: ESLEdge, ofView anotherView: UIView,
         withInset inset: CGFloat = .zero,
         priority: UILayoutPriority = .required
     ) {
@@ -188,13 +187,33 @@ public extension UIView {
         for edge in edges {
             switch edge {
             case .left:
-                pinEdge(.left, usingRelation: relation, toSameEdgeOfView: anotherView, withInset: insets.left, priority: priority)
+                pinEdge(.left,
+                    usingRelation: relation,
+                    toSameEdgeOfView: anotherView,
+                    withInset: insets.left,
+                    priority: priority
+                )
             case .right:
-                pinEdge(.right, usingRelation: relation, toSameEdgeOfView: anotherView, withInset: insets.left, priority: priority)
+                pinEdge(.right,
+                    usingRelation: relation,
+                    toSameEdgeOfView: anotherView,
+                    withInset: insets.left,
+                    priority: priority
+                )
             case .top:
-                pinEdge(.top, usingRelation: relation, toSameEdgeOfView: anotherView, withInset: insets.left, priority: priority)
+                pinEdge(.top,
+                    usingRelation: relation,
+                    toSameEdgeOfView: anotherView,
+                    withInset: insets.left,
+                    priority: priority
+                )
             case .bottom:
-                pinEdge(.bottom, usingRelation: relation, toSameEdgeOfView: anotherView, withInset: insets.left, priority: priority)
+                pinEdge(.bottom,
+                    usingRelation: relation,
+                    toSameEdgeOfView: anotherView,
+                    withInset: insets.left,
+                    priority: priority
+                )
             }
         }
     }
@@ -231,11 +250,8 @@ public extension UIView {
         withInset inset: CGFloat,
         priority: UILayoutPriority = .required
     ) {
-        pinEdges(
-            edges, usingRelation: relation, toSameEdgesOfView: anotherView,
-            withInsets: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset),
-            priority: priority
-        )
+        let insets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        pinEdges(edges, usingRelation: relation, toSameEdgesOfView: anotherView, withInsets: insets, priority: priority)
     }
     
     /// Pins edges of the view of the given group using the specified type of
