@@ -21,16 +21,17 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		B71AD508236EE37300C5AE64 /* ESLEdgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */; };
 		B784771A234B37DD002386DC /* EasySwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */; };
 		B784771C234B37DD002386DC /* EasySwiftLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */; };
 		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
-		B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */; };
 		B7B6606722FF122B006FDD7E /* EasySwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7B6606F22FF1289006FDD7E /* ESLOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6606E22FF1289006FDD7E /* ESLOffset.swift */; };
 		B7B6608422FF18C7006FDD7E /* UIView + Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608322FF18C7006FDD7E /* UIView + Center.swift */; };
 		B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608822FF61EE006FDD7E /* ESLAxis.swift */; };
 		B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */; };
 		B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */; };
+		B7E52714236EFE0C006760A0 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52713236EFE0C006760A0 /* Deprecated.swift */; };
 		B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdgeGroup.swift; sourceTree = "<group>"; };
 		B7847717234B37DD002386DC /* EasySwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasySwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySwiftLayoutTests.swift; sourceTree = "<group>"; };
 		B784771B234B37DD002386DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B0692B230B17BA00CB6386 /* UIView + Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Size.swift"; sourceTree = "<group>"; };
-		B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAnchor.swift; sourceTree = "<group>"; };
 		B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasySwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasySwiftLayout.h; sourceTree = "<group>"; };
 		B7B6606622FF122B006FDD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
 		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
 		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
+		B7E52713236EFE0C006760A0 /* Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
 		B7F431AE234A5CF700C7E7C7 /* EasySwiftLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasySwiftLayout.framework; path = ../ContentProtectorKit/EasySwiftLayout.framework; sourceTree = "<group>"; };
 		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,10 +97,10 @@
 		B72D35C2234A321C00FD54B5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */,
 				B7B6608822FF61EE006FDD7E /* ESLAxis.swift */,
+				B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */,
 				B7B6606E22FF1289006FDD7E /* ESLOffset.swift */,
-				B7B3FD6D2305C99F0077B90E /* ESLAnchor.swift */,
+				B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -138,6 +140,7 @@
 				B72D35C0234A31FB00FD54B5 /* Extenstions */,
 				B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */,
 				B7B6606622FF122B006FDD7E /* Info.plist */,
+				B7E52713236EFE0C006760A0 /* Deprecated.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -298,11 +301,12 @@
 				B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */,
 				B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */,
 				B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */,
+				B71AD508236EE37300C5AE64 /* ESLEdgeGroup.swift in Sources */,
 				B7B6606F22FF1289006FDD7E /* ESLOffset.swift in Sources */,
 				B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */,
+				B7E52714236EFE0C006760A0 /* Deprecated.swift in Sources */,
 				B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */,
 				B7B6608422FF18C7006FDD7E /* UIView + Center.swift in Sources */,
-				B7B3FD6E2305C99F0077B90E /* ESLAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +497,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -502,7 +507,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -519,6 +524,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -528,7 +534,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

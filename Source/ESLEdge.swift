@@ -37,12 +37,25 @@ public enum ESLEdge {
     
     public static let all: [ESLEdge] = [.top, .bottom, .left, .right]
     
-    public var insetMultiplier: CGFloat {
+    var directionalMultiplier: CGFloat {
         switch self {
         case .left, .top:
             return 1.0
         case .right, .bottom:
             return -1.0
+        }
+    }
+    
+    var convertedToNSLayoutAttribute: NSLayoutAttribute {
+        switch self {
+        case .left:
+            return .left
+        case .right:
+            return .right
+        case .top:
+            return .top
+        case .bottom:
+            return .bottom
         }
     }
 }
