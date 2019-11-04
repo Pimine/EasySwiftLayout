@@ -25,82 +25,212 @@
 
 public extension UIView {
     
-    /// Sets view's width to a specific size.
+    /// Sets the width of the view to the given size with the priority of
+    /// the constraint.
     ///
-    /// 1. Constraints width anchor using `NSLayoutConstraint` to a specific size.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's property
-    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Precondition: Pass non-zero size, otherwise this method will have no effect.
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
     ///
     /// - Parameter size: The size to set this view's width to.
+    /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
-    @discardableResult func width(_ size: CGFloat) -> Self {
+    @discardableResult
+    func width(_ size: CGFloat, priority: UILayoutPriority = .required) -> Self {
         guard size != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: size).isActive = true
+        
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: .width,
+            relatedBy: .equal,
+            toItem: nil, attribute: .notAnAttribute,
+            multiplier: 1.0, constant: size
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+        
         return self
     }
     
-    /// Sets view's height to a specific size.
+    /// Sets the width of the view using the specified type of relation to the
+    /// given size with the priority of the constraint.
     ///
-    /// 1. Constraints height anchor using `NSLayoutConstraint` to a specific size.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's property
-    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Precondition: Pass non-zero size, otherwise this method will have no effect.
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
     ///
-    /// - Parameter size: The size to set this view's height to.
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter size: The size to set this view's width to.
+    /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
-    @discardableResult func height(_ size: CGFloat) -> Self{
+    @discardableResult
+    func width(_ relation: NSLayoutRelation, to size: CGFloat, priority: UILayoutPriority = .required) -> Self {
         guard size != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: size).isActive = true
+        
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: .width,
+            relatedBy: relation,
+            toItem: nil, attribute: .notAnAttribute,
+            multiplier: 1.0, constant: size
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+        
         return self
     }
     
-    /// Sets view's dimensions to a specific size.
+    /// Sets the height of the view to the given size with the priority of
+    /// the constraint.
     ///
-    /// 1. Constraints width and height anchors using `NSLayoutConstraint` to a specific size.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's property
-    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// 1. Constraints the height anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Precondition: Pass non-zero size, otherwise this method will have no effect.
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
+    ///
+    /// - Parameter size: The size to set this view's width to.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
+    func height(_ height: CGFloat, priority: UILayoutPriority = .required) -> Self {
+        guard height != 0 else { return self }
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: .height,
+            relatedBy: .equal,
+            toItem: nil, attribute: .notAnAttribute,
+            multiplier: 1.0, constant: height
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+        
+        return self
+    }
+    
+    /// Sets the height of the view using the specified type of relation to the
+    /// given size with the priority of the constraint.
+    ///
+    /// 1. Constraints the height anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
+    ///
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter size: The size to set this view's width to.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
+    func height(_ relation: NSLayoutRelation, to height: CGFloat, priority: UILayoutPriority = .required) -> Self {
+        guard height != 0 else { return self }
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: .height,
+            relatedBy: relation,
+            toItem: nil, attribute: .notAnAttribute,
+            multiplier: 1.0, constant: height
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+        
+        return self
+    }
+    
+    /// Sets the dimensions of the view to the given size with the priority of
+    /// the constraint.
+    ///
+    /// 1. Constraints the height and width anchors using `NSLayoutConstraint`
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
     ///
     /// - Parameter size: The size to set this view's dimensions to.
+    /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
-    @discardableResult func size(_ size: CGSize) -> Self {
+    @discardableResult
+    func size(_ size: CGSize, priority: UILayoutPriority) -> Self {
         guard size != .zero else { return self }
         if size.height != 0 {
-            height(size.height)
+            height(size.height, priority: priority)
         }
         if size.width != 0 {
-            width(size.width)
+            width(size.width, priority: priority)
         }
         return self
     }
     
-    /// Sets view's dimensions to square with side.
+    /// Sets the dimensions of the view using the specified type of relation to
+    /// the given size with the priority of the constraint.
     ///
-    /// 1. Constraints width and height anchors using `NSLayoutConstraint` to match square size.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's property
-    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// 1. Constraints the height and width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Precondition: Pass non-zero side, otherwise this method will have no effect.
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
     ///
-    /// - Parameter side: Square side to set this view's dimensions to.
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter size: The size to set this view's dimensions to.
+    /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
-    @discardableResult func size(toSquareWithSide side: CGFloat) -> Self {
+    @discardableResult
+    func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority) -> Self {
+        guard size != .zero else { return self }
+        if size.height != 0 {
+            height(relation, to: size.height)
+        }
+        if size.width != 0 {
+            width(relation, to: size.width)
+        }
+        return self
+    }
+    
+    /// Sets the dimensions of the view to a square with the side using the
+    /// specified type of relation to the given size with the priority of the
+    /// constraint.
+    ///
+    /// 1. Constraints the height and width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// have no effect.
+    ///
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter side: The side of the square to set this view's dimensions to.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
+    func size(relation: NSLayoutRelation, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self {
         guard side != .zero else { return self }
-        size(.init(width: side, height: side))
+        size(relation, to: CGSize(width: side, height: side), priority: priority)
         return self
     }
 }
