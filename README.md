@@ -1020,7 +1020,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>centerInSuperview(_:withOffset:priority:)</code></summary>
+<summary><code>centerInSuperview(withOffset:priority:)</code></summary>
   
 ##### Summary
 
