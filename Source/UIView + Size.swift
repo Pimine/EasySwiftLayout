@@ -171,7 +171,7 @@ public extension UIView {
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
-    func size(_ size: CGSize, priority: UILayoutPriority) -> Self {
+    func size(_ size: CGSize, priority: UILayoutPriority = .required) -> Self {
         guard size != .zero else { return self }
         if size.height != 0 {
             height(size.height, priority: priority)
