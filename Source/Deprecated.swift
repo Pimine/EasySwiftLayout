@@ -1,5 +1,5 @@
 //
-//  ESLEdge.swift
+//  Deprecated.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
@@ -23,39 +23,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-public enum ESLEdge {
+import Foundation
+
+extension UIView {
     
-    //MARK: Cases
-    
-    case top
-    case bottom
-    
-    case left
-    case right
-    
-    //MARK: Variables
-    
-    public static let all: [ESLEdge] = [.top, .bottom, .left, .right]
-    
-    var directionalMultiplier: CGFloat {
-        switch self {
-        case .left, .top:
-            return 1.0
-        case .right, .bottom:
-            return -1.0
-        }
+    @available(*, deprecated, renamed: "pinEdgesToSuperview(ofGroup:usingRelation:withInset:priority:)")
+    func pinHorizontalEdgesToSuperview(withInset inset: CGFloat = .zero) {
+        pinEdgesToSuperview(ofGroup: .horizontal, withInset: inset)
     }
     
-    var convertedToNSLayoutAttribute: NSLayoutAttribute {
-        switch self {
-        case .left:
-            return .left
-        case .right:
-            return .right
-        case .top:
-            return .top
-        case .bottom:
-            return .bottom
-        }
+    @available(*, deprecated, renamed: "pinEdgesToSuperview(ofGroup:usingRelation:withInset:priority:)")
+    func pinVerticalEdgesToSuperview(withInset inset: CGFloat = .zero) {
+        pinEdgesToSuperview(ofGroup: .vertical, withInset: inset)
     }
 }

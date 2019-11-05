@@ -1,5 +1,5 @@
 //
-//  ESLAnchor.swift
+//  ESLEdgeGroup.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
@@ -23,41 +23,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-public struct ESLAnchor {
+import Foundation
+
+public enum ESLEdgeGroup {
+    
+    //MARK: - Cases
+    
+    case horizontal
+    case vertical
     
     //MARK: - Variables
     
-    public let edge: ESLEdge
-    public let view: UIView
-    
-    //MARK: - Life Cycle
-    
-    public init(_ edge: ESLEdge, ofView view: UIView) {
-        self.edge = edge
-        self.view = view
-    }
-    
-    //MARK: - Methods
-    
-    func convertToNSLayoutXAnchor() -> NSLayoutXAxisAnchor {
-        switch edge {
-        case .left:
-            return view.leftAnchor
-        case .right:
-            return view.rightAnchor
-        default:
-            fatalError("[EasySwiftLayout] You cannot convert horizontal axis to NSLayoutXAxisAnchor")
-        }
-    }
-    
-    func convertToNSLayoutYAnchor() -> NSLayoutYAxisAnchor {
-        switch edge {
-        case .top:
-            return view.topAnchor
-        case .bottom:
-            return view.bottomAnchor
-        default:
-            fatalError("[EasySwiftLayout] You cannot convert horizontal axis to NSLayoutYAxisAnchor")
+    var edges: [ESLEdge] {
+        switch self {
+        case .horizontal:
+            return [.left, .right]
+        case .vertical:
+            return [.top, .bottom]
         }
     }
 }
