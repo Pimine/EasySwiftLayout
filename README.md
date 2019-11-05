@@ -384,21 +384,21 @@ priority | `UILayoutPriority` | The priority of the constraint.
 #### Pin Methods
 
 <details>
-<summary><code>pin(topTo:leftTo:bottomTo:rightTo:withInsets:)</code></summary>
+<summary><code>pin(topTo:leftTo:bottomTo:rightTo:withInsets:priority:)</code></summary>
   
 ##### Summary
 
-Pins edges to the given `NSLayoutAxisAnchor`s.
+Pins the edges to the given NSLayoutAxisAnchors with the insets and priority of the constraints.
 
 ##### Declaration
 
 ```swift
-func  pin(topTo  top: NSLayoutYAxisAnchor? = nil, leftTo  left: NSLayoutXAxisAnchor? = nil, bottomTo  bottom: NSLayoutYAxisAnchor? = nil, rightTo  right: NSLayoutXAxisAnchor? = nil, withInsets  insets: UIEdgeInsets = .zero) -> Self
+func pin(topTo top: NSLayoutYAxisAnchor? = nil, leftTo left: NSLayoutXAxisAnchor? = nil, bottomTo bottom: NSLayoutYAxisAnchor? = nil, rightTo right: NSLayoutXAxisAnchor? = nil, withInsets insets: UIEdgeInsets = .zero, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
 
-- Compact version of default Swift layout. Allows you to edges to specific  `NSLayoutAxisAnchor`.
+- Compact version of default Swift layout. Allows you to pin edges to specific `NSLayoutAxisAnchor`.
 
 - To make Auto-Layout works properly, it automatically sets view’s property  `translatesAutoresizingMaskIntoConstraints`  to  `false`
 
@@ -410,14 +410,12 @@ You should pass at least one anchor, otherwise this method will have no effect.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-top  | `NSLayoutYAxisAnchor` | Anchor to pin top to.
-left  | `NSLayoutXAxisAnchor` | Anchor to pin left to.
-bottom | `NSLayoutYAxisAnchor` | Anchor to pin bottom to.
-right | `NSLayoutXAxisAnchor` | Anchor to pin right to.
-insets | `UIEdgeInsets` | Insets between edges.
-
-##### Returns
-`self`  with attribute  `@discardableResult`.
+top  | `NSLayoutYAxisAnchor` | The anchor to pin top to.
+left  | `NSLayoutXAxisAnchor` | The anchor to pin left to.
+bottom | `NSLayoutYAxisAnchor` | The anchor to pin bottom to.
+right | `NSLayoutXAxisAnchor` | The anchor to pin right to.
+insets | `UIEdgeInsets` | The insets between the edges.
+priority | `UILayoutPriority` | The priority of the constraints.
 
 ##### Declared In
 
@@ -426,41 +424,40 @@ insets | `UIEdgeInsets` | Insets between edges.
 </details>
 
 <details>
-<summary><code>pinEdge(_:toEdge:ofView:withInset:)</code></summary>
+<summary><code>pinEdge(_:usingRelation:toEdge:ofView:withInset:priorite:)</code></summary>
   
 ##### Summary
 
-Pins edge to the given edge of another view with an inset.
+Pins the edge of the view using the specified type of relation to the given edge of another view with the inset and priority of the constraint.
 
 ##### Declaration
 
 ```swift
-func  pinEdge(_  edge: ESLEdge, toEdge  pinningEdge: ESLEdge, ofView  anotherView: UIView, withInset  inset: CGFloat = .zero) -> Self
+func pinEdge(_ edge: ESLEdge, usingRelation relation: NSLayoutRelation = .equal, toEdge pinningEdge: ESLEdge, ofView anotherView: UIView, withInset inset: CGFloat = .zero, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
 
-- Consider, that you cannot pin edge to different axis, otherwise method will throw `fatalError()`. X-axis constraints are not compatible with y-axis.
+- Consider, accordingly to [Apple's documentation](https://apple.co/2PFH9f2), you cannot pin edges with different axis, otherwise it will throw fatal error.
 
-- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+- To make Auto-Layout works properly, it automatically sets view’s property `translatesAutoresizingMaskIntoConstraints` to `false`
 
 ##### Precondition
 
 - Another view must be in the same view hierarchy as this view.
 
-- Pin edges with same axis or method will throw `fatalError()`
+- Pin edges with same axis or method will throw fatal error.
 
 ##### Parameters
 
 Parameter  | Type | Description
 ---------- | ---- |------------
 edge  | `ESLEdge` | The edge of this view to pin.
+relation | `NSLayoutRelation` | The type of relationship for the constraint.
 pinningEdge  | `ESLEdge` | The edge of another view to pin to.
 anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
-inset | `CGFloat` | Inset between edge of this view and edge of another view.
-
-##### Returns
-`self`  with attribute  `@discardableResult`.
+inset | `CGFloat` | The inset between the edge of this view and the edge of another view.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
@@ -468,16 +465,132 @@ inset | `CGFloat` | Inset between edge of this view and edge of another view.
 </details>
 
 <details>
-<summary><code>pinEdge(_:toSameEdgeOfView:withInset:)</code></summary>
+<summary><code>pinEdge(_:usingRelation:toSameEdgeOfView:withInset:priority:)</code></summary>
   
 ##### Summary
 
-Pins the given edge of the view to the corresponding margin of another view with an inset.
+Pins the given edge of the view using the specified type of relation to the corresponding margin of another view with the inset and priority of the constraint.
 
 ##### Declaration
 
 ```swift
-func  pinEdge(_  edge: ESLEdge, toSameEdgeOfView  anotherView: UIView, withInset  inset: CGFloat = .zero) -> Self
+func pinEdge(_ edge: ESLEdge, usingRelation relation: NSLayoutRelation = .equal, toSameEdgeOfView anotherView: UIView, withInset inset: CGFloat = .zero, priority: UILayoutPriority = .required)
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view’s property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edge  | `ESLEdge` | The edge of this view to pin.
+relation | `NSLayoutRelation` | The type of relationship for the constraint.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+inset | `CGFloat` | The inset beetween the edge of this view and the corresponding edge of another view.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary><code>pinEdges(_:usingRelation:toSameEdgesOfView:withInsets:priority:)</code></summary>
+  
+##### Summary
+
+Pins the given edges of the view using the specified type of relation to the corresponding margins of another view with the insets and priority of the constraints.
+
+##### Declaration
+
+```swift
+func pinEdges(_ edges: [ESLEdge] = ESLEdge.all, usingRelation relation: NSLayoutRelation = .equal, toSameEdgesOfView anotherView: UIView, withInsets insets: UIEdgeInsets = .zero, priority: UILayoutPriority = .required)
+```
+
+##### Discussion
+
+- This method is intended to pin multiple edges, it is not recommended to use it for a single one. For these purposes, `pinEdge(_:usingRelation:toSameEdgeOfView:withInset:priority:)` would be a better approach.
+
+- If you don’t need to customize the insets based on the edge, use `pinEdges(_:toSameEdgesOfView:withInset:relation:priority:)`.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edges  | `[ESLEdge]` | The edges of this view to pin.
+relation | `NSLayoutRelation` | The type of relationship for the constraints.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+insets | `UIEdgeInsets` | The insets beetween the edges of this view and corresponding edges of another view.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary><code>pinEdges(_:usingRelation:toSameEdgesOfView:withInset:priority:)</code></summary>
+  
+##### Summary
+
+Pins the given edges of the view using the specified type of relation to the corresponding margins of another view with the equal insets and priority of the constraints.
+
+##### Declaration
+
+```swift
+func pinEdges(_ edges: [ESLEdge] = ESLEdge.all, usingRelation relation: NSLayoutRelation = .equal, toSameEdgesOfView anotherView: UIView, withInset inset: CGFloat, priority: UILayoutPriority = .required)
+```
+
+##### Discussion
+
+- This method is intended to pin multiple edges, it is not recommended to use it for a single one. For these purposes, `pinEdge(_:usingRelation:toSameEdgeOfView:withInset:priority:)` would be a better approach.
+
+- If you don’t need to customize the insets based on the edge, use `pinEdges(_:toSameEdgesOfView:withInset:relation:priority:)`.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+Another view must be in the same view hierarchy as this view.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+edges  | `[ESLEdge]` | The edges of this view to pin.
+relation | `NSLayoutRelation` | The type of relationship for the constraints.
+anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
+insets | `CGFloat` | The inset beetween the edges of this view and corresponding edges of another view.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Declared In
+[UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
+
+</details>
+
+<details>
+<summary><code>pinEdges(ofGroup:usingRelation:toSameEdgesOfView:withInset:priority:)</code></summary>
+  
+##### Summary
+
+Pins edges of the view of the given group using the specified type of relation to the corresponding margins of another view with the equal insets and priority of the constraints.
+
+##### Declaration
+
+```swift
+func pinEdges(ofGroup edgeGroup: ESLEdgeGroup, usingRelation relation: NSLayoutRelation = .equal, toSameEdgesOfView anotherView: UIView, withInset inset: CGFloat, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
@@ -492,12 +605,11 @@ Another view must be in the same view hierarchy as this view.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-edge  | `ESLEdge` | The edge of this view to pin.
+edgeGroup  | `ESLEdgeGroup` | The group of edges of this view to pin to.
+relation | `NSLayoutRelation` | The type of relationship for the constraints.
 anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
-inset | `CGFloat` | Inset between edge of this view and edge of another view.
-
-##### Returns
-`self`  with attribute  `@discardableResult`.
+insets | `CGFloat` | The inset beetween the edges of this view and corresponding edges of another view.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
@@ -505,22 +617,22 @@ inset | `CGFloat` | Inset between edge of this view and edge of another view.
 </details>
 
 <details>
-<summary><code>pinEdges(_:toSameEdgesOfView:withInsets:)</code></summary>
+<summary><code>pinEdges(usingRelation:toSameEdgesOfView:withInsets:priority:excludingEdge:)</code></summary>
   
 ##### Summary
 
-Pins the given edges of the view to the corresponding margins of another view with insets.
+Pins the edges of the view using the specified type of relation to the corresponding margins of another view with the insets and priority of the constraints, excluding one edge
 
 ##### Declaration
 
 ```swift
-func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  anotherView: UIView, withInsets  insets: UIEdgeInsets = .zero) -> Self
+func pinEdges(usingRelation relation: NSLayoutRelation = .equal, toSameEdgesOfView anotherView: UIView, withInsets insets: UIEdgeInsets = .zero, excludingEdge excludedEdge: ESLEdge, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
 
-- This method is intended to pin multiple edges, it is not recommended to use it for a single edge. For these purposes, `pinEdge(_:toSameEdgeOfView:withInset:)` would be a better approach.
-
+- If you don’t need to customize the inset based on the edge, use `pinEdges(usingRelation:toSameEdgesOfView:withInset:excludingEdge:priority:)`.
+- 
 - To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
 
 ##### Precondition
@@ -531,12 +643,11 @@ Another view must be in the same view hierarchy as this view.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-edges  | `[ESLEdge]` | The edges of this view to pin.
+relation | `NSLayoutRelation` | The type of relationship for the constraints.
 anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
-insets | `UIEdgeInsets` | Insets between edges of this view and corresponding edges of another view
-
-##### Returns
-`self`  with attribute  `@discardableResult`.
+insets | `UIEdgeInsets` | The insets beetween the edges of this view and corresponding edges of another view.
+excludedEdge | `ESLEdge` | The edge to be ingored and not pinned.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)
@@ -544,24 +655,22 @@ insets | `UIEdgeInsets` | Insets between edges of this view and corresponding ed
 </details>
 
 <details>
-<summary><code>pinEdges(_:toSameEdgesOfView:withInset:)</code></summary>
+<summary><code>pinEdges(usingRelation:toSameEdgesOfView:withInset:priority:excludingEdge:)</code></summary>
   
 ##### Summary
 
-Pins the given edges of the view to the corresponding margins of another view with equal inset.
+Pins the edges of the view using the specified type of relation to the corresponding margins of another view with the equal inset and priority of the constraints, excluding one edge.
 
 ##### Declaration
 
 ```swift
-func  pinEdges(_  edges: [ESLEdge] = ESLEdge.all, toSameEdgesOfView  anotherView: UIView, withInset  inset: CGFloat) -> Self
+func pinEdges(usingRelation relation: NSLayoutRelation = .equal, toSameEdgesOfView anotherView: UIView, withInset inset: CGFloat, excludingEdge excludedEdge: ESLEdge, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
 
-- This method is intended to pin multiple edges, it is not recommended to use it for a single one. For these purposes, `pinEdge(_:toSameEdgeOfView:withInset:)` would be a better approach.
-
-- If you want to customize inset based on edge, use `pinEdges(_:toSameEdgesOfView:withInsets:)`.
-
+- If you don’t need to customize the inset based on the edge, use `pinEdges(usingRelation:toSameEdgesOfView:withInset:excludingEdge:priority:)`.
+- 
 - To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
 
 ##### Precondition
@@ -572,12 +681,11 @@ Another view must be in the same view hierarchy as this view.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-edges  | `[ESLEdge]` | The edges of this view to pin.
+relation | `NSLayoutRelation` | The type of relationship for the constraints.
 anotherView | `NSLayoutYAxisAnchor` | Another view to pin to.
-insets | `CGFloat` | Inset between edges of this view and corresponding edges of another view
-
-##### Returns
-`self`  with attribute  `@discardableResult`.
+inset | `CGFloat` | The inset beetween the edges of this view and corresponding edges of another view.
+excludedEdge | `ESLEdge` | The edge to be ingored and not pinned.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Pin.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Pin.swift)

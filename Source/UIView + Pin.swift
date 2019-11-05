@@ -315,7 +315,7 @@ public extension UIView {
     
     /// Pins the edges of the view using the specified type of relation to
     /// the corresponding margins of another view with the equal inset and
-    /// priority of the constraints, excluding one edge
+    /// priority of the constraints, excluding one edge.
     ///
     /// 1. If you don't need to customize the inset based on the edge, use
     /// `pinEdges(usingRelation:toSameEdgesOfView:withInset:excludingEdge:priority:)`.
