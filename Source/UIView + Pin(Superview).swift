@@ -34,7 +34,7 @@ public extension UIView {
     ///
     /// 2. Use this method only if you want to pin the edge of the view to the
     /// opposite margin of its superview, in other cases
-    /// `pinEdgeToSuperview(_:usingRelation:withInset:priority:) would be a better
+    /// `pinEdgeToSuperview(_:usingRelation:withInset:priority:)` would be a better
     /// approach.
     ///
     /// 3. To make Auto-Layout works properly, it automatically sets view's
@@ -151,7 +151,7 @@ public extension UIView {
     /// - Precondition: The view should have the superview, otherwise this method
     /// will have no effect.
     ///
-    /// - Parameter edgeGroup: The group of edges of this view to pin to.
+    /// - Parameter group: The group of edges of this view to pin to.
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter inset: The inset beetween the edges of this view and
     /// corresponding edges of its superview.
@@ -169,12 +169,9 @@ public extension UIView {
     
     /// Pins the edges of the view using the specified type of relation to
     /// the corresponding margins of its superview with the insets and priority of
-    /// the constraints, excluding one edge
+    /// the constraints, excluding one edge.
     ///
-    /// 1. If you don't need to customize the inset based on the edge, use
-    /// `pinEdgesToSuperview(usingRelation:withInset:excludingEdge:priority:)`.
-    ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -204,12 +201,9 @@ public extension UIView {
     
     /// Pins the edges of the view using the specified type of relation to
     /// the corresponding margins of its superview with the equal inset and
-    /// priority of the constraints, excluding one edge
+    /// priority of the constraints, excluding one edge.
     ///
-    /// 1. If you don't need to customize the inset based on the edge, use
-    /// `pinEdgesToSuperview(usingRelation:withInset:excludingEdge:priority:)`.
-    ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: The view should have the superview, otherwise this method
