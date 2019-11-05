@@ -951,16 +951,16 @@ priority | `UILayoutPriority` | The priority of the constraint.
 #### Center Methods
 
 <details>
-<summary><code>centerInView(_:withOffset:)</code></summary>
+<summary><code>centerInView(_:withOffset:priority:)</code></summary>
   
 ##### Summary
 
-Centers the view in the given view with offset.
+Centers the view in another view with the offset and priority of the constraint.
 
 ##### Declaration
 
 ```swift
-func  centerInView(_  anotherView: UIView, withOffset  offset: ESLOffset = .zero) -> Self
+func centerInView(_ anotherView: UIView, withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
@@ -975,12 +975,9 @@ Another view must be in the same view hierarchy as this view.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-anotherView | `UIView` | View to center in.
+anotherView | `UIView` | Another view to center in.
 offset | `ESLOffset` | Axis offset.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
@@ -988,16 +985,16 @@ offset | `ESLOffset` | Axis offset.
 </details>
 
 <details>
-<summary><code>centerInView(_:axis:withOffset:)</code></summary>
+<summary><code>centerInView(_:axis:withOffset:priority:)</code></summary>
   
 ##### Summary
 
-Centers the given axis of the view in another view with offset.
+Centers the axis of this view in another view with the offset and priority of the constraint.
 
 ##### Declaration
 
 ```swift
-func  centerInView(_  anotherView: UIView, axis: ESLAxis, withOffset  offset: CGFloat = .zero) -> Self
+func centerInView(_ anotherView: UIView, axis: ESLAxis, withOffset offset: CGFloat = .zero, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
@@ -1015,10 +1012,7 @@ Parameter  | Type | Description
 anotherView | `UIView` | View to center in.
 axis | `ESLAxis` | Axis to center
 offset | `ESLOffset` | Axis offset.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
@@ -1026,16 +1020,16 @@ offset | `ESLOffset` | Axis offset.
 </details>
 
 <details>
-<summary><code>centerInSuperview(_:withOffset:)</code></summary>
+<summary><code>centerInSuperview(_:withOffset:priority:)</code></summary>
   
 ##### Summary
 
-Centers the given axis of the view in its superview with offset.
+Centers the view in its superview view with the offset and priority of the constraint.
 
 ##### Declaration
 
 ```swift
-func  centerInSuperview(_  axis: ESLAxis, withOffset  offset: CGFloat = .zero) -> Self
+func centerInSuperview(withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required)
 ```
 
 ##### Discussion
@@ -1044,54 +1038,48 @@ To make Auto-Layout works properly, it automatically sets view's property `trans
 
 ##### Precondition
 
-View should have superview, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-axis | `ESLAxis` | Axis to center
-offset | `CGFloat` | Axis offset.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
-
-</details>
-
-<details>
-<summary><code>centerInSuperview(withOffset:)</code></summary>
-  
-##### Summary
-
-Centers the view in its superview with offset.
-
-##### Declaration
-
-```swift
-func  centerInSuperview(withOffset  offset: ESLOffset = .zero) -> Self
-```
-
-##### Discussion
-
-To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-View should have superview, otherwise this method will have no effect.
+The view should have the superview, otherwise this method will have no effect.
 
 ##### Parameters
 
 Parameter  | Type | Description
 ---------- | ---- |------------
 offset | `ESLOffset` | Axis offset.
+priority | `UILayoutPriority` | The priority of the constraint.
 
-##### Returns
+##### Declared In
+[UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
 
-`self`  with attribute  `@discardableResult`.
+</details>
+
+<details>
+<summary><code>centerInSuperview(_:withOffset:priority:)</code></summary>
+  
+##### Summary
+
+Centers the axis of this view in its superview with the offset and priority of the constraint.
+
+##### Declaration
+
+```swift
+func centerInSuperview(_ axis: ESLAxis, withOffset offset: CGFloat = .zero, priority: UILayoutPriority = .required)
+```
+
+##### Discussion
+
+To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Precondition
+
+The view should have the superview, otherwise this method will have no effect.
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+axis | `ESLAxis` | Axis to center.
+offset | `CGFloat | Axis offset.
+priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Declared In
 [UIView + Center.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Center.swift)
