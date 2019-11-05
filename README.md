@@ -310,7 +310,7 @@ Sets the dimensions of the view using the specified type of relation to the give
 ##### Declaration
 
 ```swift
-func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority) -> Self
+func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
