@@ -617,7 +617,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>pinEdges(usingRelation:toSameEdgesOfView:withInsets:priority:excludingEdge:)</code></summary>
+<summary><code>pinEdges(usingRelation:toSameEdgesOfView:withInsets:excludingEdge:priority:)</code></summary>
   
 ##### Summary
 
@@ -655,7 +655,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>pinEdges(usingRelation:toSameEdgesOfView:withInset:priority:excludingEdge:)</code></summary>
+<summary><code>pinEdges(usingRelation:toSameEdgesOfView:withInset:excludingEdge:priority:)</code></summary>
   
 ##### Summary
 
@@ -879,7 +879,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>pinEdgesToSuperview(usingRelation:withInsets:priority::excludingEdge:)</code></summary>
+<summary><code>pinEdgesToSuperview(usingRelation:withInsets:excludingEdge:priority:)</code></summary>
   
 ##### Summary
 
