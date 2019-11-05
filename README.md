@@ -739,7 +739,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>pinEdgeToSuperview(_:usingRelation:withInset:priority)</code></summary>
+<summary><code>pinEdgeToSuperview(_:usingRelation:withInset:priority:)</code></summary>
   
 ##### Summary
 
