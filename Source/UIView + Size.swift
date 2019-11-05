@@ -100,7 +100,7 @@ public extension UIView {
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter size: The size to set this view's width to.
+    /// - Parameter size: The size to set this view's height to.
     /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
@@ -133,7 +133,7 @@ public extension UIView {
     /// have no effect.
     ///
     /// - Parameter relation: The type of relationship for constraint.
-    /// - Parameter size: The size to set this view's width to.
+    /// - Parameter size: The size to set this view's height to.
     /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
@@ -214,11 +214,12 @@ public extension UIView {
     /// specified type of relation to the given size with the priority of the
     /// constraint.
     ///
-    /// 1. Constraints the height and width anchor using `NSLayoutConstraint`.
+    /// 1. Constraints the height and width anchor using `NSLayoutConstraint`
+    /// to match square size.
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Precondition: Pass size greater than zero, otherwise this method will
+    /// - Precondition: Pass side greater than zero, otherwise this method will
     /// have no effect.
     ///
     /// - Parameter relation: The type of relationship for constraint.
