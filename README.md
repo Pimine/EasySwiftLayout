@@ -269,7 +269,7 @@ Sets the dimensions of the view to the given size with the priority of the const
 ##### Declaration
 
 ```swift
-func size(_ size: CGSize, priority: UILayoutPriority) -> Self
+func size(_ size: CGSize, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
