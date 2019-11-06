@@ -25,7 +25,7 @@
 
 import Foundation
 
-extension UIView {
+public extension UIView {
     
     @available(*, deprecated, renamed: "pinEdgesToSuperview(ofGroup:usingRelation:withInset:priority:)")
     func pinHorizontalEdgesToSuperview(withInset inset: CGFloat = .zero) {
