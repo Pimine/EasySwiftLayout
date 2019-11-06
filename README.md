@@ -342,7 +342,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>size(toSquareWithSide:priority:)</code></summary>
+<summary><code>size(_:toSquareWithSide:priority:)</code></summary>
   
 ##### Summary
 
@@ -351,7 +351,7 @@ Sets the dimensions of the view to a square with the side using the specified ty
 ##### Declaration
 
 ```swift
-func size(relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self
+func size(_ relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
