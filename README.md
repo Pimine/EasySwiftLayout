@@ -351,7 +351,7 @@ Sets the dimensions of the view to a square with the side using the specified ty
 ##### Declaration
 
 ```swift
-func size(relation: NSLayoutRelation, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self
+func size(relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion

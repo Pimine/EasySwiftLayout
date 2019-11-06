@@ -229,7 +229,10 @@ public extension UIView {
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
-    func size(relation: NSLayoutRelation, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self {
+    func size(
+        relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat,
+        priority: UILayoutPriority = .required
+    ) -> Self {
         guard side != .zero else { return self }
         size(relation, to: CGSize(width: side, height: side), priority: priority)
         return self
