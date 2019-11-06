@@ -230,7 +230,7 @@ public extension UIView {
     ///
     @discardableResult
     func size(
-        relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat,
+        _ relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat,
         priority: UILayoutPriority = .required
     ) -> Self {
         guard side != .zero else { return self }
