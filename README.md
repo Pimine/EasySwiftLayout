@@ -138,7 +138,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>width(_:size:priority:)</code></summary>
+<summary><code>width(_:to:priority:)</code></summary>
   
 ##### Summary
 
@@ -219,7 +219,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>height(_:size:priority:)</code></summary>
+<summary><code>height(_:to:priority:)</code></summary>
   
 ##### Summary
 
@@ -301,7 +301,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>size(_:size:priority:)</code></summary>
+<summary><code>size(_:to:priority:)</code></summary>
   
 ##### Summary
 
