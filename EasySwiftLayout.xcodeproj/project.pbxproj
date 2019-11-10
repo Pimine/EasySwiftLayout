@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		B71AD508236EE37300C5AE64 /* ESLEdgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */; };
+		B74F8CB62378292C00C67F28 /* UIEdgeInsets + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F8CB52378292C00C67F28 /* UIEdgeInsets + Helpers.swift */; };
 		B784771A234B37DD002386DC /* EasySwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */; };
 		B784771C234B37DD002386DC /* EasySwiftLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */; };
 		B7B0692C230B17BA00CB6386 /* UIView + Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0692B230B17BA00CB6386 /* UIView + Size.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdgeGroup.swift; sourceTree = "<group>"; };
+		B74F8CB52378292C00C67F28 /* UIEdgeInsets + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets + Helpers.swift"; sourceTree = "<group>"; };
 		B7847717234B37DD002386DC /* EasySwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasySwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasySwiftLayoutTests.swift; sourceTree = "<group>"; };
 		B784771B234B37DD002386DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		B72D35C0234A31FB00FD54B5 /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
+				B74F8CB823784CCD00C67F28 /* Helpers */,
 				B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */,
 				B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */,
 				B7B0692B230B17BA00CB6386 /* UIView + Size.swift */,
@@ -103,6 +106,14 @@
 				B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		B74F8CB823784CCD00C67F28 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B74F8CB52378292C00C67F28 /* UIEdgeInsets + Helpers.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		B7847718234B37DD002386DC /* EasySwiftLayoutTests */ = {
@@ -138,9 +149,9 @@
 			children = (
 				B72D35C2234A321C00FD54B5 /* Shared */,
 				B72D35C0234A31FB00FD54B5 /* Extenstions */,
+				B7E52713236EFE0C006760A0 /* Deprecated.swift */,
 				B7B6606522FF122B006FDD7E /* EasySwiftLayout.h */,
 				B7B6606622FF122B006FDD7E /* Info.plist */,
-				B7E52713236EFE0C006760A0 /* Deprecated.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 			files = (
 				B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */,
 				B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */,
+				B74F8CB62378292C00C67F28 /* UIEdgeInsets + Helpers.swift in Sources */,
 				B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */,
 				B71AD508236EE37300C5AE64 /* ESLEdgeGroup.swift in Sources */,
 				B7B6606F22FF1289006FDD7E /* ESLOffset.swift in Sources */,
@@ -497,7 +509,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -507,7 +519,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -524,7 +536,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -534,7 +546,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

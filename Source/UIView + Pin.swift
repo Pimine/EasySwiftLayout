@@ -99,18 +99,19 @@ public extension UIView {
     ///     - Pin edges with same axis or method will throw fatal error.
     ///
     /// - Parameter edge: The edge of this view to pin.
-    /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter pinningEdge: The edge of another view to pin to.
     /// - Parameter anotherView: Another view to pin to.
     /// - Parameter inset: The inset between the edge of this view and the edge of
     /// another view.
+    /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
     func pinEdge(
         _ edge: ESLEdge,
-        usingRelation relation: NSLayoutRelation = .equal,
-        toEdge pinningEdge: ESLEdge, ofView anotherView: UIView,
+        toEdge pinningEdge: ESLEdge,
+        ofView anotherView: UIView,
         withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         translatesAutoresizingMaskIntoConstraints = false
@@ -130,88 +131,90 @@ public extension UIView {
     /// the constraint.
     ///
     /// To make Auto-Layout works properly, it automatically sets view's property
-    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
     /// view.
     ///
     /// - Parameter edge: The edge of this view to pin to.
-    /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter anotherView: Another view to pin to.
     /// - Parameter inset: The inset beetween the edge of this view and the
     /// corresponding edge of another view.
+    /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
     func pinEdge(
         _ edge: ESLEdge,
-        usingRelation relation: NSLayoutRelation = .equal,
         toSameEdgeOfView anotherView: UIView,
         withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
-        pinEdge(edge, usingRelation: relation, toEdge: edge, ofView: anotherView, withInset: inset, priority: priority)
+        pinEdge(edge,
+            toEdge: edge, ofView: anotherView,
+            withInset: inset,
+            usingRelation: relation,
+            priority: priority
+        )
     }
     
     /// Pins the given edges of the view using the specified type of relation to
     /// the corresponding margins of another view with the insets and priority of
     /// the constraints.
     ///
-    /// 1. This method is intended to pin multiple edges, it is not recommended to
-    /// use it for a single one. For these purposes,
-    /// `pinEdge(_:usingRelation:toSameEdgeOfView:withInset:priority:)` would be a
-    /// better approach.
+    /// 1. If you don't need to customize the insets based on the edge, use
+    /// [pinEdges(_:toSameEdgesOfView:withInset:relation:priority:)](x-source-tag://toSameEdgesOfView_inset).
     ///
-    /// 2. If you don't need to customize the insets based on the edge, use
-    /// `pinEdges(_:toSameEdgesOfView:withInset:relation:priority:)`.
-    ///
-    /// 3. To make Auto-Layout works properly, it automatically sets view's
-    /// property`translatesAutoresizingMaskIntoConstraints` to `false`
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
     /// view.
     ///
     /// - Parameter edges: The edges of this view to pin to.
-    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter anotherView: Another view to pin to.
     /// - Parameter insets: The insets beetween the edges of this view and
     /// corresponding edges of another view.
+    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Tag: toSameEdgesOfView_insets
     ///
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
-        usingRelation relation: NSLayoutRelation = .equal,
         toSameEdgesOfView anotherView: UIView,
         withInsets insets: UIEdgeInsets = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         for edge in edges {
             switch edge {
             case .left:
                 pinEdge(.left,
-                    usingRelation: relation,
                     toSameEdgeOfView: anotherView,
                     withInset: insets.left,
+                    usingRelation: relation,
                     priority: priority
                 )
             case .right:
                 pinEdge(.right,
-                    usingRelation: relation,
                     toSameEdgeOfView: anotherView,
                     withInset: insets.left,
+                    usingRelation: relation,
                     priority: priority
                 )
             case .top:
                 pinEdge(.top,
-                    usingRelation: relation,
                     toSameEdgeOfView: anotherView,
                     withInset: insets.left,
+                    usingRelation: relation,
                     priority: priority
                 )
             case .bottom:
                 pinEdge(.bottom,
-                    usingRelation: relation,
                     toSameEdgeOfView: anotherView,
                     withInset: insets.left,
+                    usingRelation: relation,
                     priority: priority
                 )
             }
@@ -222,125 +225,144 @@ public extension UIView {
     /// the corresponding margins of another view with the equal insets and
     /// priority of the constraints.
     ///
-    /// 1. This method is intended to pin multiple edges, it is not recommended to
-    /// use it for a single one. For these purposes,
-    /// `pinEdge(_:usingRelation:toSameEdgeOfView:withInset:priority:)` would be a
-    /// better approach.
+    /// 1. If you need to customize the insets based on the edge, use
+    /// [pinEdges(_:toSameEdgesOfView:withInsets:relation:priority:)](x-source-tag://toSameEdgesOfView_insets).
     ///
-    /// 2. If you don't need to customize the insets based on the edge, use
-    /// `pinEdges(_:toSameEdgesOfView:withInset:relation:priority:)`.
-    ///
-    /// 3. To make Auto-Layout works properly, it automatically sets view's
-    /// property`translatesAutoresizingMaskIntoConstraints` to `false`
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property`translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
     /// view.
     ///
     /// - Parameter edges: The edges of this view to pin to.
-    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter anotherView: Another view to pin to.
     /// - Parameter inset: The inset beetween the edges of this view and
     /// corresponding edges of another view.
+    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Tag: toSameEdgesOfView_inset
     ///
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
-        usingRelation relation: NSLayoutRelation = .equal,
         toSameEdgesOfView anotherView: UIView,
         withInset inset: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
-        let insets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-        pinEdges(edges, usingRelation: relation, toSameEdgesOfView: anotherView, withInsets: insets, priority: priority)
+        pinEdges(edges,
+             toSameEdgesOfView: anotherView,
+             withInsets: UIEdgeInsets(inset: inset),
+             usingRelation: relation,
+             priority: priority
+        )
     }
     
     /// Pins edges of the view of the given group using the specified type of
     /// relation to the corresponding margins of another view with the equal
     /// insets and priority of the constraints.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's
-    /// property`translatesAutoresizingMaskIntoConstraints` to `false`
+    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
     /// view.
     ///
     /// - Parameter edgeGroup: The group of edges of this view to pin to.
-    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter anotherView: Another view to pin to.
     /// - Parameter inset: The inset beetween the edges of this view and
     /// corresponding edges of another view.
+    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
     func pinEdges(
         ofGroup edgeGroup: ESLEdgeGroup,
-        usingRelation relation: NSLayoutRelation = .equal,
         toSameEdgesOfView anotherView: UIView,
         withInset inset: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
-        pinEdges(edgeGroup.edges, usingRelation: relation, toSameEdgesOfView: anotherView, withInset: inset, priority: priority)
+        pinEdges(edgeGroup.edges,
+             toSameEdgesOfView: anotherView,
+             withInset: inset,
+             usingRelation: relation,
+             priority: priority
+        )
     }
     
     
-    /// Pins the edges of the view using the specified type of relation to
-    /// the corresponding margins of another view with the insets and priority of
-    /// the constraints, excluding one edge
+    /// Pins the edges of the view using the specified type of relation to the
+    /// corresponding margins of another view with the insets and priority of the
+    /// constraints, excluding one edge.
     ///
-    /// 1. If you don't need to customize the inset based on the edge, use
-    /// `pinEdges(usingRelation:toSameEdgesOfView:withInset:excludingEdge:priority:)`.
+    /// 1. If you don't need to customize the insets based on the edge, use
+    /// [pinEdges(toSameEdgesOfView:excludingEdge:withInset:usingRelation:priority:)](x-source-tag://excludingEdge_inset).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
-    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
     /// view.
     ///
-    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter anotherView: Another view to pin to.
+    /// - Parameter excludedEdge: The edge to be ingored and not pinned.
     /// - Parameter insets: The insets beetween the edges of this view and
     /// corresponding edges of another view.
-    /// - Parameter excludedEdge: The edge to be ingored and not pinned.
+    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Tag: excludingEdge_insets
+    ///
     func pinEdges(
-        usingRelation relation: NSLayoutRelation = .equal,
         toSameEdgesOfView anotherView: UIView,
-        withInsets insets: UIEdgeInsets = .zero,
         excludingEdge excludedEdge: ESLEdge,
+        withInsets insets: UIEdgeInsets = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         let edges = ESLEdge.all.filter { $0 != excludedEdge }
-        pinEdges(edges, usingRelation: relation, toSameEdgesOfView: anotherView, withInsets: insets, priority: priority)
+        pinEdges(edges,
+             toSameEdgesOfView: anotherView,
+             withInsets: insets,
+             usingRelation: relation,
+             priority: priority
+        )
     }
     
-    /// Pins the edges of the view using the specified type of relation to
-    /// the corresponding margins of another view with the equal inset and
-    /// priority of the constraints, excluding one edge.
+    /// Pins the edges of the view using the specified type of relation to the
+    /// corresponding margins of another view with the equal inset and priority of
+    /// the constraints, excluding one edge.
     ///
-    /// 1. If you don't need to customize the inset based on the edge, use
-    /// `pinEdges(usingRelation:toSameEdgesOfView:withInset:excludingEdge:priority:)`.
+    /// 1. If you need to customize the inset based on the edge, use
+    /// [pinEdges(toSameEdgesOfView:excludingEdge:withInsets:usingRelation:priority:)](x-source-tag://excludingEdge_insets).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
-    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
     /// view.
     ///
-    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter anotherView: Another view to pin to.
+    /// - Parameter excludedEdge: The edge to be ingored and not pinned.
     /// - Parameter inset: The inset beetween the edges of this view and
     /// corresponding edges of another view.
-    /// - Parameter excludedEdge: The edge to be ingored and not pinned.
+    /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Tag: excludingEdge_inset
+    ///
     func pinEdges(
-        usingRelation relation: NSLayoutRelation = .equal,
         toSameEdgesOfView anotherView: UIView,
-        withInset inset: CGFloat,
         excludingEdge excludedEdge: ESLEdge,
+        withInset inset: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
-        let edges = ESLEdge.all.filter { $0 != excludedEdge }
-        pinEdges(edges, usingRelation: relation, toSameEdgesOfView: anotherView, withInset: inset, priority: priority)
+        pinEdges(
+            toSameEdgesOfView: anotherView,
+            excludingEdge: excludedEdge,
+            withInsets: UIEdgeInsets(inset: inset),
+            usingRelation: relation, priority: priority
+        )
     }
 }
