@@ -74,7 +74,10 @@ public extension UIView {
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
-    func width(_ relation: NSLayoutRelation, to size: CGFloat, priority: UILayoutPriority = .required) -> Self {
+    func width(
+        _ relation: NSLayoutRelation, to size: CGFloat,
+        priority: UILayoutPriority = .required
+    ) -> Self {
         guard size != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -139,7 +142,10 @@ public extension UIView {
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
-    func height(_ relation: NSLayoutRelation, to height: CGFloat, priority: UILayoutPriority = .required) -> Self {
+    func height(
+        _ relation: NSLayoutRelation, to height: CGFloat,
+        priority: UILayoutPriority = .required
+    ) -> Self {
         guard height != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -199,7 +205,10 @@ public extension UIView {
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
-    func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority = .required) -> Self {
+    func size(
+        _ relation: NSLayoutRelation, to size: CGSize,
+        priority: UILayoutPriority = .required
+    ) -> Self {
         guard size != .zero else { return self }
         if size.height != 0 {
             height(relation, to: size.height)
