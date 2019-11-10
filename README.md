@@ -577,7 +577,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>pinEdges(ofGroup:toSameEdgesOfView:usingRelation:withInset:priority:)</code></summary>
+<summary><code>pinEdges(ofGroup:toSameEdgesOfView:withInset:usingRelation:priority:)</code></summary>
   
 ##### Summary
 
