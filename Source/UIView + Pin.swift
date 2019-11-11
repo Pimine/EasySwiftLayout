@@ -163,7 +163,7 @@ public extension UIView {
     /// the constraints.
     ///
     /// 1. If you don't need to customize the insets based on the edge, use
-    /// [pinEdges(_:toSameEdgesOfView:withInset:relation:priority:)](x-source-tag://toSameEdgesOfView_inset).
+    /// [pinEdges(_:toSameEdgesOfView:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfView_inset).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
@@ -226,7 +226,7 @@ public extension UIView {
     /// priority of the constraints.
     ///
     /// 1. If you need to customize the insets based on the edge, use
-    /// [pinEdges(_:toSameEdgesOfView:withInsets:relation:priority:)](x-source-tag://toSameEdgesOfView_insets).
+    /// [pinEdges(_:toSameEdgesOfView:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfView_insets).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property`translatesAutoresizingMaskIntoConstraints` to `false`.
