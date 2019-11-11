@@ -199,21 +199,21 @@ public extension UIView {
             case .right:
                 pinEdge(.right,
                     toSameEdgeOfView: anotherView,
-                    withInset: insets.left,
+                    withInset: insets.right,
                     usingRelation: relation,
                     priority: priority
                 )
             case .top:
                 pinEdge(.top,
                     toSameEdgeOfView: anotherView,
-                    withInset: insets.left,
+                    withInset: insets.top,
                     usingRelation: relation,
                     priority: priority
                 )
             case .bottom:
                 pinEdge(.bottom,
                     toSameEdgeOfView: anotherView,
-                    withInset: insets.left,
+                    withInset: insets.bottom,
                     usingRelation: relation,
                     priority: priority
                 )
