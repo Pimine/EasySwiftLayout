@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		B715FF0923EAEE21000395E6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7B6606622FF122B006FDD7E /* Info.plist */; };
 		B71AD508236EE37300C5AE64 /* ESLEdgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71AD507236EE37300C5AE64 /* ESLEdgeGroup.swift */; };
 		B74F8CB62378292C00C67F28 /* UIEdgeInsets + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F8CB52378292C00C67F28 /* UIEdgeInsets + Helpers.swift */; };
 		B76960B123E2E5B50034ED31 /* ESLSuperviewGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76960B023E2E5B50034ED31 /* ESLSuperviewGuide.swift */; };
@@ -277,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B715FF0923EAEE21000395E6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +520,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -547,7 +549,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
 				DYLIB_COMPATIBILITY_VERSION = 1;
