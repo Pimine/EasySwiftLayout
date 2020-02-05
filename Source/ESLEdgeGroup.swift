@@ -25,7 +25,7 @@
 
 import Foundation
 
-@frozen public enum ESLEdgeGroup {
+public enum ESLEdgeGroup {
     
     //MARK: - Cases
     

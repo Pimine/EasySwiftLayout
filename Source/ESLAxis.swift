@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-@frozen public enum ESLAxis {
+public enum ESLAxis {
     
     //MARK: Cases
     
