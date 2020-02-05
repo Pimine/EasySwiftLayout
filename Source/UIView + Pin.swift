@@ -25,7 +25,7 @@
 
 public extension UIView {
     
-    //MARK: - Abstraction for default
+    // MARK: - Abstraction for default
     
     /// Pins the edges to the given `NSLayoutAxisAnchor`s with the insets and
     /// priority of the constraints.
@@ -82,7 +82,7 @@ public extension UIView {
         }
     }
     
-    //MARK: - Pin Methods
+    // MARK: - Pin Methods | Edge(s) to View
 
     /// Pins the edge of the view using the specified type of relation to the
     /// given edge of another view with the inset and priority of the constraint.
@@ -360,6 +360,147 @@ public extension UIView {
     ) {
         pinEdges(
             toSameEdgesOfView: anotherView,
+            excludingEdge: excludedEdge,
+            withInsets: UIEdgeInsets(inset: inset),
+            usingRelation: relation, priority: priority
+        )
+    }
+    
+    // MARK: - Pin Methods | Edge(s) to Guide
+    
+    func pinEdge(
+        _ edge: ESLEdge,
+        toEdge pinningEdge: ESLEdge,
+        ofGuide guide: ESLGuide,
+        withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let layoutGuide = guide.layoutGuide
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: edge.convertedToNSLayoutAttribute,
+            relatedBy: relation,
+            toItem: layoutGuide, attribute: pinningEdge.convertedToNSLayoutAttribute,
+            multiplier: 1.0, constant: inset * edge.directionalMultiplier
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+    }
+    
+    func pinEdge(
+        _ edge: ESLEdge,
+        toSameEdgeOfGuide guide: ESLGuide,
+        withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        pinEdge(edge,
+            toEdge: edge,
+            ofGuide: guide,
+            withInset: inset,
+            usingRelation: relation,
+            priority: priority
+        )
+    }
+    
+    func pinEdges(
+        _ edges: [ESLEdge] = ESLEdge.all,
+        toSameEdgesOfGuide guide: ESLGuide,
+        withInsets insets: UIEdgeInsets = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        for edge in edges {
+            switch edge {
+            case .left:
+                pinEdge(.left,
+                    toSameEdgeOfGuide: guide,
+                    withInset: insets.left,
+                    usingRelation: relation,
+                    priority: priority
+                )
+            case .right:
+                pinEdge(.right,
+                    toSameEdgeOfGuide: guide,
+                    withInset: insets.right,
+                    usingRelation: relation,
+                    priority: priority
+                )
+            case .top:
+                pinEdge(.top,
+                    toSameEdgeOfGuide: guide,
+                    withInset: insets.top,
+                    usingRelation: relation,
+                    priority: priority
+                )
+            case .bottom:
+                pinEdge(.bottom,
+                    toSameEdgeOfGuide: guide,
+                    withInset: insets.bottom,
+                    usingRelation: relation,
+                    priority: priority
+                )
+            }
+        }
+    }
+    
+    func pinEdges(
+        _ edges: [ESLEdge] = ESLEdge.all,
+        toSameEdgesOfGuide guide: ESLGuide,
+        withInset inset: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        pinEdges(edges,
+             toSameEdgesOfGuide: guide,
+             withInsets: UIEdgeInsets(inset: inset),
+             usingRelation: relation,
+             priority: priority
+        )
+    }
+    
+    func pinEdges(
+        ofGroup edgeGroup: ESLEdgeGroup,
+        toSameEdgesOfGuide guide: ESLGuide,
+        withInset inset: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        pinEdges(edgeGroup.edges,
+             toSameEdgesOfGuide: guide,
+             withInset: inset,
+             usingRelation: relation,
+             priority: priority
+        )
+    }
+    
+    func pinEdges(
+        toSameEdgesOfGuide guide: ESLGuide,
+        excludingEdge excludedEdge: ESLEdge,
+        withInsets insets: UIEdgeInsets = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        let edges = ESLEdge.all.filter { $0 != excludedEdge }
+        pinEdges(edges,
+             toSameEdgesOfGuide: guide,
+             withInsets: insets,
+             usingRelation: relation,
+             priority: priority
+        )
+    }
+    
+    func pinEdges(
+        toSameEdgesOfGuide guide: ESLGuide,
+        excludingEdge excludedEdge: ESLEdge,
+        withInset inset: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) {
+        pinEdges(
+            toSameEdgesOfGuide: guide,
             excludingEdge: excludedEdge,
             withInsets: UIEdgeInsets(inset: inset),
             usingRelation: relation, priority: priority

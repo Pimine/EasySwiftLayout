@@ -25,14 +25,14 @@
 
 import Foundation
 
-public enum ESLEdgeGroup {
+@frozen public enum ESLEdgeGroup {
     
     //MARK: - Cases
     
     case horizontal
     case vertical
     
-    //MARK: - Variables
+    //MARK: - Properties
     
     var edges: [ESLEdge] {
         switch self {

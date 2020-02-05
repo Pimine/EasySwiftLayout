@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name 		= 'EasySwiftLayout'
-  s.version 		= '1.2.2'
+  s.version 		= '1.3.0'
   s.license 		= 'MIT'
   s.summary 		= 'Lightweight Swift framework for Auto-Layout. Helps you write readable and compact UI code using simple API.'
   s.homepage 		= 'https://github.com/denandreychuk/EasySwiftLayout'

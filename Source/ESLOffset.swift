@@ -23,16 +23,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-public struct ESLOffset {
+@frozen public struct ESLOffset {
     
-    //MARK: - Variables
+    //MARK: - Properties
     
     public let x: CGFloat
     public let y: CGFloat
     
     public static let zero = ESLOffset(x: 0, y: 0)
     
-    //MARK: Life Cycle
+    //MARK: - Initialization
     
     public init(x: CGFloat, y: CGFloat) {
         self.x = x

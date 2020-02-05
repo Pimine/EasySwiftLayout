@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import EasySwiftLayout
 
 class EasySwiftLayoutTests: XCTestCase {
 
@@ -19,8 +20,19 @@ class EasySwiftLayoutTests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let viewController = UIViewController()
+        print(viewController.view.frame)
+        
+        
+        let anotherView = UIView()
+        viewController.view.addSubview(anotherView)
+        anotherView.pin(bottomTo: viewController.view.safeAreaLayoutGuide.bottomAnchor)
+        //anotherView.pinEdge(.bottom, toEdge: .bottom, ofGuide: .safeArea(of: viewController.view))
+        anotherView.pinEdgesToSuperview(excludingEdge: .bottom)
+        
+        anotherView.layoutIfNeeded()
+        
+        print(anotherView.frame)
     }
 
     func testPerformanceExample() {

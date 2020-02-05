@@ -56,17 +56,31 @@ public extension UIView {
         _ edge: ESLEdge,
         toSuperviewEdge superviewEdge: ESLEdge,
         withInset inset: CGFloat = .zero,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         guard let superview = superview else { return }
-        pinEdge(edge,
-            toEdge: superviewEdge,
-            ofView: superview,
-            withInset: inset,
-            usingRelation: relation,
-            priority: priority
-        )
+        
+        switch guide {
+        case .none:
+            pinEdge(edge,
+               toEdge: superviewEdge,
+               ofView: superview,
+               withInset: inset,
+               usingRelation: relation,
+               priority: priority
+            )
+        default:
+            let guide = guide.convertedToESLGuide(superview: superview)!
+            pinEdge(edge,
+                toEdge: superviewEdge,
+                ofGuide: guide,
+                withInset: inset,
+                usingRelation: relation,
+                priority: priority
+            )
+        }
     }
     
     /// Pins the given edge of the view using the specified type of relation to
@@ -90,16 +104,29 @@ public extension UIView {
     func pinEdgeToSuperview(
         _ edge: ESLEdge,
         withInset inset: CGFloat = .zero,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         guard let superview = superview else { return }
-        pinEdge(edge,
-            toSameEdgeOfView: superview,
-            withInset: inset,
-            usingRelation: relation,
-            priority: priority
-        )
+        
+        switch guide {
+        case .none:
+            pinEdge(edge,
+               toSameEdgeOfView: superview,
+               withInset: inset,
+               usingRelation: relation,
+               priority: priority
+            )
+        default:
+            let guide = guide.convertedToESLGuide(superview: superview)!
+            pinEdge(edge,
+                toSameEdgeOfGuide: guide,
+                withInset: inset,
+                usingRelation: relation,
+                priority: priority
+            )
+        }
     }
     
     /// Pins the given edges of the view using the specified type of relation to
@@ -126,16 +153,29 @@ public extension UIView {
     func pinEdgesToSuperview(
         _ edges: [ESLEdge] = ESLEdge.all,
         withInsets insets: UIEdgeInsets = .zero,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         guard let superview = superview else { return }
-        pinEdges(edges,
-           toSameEdgesOfView: superview,
-           withInsets: insets,
-           usingRelation: relation,
-           priority: priority
-        )
+        
+        switch guide {
+        case .none:
+            pinEdges(edges,
+               toSameEdgesOfView: superview,
+               withInsets: insets,
+               usingRelation: relation,
+               priority: priority
+            )
+        default:
+            let guide = guide.convertedToESLGuide(superview: superview)!
+            pinEdges(edges,
+                toSameEdgesOfGuide: guide,
+                withInsets: insets,
+                usingRelation: relation,
+                priority: priority
+            )
+        }
     }
     
     /// Pins the given edges of the view using the specified type of relation to
@@ -162,11 +202,13 @@ public extension UIView {
     func pinEdgesToSuperview(
         _ edges: [ESLEdge] = ESLEdge.all,
         withInset inset: CGFloat,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         pinEdgesToSuperview(edges,
             withInsets: UIEdgeInsets(inset: inset),
+            respectingGuide: guide,
             usingRelation: relation,
             priority: priority
         )
@@ -192,14 +234,13 @@ public extension UIView {
     func pinEdgesToSuperview(
         ofGroup group: ESLEdgeGroup,
         withInset inset: CGFloat = .zero,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
-        guard let superview = superview else { return }
-        pinEdges(
-            ofGroup: group,
-            toSameEdgesOfView: superview,
+        pinEdgesToSuperview(group.edges,
             withInset: inset,
+            respectingGuide: guide,
             usingRelation: relation,
             priority: priority
         )
@@ -229,14 +270,15 @@ public extension UIView {
     func pinEdgesToSuperview(
         excludingEdge excludedEdge: ESLEdge,
         withInsets insets: UIEdgeInsets = .zero,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
-        guard let superview = superview else { return }
-        pinEdges(
-            toSameEdgesOfView: superview,
-            excludingEdge: excludedEdge,
+        let edges = ESLEdge.all.filter { $0 != excludedEdge }
+        
+        pinEdgesToSuperview(edges,
             withInsets: insets,
+            respectingGuide: guide,
             usingRelation: relation,
             priority: priority
         )
@@ -266,12 +308,14 @@ public extension UIView {
     func pinEdgesToSuperview(
         excludingEdge excludedEdge: ESLEdge,
         withInset inset: CGFloat,
+        respectingGuide guide: ESLSuperviewGuide = .none,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) {
         pinEdgesToSuperview(
             excludingEdge: excludedEdge,
             withInsets: UIEdgeInsets(inset: inset),
+            respectingGuide: guide,
             usingRelation: relation,
             priority: priority
         )
