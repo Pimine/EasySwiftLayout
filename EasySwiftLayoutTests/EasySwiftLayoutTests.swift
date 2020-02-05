@@ -20,19 +20,6 @@ class EasySwiftLayoutTests: XCTestCase {
     }
 
     func testExample() {
-        let viewController = UIViewController()
-        print(viewController.view.frame)
-        
-        
-        let anotherView = UIView()
-        viewController.view.addSubview(anotherView)
-        anotherView.pin(bottomTo: viewController.view.safeAreaLayoutGuide.bottomAnchor)
-        //anotherView.pinEdge(.bottom, toEdge: .bottom, ofGuide: .safeArea(of: viewController.view))
-        anotherView.pinEdgesToSuperview(excludingEdge: .bottom)
-        
-        anotherView.layoutIfNeeded()
-        
-        print(anotherView.frame)
     }
 
     func testPerformanceExample() {
