@@ -368,6 +368,26 @@ public extension UIView {
     
     // MARK: - Pin Methods | Edge(s) to Guide
     
+    /// Pins the edge of the view using the specified type of relation to the
+    /// given edge of guide with the inset and priority of the constraint.
+    ///
+    /// 1. Consider, accordingly to
+    /// [Apple's documentation](https://apple.co/2PFH9f2), you cannot pin edges
+    /// with different axis, otherwise it will throw fatal error.
+    ///
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Precondition: Pin edges with same axis or method will throw fatal error.
+    ///
+    /// - Parameter edge: The edge of this view to pin.
+    /// - Parameter pinningEdge: The edge of another view to pin to.
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter inset: The inset between the edge of this view and the edge of
+    /// guide.
+    /// - Parameter relation: The type of relationship for the constraint.
+    /// - Parameter priority: The priority of the constraint.
+    ///
     func pinEdge(
         _ edge: ESLEdge,
         toEdge pinningEdge: ESLEdge,
@@ -389,6 +409,20 @@ public extension UIView {
         constraint.isActive = true
     }
     
+    /// Pins the given edge of the view using the specified type of relation to
+    /// the corresponding margin of guide with the inset and priority of
+    /// the constraint.
+    ///
+    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`.
+    ///
+    /// - Parameter edge: The edge of this view to pin to.
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter inset: The inset beetween the edge of this view and the
+    /// corresponding edge of guide.
+    /// - Parameter relation: The type of relationship for the constraint.
+    /// - Parameter priority: The priority of the constraint.
+    ///
     func pinEdge(
         _ edge: ESLEdge,
         toSameEdgeOfGuide guide: ESLGuide,
@@ -405,6 +439,25 @@ public extension UIView {
         )
     }
     
+    /// Pins the given edges of the view using the specified type of relation to
+    /// the corresponding margins of guide with the insets and priority of
+    /// the constraints.
+    ///
+    /// 1. If you don't need to customize the insets based on the edge, use
+    /// [pinEdges(_:toSameEdgesOfGuide:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_inset).
+    ///
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
+    ///
+    /// - Parameter edges: The edges of this view to pin to.
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter insets: The insets beetween the edges of this view and
+    /// corresponding edges of guide.
+    /// - Parameter relation: The type of relationship for the constraints.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Tag: toSameEdgesOfGuide_insets
+    ///
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
         toSameEdgesOfGuide guide: ESLGuide,
@@ -446,6 +499,25 @@ public extension UIView {
         }
     }
     
+    /// Pins the given edges of the view using the specified type of relation to
+    /// the corresponding margins of guide with the equal insets and
+    /// priority of the constraints.
+    ///
+    /// 1. If you need to customize the insets based on the edge, use
+    /// [pinEdges(_:toSameEdgesOfGuide:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_insets).
+    ///
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property`translatesAutoresizingMaskIntoConstraints` to `false`.
+    ///
+    /// - Parameter edges: The edges of this view to pin to.
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter inset: The inset beetween the edges of this view and
+    /// corresponding edges of guide.
+    /// - Parameter relation: The type of relationship for the constraints.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Tag: toSameEdgesOfGuide_inset
+    ///
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
         toSameEdgesOfGuide guide: ESLGuide,
@@ -461,6 +533,21 @@ public extension UIView {
         )
     }
     
+    
+    /// Pins edges of the view of the given group using the specified type of
+    /// relation to the corresponding margins of guide with the equal
+    /// insets and priority of the constraints.
+    ///
+    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`.
+    ///
+    /// - Parameter edgeGroup: The group of edges of this view to pin to.
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter inset: The inset beetween the edges of this view and
+    /// corresponding edges of guide.
+    /// - Parameter relation: The type of relationship for the constraints.
+    /// - Parameter priority: The priority of the constraint.
+    ///
     func pinEdges(
         ofGroup edgeGroup: ESLEdgeGroup,
         toSameEdgesOfGuide guide: ESLGuide,
@@ -476,6 +563,25 @@ public extension UIView {
         )
     }
     
+    /// Pins the edges of the view using the specified type of relation to the
+    /// corresponding margins of guide with the insets and priority of the
+    /// constraints, excluding one edge.
+    ///
+    /// 1. If you don't need to customize the insets based on the edge, use
+    /// [pinEdges(toSameEdgesOfGuide:excludingEdge:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_excludingEdge_inset).
+    ///
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
+    ///
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter excludedEdge: The edge to be ingored and not pinned.
+    /// - Parameter insets: The insets beetween the edges of this view and
+    /// corresponding edges of guide.
+    /// - Parameter relation: The type of relationship for the constraints.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Tag: toSameEdgesOfGuide_excludingEdge_insets
+    ///
     func pinEdges(
         toSameEdgesOfGuide guide: ESLGuide,
         excludingEdge excludedEdge: ESLEdge,
@@ -492,6 +598,25 @@ public extension UIView {
         )
     }
     
+    /// Pins the edges of the view using the specified type of relation to the
+    /// corresponding margins of guide with the equal inset and priority of
+    /// the constraints, excluding one edge.
+    ///
+    /// 1. If you need to customize the inset based on the edge, use
+    /// [pinEdges(toSameEdgesOfView:excludingEdge:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_excludingEdge_insets).
+    ///
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
+    ///
+    /// - Parameter guide: The guide to pin to.
+    /// - Parameter excludedEdge: The edge to be ingored and not pinned.
+    /// - Parameter inset: The inset beetween the edges of this view and
+    /// corresponding edges of guide.
+    /// - Parameter relation: The type of relationship for the constraints.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Tag: toSameEdgesOfGuide_excludingEdge_inset
+    ///
     func pinEdges(
         toSameEdgesOfGuide guide: ESLGuide,
         excludingEdge excludedEdge: ESLEdge,

@@ -27,6 +27,7 @@ public extension UIView {
     
     /// Pins the edge of the view using the specified type of relation to the
     /// given edge of its superview with the inset and priority of the constraint.
+    /// Optionally respects one of pre-defined Apple's layout guides.
     ///
     /// 1. Consider, accordingly to
     /// [Apple's documentation](https://apple.co/2PFH9f2), you cannot pin edges
@@ -49,6 +50,7 @@ public extension UIView {
     /// - Parameter superviewEdge: The edge of its superview to pin to.
     /// - Parameter inset: The inset between the edge of this view and the edge of
     /// its superview.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -85,7 +87,8 @@ public extension UIView {
     
     /// Pins the given edge of the view using the specified type of relation to
     /// the corresponding margin of its superview with the inset and priority of
-    /// the constraint.
+    /// the constraint. Optionally respects one of pre-defined Apple's layout
+    /// guides.
     ///
     /// To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
@@ -96,6 +99,7 @@ public extension UIView {
     /// - Parameter edge: The edge of this view to pin.
     /// - Parameter inset: The inset beetween the edge of this view and the
     /// corresponding edge of its superview.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -131,7 +135,8 @@ public extension UIView {
     
     /// Pins the given edges of the view using the specified type of relation to
     /// the corresponding margins of its superview with the insets and priority of
-    /// the constraints.
+    /// the constraints. Optionally respects one of pre-defined Apple's layout
+    /// guides.
     ///
     /// 1. If you don't need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(_:withInset:usingRelation:priority:)](x-source-tag://superview_toSameEdgesOfView_inset).
@@ -145,6 +150,7 @@ public extension UIView {
     /// - Parameter edges: The edges of this view to pin.
     /// - Parameter insets: The insets beetween the edges of this view and the
     /// corresponding edges of its superview.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -180,7 +186,8 @@ public extension UIView {
     
     /// Pins the given edges of the view using the specified type of relation to
     /// the corresponding margins of its superview with the equal insets and
-    /// priority of the constraints.
+    /// priority of the constraints. Optionally respects one of pre-defined Apple's
+    /// layout guides.
     ///
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(_:withInsets:usingRelation:priority:)](x-source-tag://superview_toSameEdgesOfView_insets).
@@ -194,6 +201,7 @@ public extension UIView {
     /// - Parameter edges: The edges of this view to pin.
     /// - Parameter inset: The inset beetween the edges of this view and the
     /// corresponding edges of its superview.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -216,7 +224,8 @@ public extension UIView {
     
     /// Pins edges of the view of the given group using the specified type of
     /// relation to the corresponding margins of its superview with the equal
-    /// insets and priority of the constraints.
+    /// insets and priority of the constraints. Optionally respects one of
+    /// pre-defined Apple's layout guides.
     ///
     /// To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
@@ -225,9 +234,9 @@ public extension UIView {
     /// will have no effect.
     ///
     /// - Parameter group: The group of edges of this view to pin to.
-
     /// - Parameter inset: The inset beetween the edges of this view and
     /// corresponding edges of its superview.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -248,7 +257,8 @@ public extension UIView {
     
     /// Pins the edges of the view using the specified type of relation to the
     /// corresponding margins of its superview with the insets and priority of the
-    /// constraints, excluding one edge.
+    /// constraints, excluding one edge. Optionally respects one of pre-defined
+    /// Apple's layout guides.
     ///
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(excludingEdge:withInset:usingRelation:priority:)](x-source-tag://superview_excludingEdge_inset).
@@ -262,6 +272,7 @@ public extension UIView {
     /// - Parameter excludedEdge: The edge to be ingored and not pinned.
     /// - Parameter insets: The insets beetween the edges of this view and
     /// corresponding edges of another view.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -286,7 +297,8 @@ public extension UIView {
     
     /// Pins the edges of the view using the specified type of relation to the
     /// corresponding margins of its superview with the equal inset and priority
-    /// of the constraints, excluding one edge.
+    /// of the constraints, excluding one edge. Optionally respects one of
+    /// pre-defined Apple's layout guides.
     ///
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(excludingEdge:withInsets:usingRelation:priority:)](x-source-tag://superview_excludingEdge_insets).
@@ -300,6 +312,7 @@ public extension UIView {
     /// - Parameter excludedEdge: The edge to be ingored and not pinned.
     /// - Parameter inset: The inset beetween the edges of this view and
     /// corresponding edges of its superview.
+    /// - Parameter guide: The guide to respect in layout.
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
