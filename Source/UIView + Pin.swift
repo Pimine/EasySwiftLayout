@@ -378,9 +378,7 @@ public extension UIView {
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
-    /// - Precondition:
-    ///     - Another view must be in the same view hierarchy as this view.
-    ///     - Pin edges with same axis or method will throw fatal error.
+    /// - Precondition: Pin edges with same axis or method will throw fatal error.
     ///
     /// - Parameter edge: The edge of this view to pin.
     /// - Parameter pinningEdge: The edge of another view to pin to.
@@ -418,9 +416,6 @@ public extension UIView {
     /// To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
-    /// - Precondition: Another view must be in the same view hierarchy as this
-    /// view.
-    ///
     /// - Parameter edge: The edge of this view to pin to.
     /// - Parameter guide: The guide to pin to.
     /// - Parameter inset: The inset beetween the edge of this view and the
@@ -449,13 +444,10 @@ public extension UIView {
     /// the constraints.
     ///
     /// 1. If you don't need to customize the insets based on the edge, use
-    /// [pinEdges(_:toSameEdgesOfView:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_inset).
+    /// [pinEdges(_:toSameEdgesOfGuide:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_inset).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
-    ///
-    /// - Precondition: Another view must be in the same view hierarchy as this
-    /// view.
     ///
     /// - Parameter edges: The edges of this view to pin to.
     /// - Parameter guide: The guide to pin to.
@@ -512,13 +504,10 @@ public extension UIView {
     /// priority of the constraints.
     ///
     /// 1. If you need to customize the insets based on the edge, use
-    /// [pinEdges(_:toSameEdgesOfView:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_insets).
+    /// [pinEdges(_:toSameEdgesOfGuide:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_insets).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property`translatesAutoresizingMaskIntoConstraints` to `false`.
-    ///
-    /// - Precondition: Another view must be in the same view hierarchy as this
-    /// view.
     ///
     /// - Parameter edges: The edges of this view to pin to.
     /// - Parameter guide: The guide to pin to.
@@ -552,9 +541,6 @@ public extension UIView {
     /// To make Auto-Layout works properly, it automatically sets view's property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
-    /// - Precondition: Another view must be in the same view hierarchy as this
-    /// view.
-    ///
     /// - Parameter edgeGroup: The group of edges of this view to pin to.
     /// - Parameter guide: The guide to pin to.
     /// - Parameter inset: The inset beetween the edges of this view and
@@ -582,13 +568,10 @@ public extension UIView {
     /// constraints, excluding one edge.
     ///
     /// 1. If you don't need to customize the insets based on the edge, use
-    /// [pinEdges(toSameEdgesOfView:excludingEdge:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_excludingEdge_inset).
+    /// [pinEdges(toSameEdgesOfGuide:excludingEdge:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_excludingEdge_inset).
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
-    ///
-    /// - Precondition: Another view must be in the same view hierarchy as this
-    /// view.
     ///
     /// - Parameter guide: The guide to pin to.
     /// - Parameter excludedEdge: The edge to be ingored and not pinned.
@@ -624,9 +607,6 @@ public extension UIView {
     ///
     /// 2. To make Auto-Layout works properly, it automatically sets view's
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
-    ///
-    /// - Precondition: Another view must be in the same view hierarchy as this
-    /// view.
     ///
     /// - Parameter guide: The guide to pin to.
     /// - Parameter excludedEdge: The edge to be ingored and not pinned.
