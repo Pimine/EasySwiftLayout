@@ -23,39 +23,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+// MARK: - Size using constants
+
 public extension UIView {
-    
-    /// Sets the width of the view to the given size with the priority of
-    /// the constraint.
-    ///
-    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
-    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
-    ///
-    /// - Precondition: Pass size greater than zero, otherwise this method will
-    /// have no effect.
-    ///
-    /// - Parameter size: The size to set this view's width to.
-    /// - Parameter priority: The priority of the constraint.
-    ///
-    /// - Returns: `self` with attribute `@discardableResult`.
-    ///
-    @discardableResult
-    func width(_ size: CGFloat, priority: UILayoutPriority = .required) -> Self {
-        guard size != 0 else { return self }
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        let constraint = NSLayoutConstraint(
-            item: self, attribute: .width,
-            relatedBy: .equal,
-            toItem: nil, attribute: .notAnAttribute,
-            multiplier: 1.0, constant: size
-        )
-        constraint.priority = priority
-        constraint.isActive = true
-        
-        return self
-    }
     
     /// Sets the width of the view using the specified type of relation to the
     /// given size with the priority of the constraint.
@@ -67,15 +37,16 @@ public extension UIView {
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter size: The size to set this view's width to.
+    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
     func width(
-        _ relation: NSLayoutRelation, to size: CGFloat,
+        _ size: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         guard size != 0 else { return self }
@@ -83,41 +54,9 @@ public extension UIView {
         
         let constraint = NSLayoutConstraint(
             item: self, attribute: .width,
-            relatedBy: relation,
-            toItem: nil, attribute: .notAnAttribute,
-            multiplier: 1.0, constant: size
-        )
-        constraint.priority = priority
-        constraint.isActive = true
-        
-        return self
-    }
-    
-    /// Sets the height of the view to the given size with the priority of
-    /// the constraint.
-    ///
-    /// 1. Constraints the height anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
-    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
-    ///
-    /// - Precondition: Pass size greater than zero, otherwise this method will
-    /// have no effect.
-    ///
-    /// - Parameter size: The size to set this view's height to.
-    /// - Parameter priority: The priority of the constraint.
-    ///
-    /// - Returns: `self` with attribute `@discardableResult`.
-    ///
-    @discardableResult
-    func height(_ height: CGFloat, priority: UILayoutPriority = .required) -> Self {
-        guard height != 0 else { return self }
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        let constraint = NSLayoutConstraint(
-            item: self, attribute: .height,
             relatedBy: .equal,
             toItem: nil, attribute: .notAnAttribute,
-            multiplier: 1.0, constant: height
+            multiplier: 1.0, constant: size
         )
         constraint.priority = priority
         constraint.isActive = true
@@ -135,15 +74,16 @@ public extension UIView {
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter size: The size to set this view's height to.
+    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
     func height(
-        _ relation: NSLayoutRelation, to height: CGFloat,
+        _ height: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         guard height != 0 else { return self }
@@ -151,40 +91,13 @@ public extension UIView {
         
         let constraint = NSLayoutConstraint(
             item: self, attribute: .height,
-            relatedBy: relation,
+            relatedBy: .equal,
             toItem: nil, attribute: .notAnAttribute,
             multiplier: 1.0, constant: height
         )
         constraint.priority = priority
         constraint.isActive = true
         
-        return self
-    }
-    
-    /// Sets the dimensions of the view to the given size with the priority of
-    /// the constraint.
-    ///
-    /// 1. Constraints the height and width anchors using `NSLayoutConstraint`
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
-    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
-    ///
-    /// - Precondition: Pass size greater than zero, otherwise this method will
-    /// have no effect.
-    ///
-    /// - Parameter size: The size to set this view's dimensions to.
-    /// - Parameter priority: The priority of the constraint.
-    ///
-    /// - Returns: `self` with attribute `@discardableResult`.
-    ///
-    @discardableResult
-    func size(_ size: CGSize, priority: UILayoutPriority = .required) -> Self {
-        guard size != .zero else { return self }
-        if size.height != 0 {
-            height(size.height, priority: priority)
-        }
-        if size.width != 0 {
-            width(size.width, priority: priority)
-        }
         return self
     }
     
@@ -198,24 +111,20 @@ public extension UIView {
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter size: The size to set this view's dimensions to.
+    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
     func size(
-        _ relation: NSLayoutRelation, to size: CGSize,
+        _ size: CGSize,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard size != .zero else { return self }
-        if size.height != 0 {
-            height(relation, to: size.height)
-        }
-        if size.width != 0 {
-            width(relation, to: size.width)
-        }
+        height(size.height, priority: priority)
+        width(size.width, priority: priority)
         return self
     }
     
@@ -231,19 +140,96 @@ public extension UIView {
     /// - Precondition: Pass side greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter side: The side of the square to set this view's dimensions to.
+    /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
     @discardableResult
     func size(
-        _ relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat,
+        toSquareWithSide side: CGFloat,
+        usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard side != .zero else { return self }
-        size(relation, to: CGSize(width: side, height: side), priority: priority)
+        size(CGSize(width: side, height: side), usingRelation: relation, priority: priority)
+        return self
+    }
+}
+
+// MARK: - Size using another view
+
+public extension UIView {
+    
+    @discardableResult
+    func width(
+        to anotherView: UIView,
+        withPadding padding: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: .width,
+            relatedBy: relation,
+            toItem: anotherView, attribute: .width,
+            multiplier: 1.0, constant: padding
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+        
+        return self
+    }
+    
+    @discardableResult
+    func height(
+        to anotherView: UIView,
+        withPadding padding: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraint = NSLayoutConstraint(
+            item: self, attribute: .height,
+            relatedBy: relation,
+            toItem: anotherView, attribute: .height,
+            multiplier: 1.0, constant: padding
+        )
+        constraint.priority = priority
+        constraint.isActive = true
+        
+        return self
+    }
+    
+    @discardableResult
+    func size(
+        to anotherView: UIView,
+        withPadding padding: ESLPadding = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        width(to: anotherView, withPadding: padding.width, usingRelation: relation, priority: priority)
+        height(to: anotherView, withPadding: padding.height, usingRelation: relation, priority: priority)
+        
+        return self
+    }
+    
+    @discardableResult
+    func size(
+        to anotherView: UIView,
+        withPadding padding: CGFloat = .zero,
+        usingRelation relation: NSLayoutRelation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        size(
+            to: anotherView,
+            withPadding: ESLPadding(width: padding, height: padding),
+            usingRelation: relation,
+            priority: priority
+        )
+        
         return self
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ESLOffset.swift
+//  ESLPadding.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
@@ -23,19 +23,5 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-public struct ESLOffset {
-    
-    //MARK: - Properties
-    
-    public let x: CGFloat
-    public let y: CGFloat
-    
-    public static let zero = ESLOffset(x: 0, y: 0)
-    
-    //MARK: - Initialization
-    
-    public init(x: CGFloat, y: CGFloat) {
-        self.x = x
-        self.y = y
-    }
-}
+
+public typealias ESLPadding = CGSize
