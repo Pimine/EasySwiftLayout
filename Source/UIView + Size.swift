@@ -241,10 +241,10 @@ public extension UIView {
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Parameter anotherView: Another view to set this view size to.
-    /// - Parameter insets: The value to insets (or shrunk) the size. Negative
+    /// - Parameter insets: The values to inset (or shrunk) the size. Negative
     /// values cause the size to be outset (or expanded).
-    /// - Parameter relation: The type of relationship for constraint.
-    /// - Parameter priority: The priority of the constraint.
+    /// - Parameter relation: The type of relationship for constraints.
+    /// - Parameter priority: The priority of the constraints.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///
@@ -269,10 +269,10 @@ public extension UIView {
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Parameter anotherView: Another view to set this view size to.
-    /// - Parameter inset: The value to insets (or shrunk) the size. Negative
+    /// - Parameter inset: The value to inset (or shrunk) the size. Negative
     /// value cause the size to be outset (or expanded).
-    /// - Parameter relation: The type of relationship for constraint.
-    /// - Parameter priority: The priority of the constraint.
+    /// - Parameter relation: The type of relationship for constraints.
+    /// - Parameter priority: The priority of the constraints.
     ///
     /// - Returns: `self` with attribute `@discardableResult`.
     ///

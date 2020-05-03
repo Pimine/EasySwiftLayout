@@ -95,50 +95,10 @@ class ViewController: UIViewController {
 
 ### `UIView` Extenstions:
 
-#### Size Methods
+#### Size Methods (Constants)
 
 <details>
-<summary><code>width(_:priority:)</code></summary>
-  
-##### Summary
-
-Sets the width of the view to the given size with the priority of the constraint.
-
-##### Declaration
-
-```swift
-func width(_ size: CGFloat, priority: UILayoutPriority = .required) -> Self
-```
-
-##### Discussion
-
-- Constraints the width anchor using `NSLayoutConstraint`.
-
-- To make Auto-Layout works properly, it automatically sets view's
-property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass size greater than zero, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-size | `CGFloat` | The size to set this view's width to.
-priority | `UILayoutPriority` | The priority of the constraint.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
-
-</details>
-
-<details>
-<summary><code>width(_:to:priority:)</code></summary>
+<summary><code>width(_:usingRelation:priority:)</code></summary>
   
 ##### Summary
 
@@ -147,7 +107,7 @@ Sets the width of the view using the specified type of relation to the given siz
 ##### Declaration
 
 ```swift
-func width(_ relation: NSLayoutRelation, to size: CGFloat, priority: UILayoutPriority = .required) -> Self
+func width(_ size: CGFloat, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -165,8 +125,8 @@ Pass size greater than zero, otherwise this method will have no effect.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-relation | `NSLayoutRelation` | The type of relationship for constraint.
 size | `CGFloat` | The size to set this view's width to.
+relation | `NSLayoutRelation` | The type of relationship for constraint.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -179,47 +139,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>height(_:priority:)</code></summary>
-  
-##### Summary
-
-Sets the height of the view to the given size with the priority of the constraint.
-
-##### Declaration
-
-```swift
-func height(_ size: CGFloat, priority: UILayoutPriority = .required) -> Self
-```
-
-##### Discussion
-
-- Constraints the width anchor using `NSLayoutConstraint`.
-
-- To make Auto-Layout works properly, it automatically sets view's
-property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass size greater than zero, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
-size | `CGFloat` | The size to set this view's height to.
-priority | `UILayoutPriority` | The priority of the constraint.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
-
-</details>
-
-<details>
-<summary><code>height(_:to:priority:)</code></summary>
+<summary><code>height(_:usingRelation:priority:)</code></summary>
   
 ##### Summary
 
@@ -228,12 +148,12 @@ Sets the height of the view using the specified type of relation to the given si
 ##### Declaration
 
 ```swift
-func height(_ relation: NSLayoutRelation, to size: CGFloat, priority: UILayoutPriority = .required) -> Self
+func height(_ height: CGFloat, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
 
-- Constraints the height anchor using `NSLayoutConstraint`.
+- Constraints the width anchor using `NSLayoutConstraint`.
 
 - To make Auto-Layout works properly, it automatically sets view's
 property `translatesAutoresizingMaskIntoConstraints` to `false`
@@ -246,8 +166,8 @@ Pass size greater than zero, otherwise this method will have no effect.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-relation | `NSLayoutRelation` | The type of relationship for constraint.
 size | `CGFloat` | The size to set this view's height to.
+relation | `NSLayoutRelation` | The type of relationship for constraint.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -260,16 +180,16 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>size(_:priority:)</code></summary>
+<summary><code>size(_:usingRelation:priority:)</code></summary>
   
 ##### Summary
 
-Sets the dimensions of the view to the given size with the priority of the constraint.
+Sets the dimensions of the view using the specified type of relation to the given size with the priority of the constraint.
 
 ##### Declaration
 
 ```swift
-func size(_ size: CGSize, priority: UILayoutPriority = .required) -> Self
+func size(_ size: CGSize, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -287,49 +207,7 @@ Pass size greater than zero, otherwise this method will have no effect.
 Parameter  | Type | Description
 ---------- | ---- |------------
 size | `CGSize` | The size to set this view's dimensions to.
-priority | `UILayoutPriority` | The priority of the constraint.
-
-##### Returns
-
-`self`  with attribute  `@discardableResult`.
-
-##### Declared In
-[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
-
-</details>
-
-</details>
-
-<details>
-<summary><code>size(_:to:priority:)</code></summary>
-  
-##### Summary
-
-Sets the dimensions of the view using the specified type of relation to the given size with the priority of the constraint.
-
-##### Declaration
-
-```swift
-func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority = .required) -> Self
-```
-
-##### Discussion
-
-- Constraints the height and width anchor using `NSLayoutConstraint`.
-
-- To make Auto-Layout works properly, it automatically sets view's
-property `translatesAutoresizingMaskIntoConstraints` to `false`
-
-##### Precondition
-
-Pass size greater than zero, otherwise this method will have no effect.
-
-##### Parameters
-
-Parameter  | Type | Description
----------- | ---- |------------
 relation | `NSLayoutRelation` | The type of relationship for constraint.
-size | `CGFloat` | The size to set this view's dimensions to.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -342,7 +220,7 @@ priority | `UILayoutPriority` | The priority of the constraint.
 </details>
 
 <details>
-<summary><code>size(_:toSquareWithSide:priority:)</code></summary>
+<summary><code>size(toSquareWithSide:usingRelation:priority:)</code></summary>
   
 ##### Summary
 
@@ -351,7 +229,7 @@ Sets the dimensions of the view to a square with the side using the specified ty
 ##### Declaration
 
 ```swift
-func size(_ relation: NSLayoutRelation = .equal, toSquareWithSide side: CGFloat, priority: UILayoutPriority = .required) -> Self
+func size(toSquareWithSide side: CGFloat, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -368,8 +246,158 @@ Pass side greater than zero, otherwise this method will have no effect.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-relation | `NSLayoutRelation` | The type of relationship for constraint.
 side | `CGFloat` | Square side to set this view's dimensions to.
+relation | `NSLayoutRelation` | The type of relationship for constraint.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+#### Size Methods (Another view)
+
+<details>
+<summary><code>width(to:withInset:usingRelation:priority:)</code></summary>
+  
+##### Summary
+
+Sets the width of the view using the specified type of relation to the width of another view with the inset and priority of the constraint.
+
+##### Declaration
+
+```swift
+func width(to anotherView: UIView, withInset inset: CGFloat = .zero, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
+```
+
+##### Discussion
+
+- Constraints width and height anchors using `NSLayoutConstraint` to match square size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+anotherView | `UIView` | Another view to set this view width to.
+inset | `CGFloat` | The value to inset (or shrunk) the width. Negative value cause the width to be outset (or expanded).
+relation | `NSLayoutRelation` | The type of relationship for constraint.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+<details>
+<summary><code>height(to:withInset:usingRelation:priority:)</code></summary>
+  
+##### Summary
+
+Sets the height of the view using the specified type of relation to the height of another view with the inset and priority of the constraint.
+
+##### Declaration
+
+```swift
+func height(to anotherView: UIView, withInset inset: CGFloat = .zero, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
+```
+
+##### Discussion
+
+- Constraints width and height anchors using `NSLayoutConstraint` to match square size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+anotherView | `UIView` | Another view to set this view height to.
+inset | `CGFloat` | The value to inset (or shrunk) the height. Negative value cause the height to be outset (or expanded).
+relation | `NSLayoutRelation` | The type of relationship for constraint.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+<details>
+<summary><code>size(to:withInsets:usingRelation:priority:)</code></summary>
+  
+##### Summary
+
+Sets the size of the view using the specified type of relation to the size of another view with the insets and priority of the constraints.
+
+##### Declaration
+
+```swift
+func size(to anotherView: UIView, withInsets insets: ESL2DimensionalInsets = .zero, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
+```
+
+##### Discussion
+
+- Constraints width and height anchors using `NSLayoutConstraint` to match square size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+anotherView | `UIView` | Another view to set this view height to.
+insets | `ESL2DimensionalInsets` | The values to inset (or shrunk) the size. Negative values cause the size to be outset (or expanded).
+relation | `NSLayoutRelation` | The type of relationship for constraint.
+priority | `UILayoutPriority` | The priority of the constraint.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Size.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Source/UIView%20%2B%20Size.swift)
+
+</details>
+
+<details>
+<summary><code>size(to:withInset:usingRelation:priority:)</code></summary>
+  
+##### Summary
+
+Sets the size of the view using the specified type of relation to the size of another view with the insets and priority of the constraints.
+
+##### Declaration
+
+```swift
+func size(to anotherView: UIView, withInset inset: CGFloat = .zero, usingRelation relation: NSLayoutRelation = .equal, priority: UILayoutPriority = .required) -> Self
+```
+
+##### Discussion
+
+- Constraints width and height anchors using `NSLayoutConstraint` to match square size.
+
+- To make Auto-Layout works properly, it automatically sets view's property `translatesAutoresizingMaskIntoConstraints` to `false`
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+anotherView | `UIView` | Another view to set this view height to.
+inset | `CGFloat` | The value to inset (or shrunk) the size. Negative value cause the size to be outset (or expanded).
+relation | `NSLayoutRelation` | The type of relationship for constraint.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
