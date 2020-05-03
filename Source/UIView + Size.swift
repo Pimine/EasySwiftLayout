@@ -161,10 +161,25 @@ public extension UIView {
 
 public extension UIView {
     
+    /// Sets the width of the view using the specified type of relation to the
+    /// width of another view with the inset and priority of the constraint.
+    ///
+    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Parameter anotherView: Another view to set this view width to.
+    /// - Parameter inset: The value to inset (or shrunk) the width. Negative
+    /// value cause the width to be outset (or expanded).
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     @discardableResult
     func width(
         to anotherView: UIView,
-        withPadding padding: CGFloat = .zero,
+        withInset inset: CGFloat = .zero,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
@@ -174,7 +189,7 @@ public extension UIView {
             item: self, attribute: .width,
             relatedBy: relation,
             toItem: anotherView, attribute: .width,
-            multiplier: 1.0, constant: padding
+            multiplier: 1.0, constant: -inset
         )
         constraint.priority = priority
         constraint.isActive = true
@@ -182,10 +197,25 @@ public extension UIView {
         return self
     }
     
+    /// Sets the height of the view using the specified type of relation to the
+    /// height of another view with the inset and priority of the constraint.
+    ///
+    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Parameter anotherView: Another view to set this view height to.
+    /// - Parameter inset: The value to inset (or shrunk) the height. Negative
+    /// value cause the height to be outset (or expanded).
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     @discardableResult
     func height(
         to anotherView: UIView,
-        withPadding padding: CGFloat = .zero,
+        withInset inset: CGFloat = .zero,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
@@ -195,7 +225,7 @@ public extension UIView {
             item: self, attribute: .height,
             relatedBy: relation,
             toItem: anotherView, attribute: .height,
-            multiplier: 1.0, constant: padding
+            multiplier: 1.0, constant: -inset
         )
         constraint.priority = priority
         constraint.isActive = true
@@ -203,29 +233,59 @@ public extension UIView {
         return self
     }
     
+    /// Sets the size of the view using the specified type of relation to the
+    /// size of another view with the insets and priority of the constraints.
+    ///
+    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Parameter anotherView: Another view to set this view size to.
+    /// - Parameter insets: The value to insets (or shrunk) the size. Negative
+    /// values cause the size to be outset (or expanded).
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     @discardableResult
     func size(
         to anotherView: UIView,
-        withPadding padding: ESLPadding = .zero,
+        withInsets insets: ESL2DimensionalInsets = .zero,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        width(to: anotherView, withPadding: padding.width, usingRelation: relation, priority: priority)
-        height(to: anotherView, withPadding: padding.height, usingRelation: relation, priority: priority)
+        width(to: anotherView, withInset: insets.width, usingRelation: relation, priority: priority)
+        height(to: anotherView, withInset: insets.height, usingRelation: relation, priority: priority)
         
         return self
     }
     
+    /// Sets the size of the view using the specified type of relation to the
+    /// size of another view with the equal insets and priority of the constraints.
+    ///
+    /// 1. Constraints the width anchor using `NSLayoutConstraint`.
+    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// property `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Parameter anotherView: Another view to set this view size to.
+    /// - Parameter inset: The value to insets (or shrunk) the size. Negative
+    /// value cause the size to be outset (or expanded).
+    /// - Parameter relation: The type of relationship for constraint.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     @discardableResult
     func size(
         to anotherView: UIView,
-        withPadding padding: CGFloat = .zero,
+        withInset inset: CGFloat = .zero,
         usingRelation relation: NSLayoutRelation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         size(
             to: anotherView,
-            withPadding: ESLPadding(width: padding, height: padding),
+            withInsets: ESL2DimensionalInsets(width: inset, height: inset),
             usingRelation: relation,
             priority: priority
         )

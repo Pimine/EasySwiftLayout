@@ -1,5 +1,5 @@
 //
-//  ESLPadding.swift
+//  ESL2DimentionsInsets.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
@@ -24,4 +24,4 @@
 //  SOFTWARE.
 
 
-public typealias ESLPadding = CGSize
+public typealias ESL2DimensionalInsets = CGSize
