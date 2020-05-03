@@ -40,7 +40,11 @@ public extension UIView {
     /// - Parameter offset: Axis offset.
     /// - Parameter priority: The priority of the constraint.
     ///
-    func centerInView(_ anotherView: UIView, withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) {
+    func centerInView(
+        _ anotherView: UIView,
+        withOffset offset: ESLOffset = .zero,
+        priority: UILayoutPriority = .required
+    ) {
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: anotherView.centerXAnchor, constant: offset.x).isActive = true
         centerYAnchor.constraint(equalTo: anotherView.centerYAnchor, constant: offset.y).isActive = true
@@ -106,7 +110,11 @@ public extension UIView {
     /// - Parameter offset: Axis offset.
     /// - Parameter priority: The priority of the constraint.
     ///
-    func centerInSuperview(_ axis: ESLAxis, withOffset offset: CGFloat = .zero, priority: UILayoutPriority = .required) {
+    func centerInSuperview(
+        _ axis: ESLAxis,
+        withOffset offset: CGFloat = .zero,
+        priority: UILayoutPriority = .required
+    ) {
         guard let superview = superview else { return }
         centerInView(superview, axis: axis, withOffset: offset)
     }

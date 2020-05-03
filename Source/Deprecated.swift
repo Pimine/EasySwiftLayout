@@ -25,6 +25,8 @@
 
 import Foundation
 
+// MARK: - Pin Methods
+
 public extension UIView {
     
     @available(*, deprecated, renamed: "pinEdgesToSuperview(ofGroup:usingRelation:withInset:priority:)")
@@ -35,5 +37,47 @@ public extension UIView {
     @available(*, deprecated, renamed: "pinEdgesToSuperview(ofGroup:usingRelation:withInset:priority:)")
     func pinVerticalEdgesToSuperview(withInset inset: CGFloat = .zero) {
         pinEdgesToSuperview(ofGroup: .vertical, withInset: inset)
+    }
+}
+
+// MARK: - Size Methods
+
+public extension UIView {
+    
+    @available(*, deprecated, renamed: "width(_:usingRelation:priority:)")
+    @discardableResult
+    func width(
+        _ relation: NSLayoutRelation, to width: CGFloat,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        self.width(width, usingRelation: relation, priority: priority)
+        return self
+    }
+    
+    @available(*, deprecated, renamed: "height(_:usingRelation:priority:)")
+    @discardableResult
+    func height(
+        _ relation: NSLayoutRelation, to height: CGFloat,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        self.height(height, usingRelation: relation, priority: priority)
+        return self
+    }
+    
+    @available(*, deprecated, renamed: "size(_:usingRelation:priority:)")
+    @discardableResult
+    func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority = .required) -> Self {
+        self.size(size, usingRelation: relation, priority: priority)
+    }
+    
+    @available(*, deprecated, renamed: "size(toSquareWithSide:usingRelation:priority:)")
+    @discardableResult
+    func size(
+        _ relation: NSLayoutRelation,
+        toSquareWithSide side: CGFloat,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        size(toSquareWithSide: side, usingRelation: relation, priority: priority)
+        return self
     }
 }
