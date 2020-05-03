@@ -73,7 +73,7 @@ public extension UIView {
     @available(*, deprecated, renamed: "size(toSquareWithSide:usingRelation:priority:)")
     @discardableResult
     func size(
-        _ relation: NSLayoutRelation = .equal,
+        _ relation: NSLayoutRelation,
         toSquareWithSide side: CGFloat,
         priority: UILayoutPriority = .required
     ) -> Self {
