@@ -123,8 +123,8 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        height(size.height, priority: priority)
-        width(size.width, priority: priority)
+        height(size.height, usingRelation: relation, priority: priority)
+        width(size.width, usingRelation: relation, priority: priority)
         return self
     }
     
