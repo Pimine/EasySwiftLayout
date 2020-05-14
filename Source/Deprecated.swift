@@ -3,7 +3,7 @@
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
-//  Copyright (c) 2019 Denis Andreychuk
+//  Copyright (c) 2019-2020 Denis Andreychuk
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,9 @@
 
 import Foundation
 
+@available(*, deprecated, message: "Use `ESLSizeOffset` instead")
+typealias ESL2DimensionalInsets = CGSize
+
 // MARK: - Pin Methods
 
 public extension UIView {
@@ -44,10 +47,54 @@ public extension UIView {
 
 public extension UIView {
     
+    @available(*, deprecated, renamed: "width(match:withInset:usingRelation:priority:)")
+    @discardableResult
+    func width(
+        to anotherView: UIView,
+        withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        width(match: anotherView, withInset: inset, usingRelation: relation, priority: priority)
+    }
+    @available(*, deprecated, renamed: "height(match:withInset:usingRelation:priority:)")
+    @discardableResult
+    func height(
+        to anotherView: UIView,
+        withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        height(match: anotherView, withInset: inset, usingRelation: relation, priority: priority)
+    }
+    
+    @available(*, deprecated, renamed: "size(match:withInsets:usingRelation:priority:)")
+    @discardableResult
+    func size(
+        to anotherView: UIView,
+        withInsets insets: ESLSizeInsets = .zero,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        size(match: anotherView, withInsets: insets, usingRelation: relation, priority: priority)
+    }
+    
+    @available(*, deprecated, renamed: "size(match:withInset:usingRelation:priority:)")
+    @discardableResult
+    func size(
+        to anotherView: UIView,
+        withInset inset: CGFloat = .zero,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        size(match: anotherView, withInset: inset, usingRelation: relation, priority: priority)
+    }
+    
+    
     @available(*, deprecated, renamed: "width(_:usingRelation:priority:)")
     @discardableResult
     func width(
-        _ relation: NSLayoutRelation, to width: CGFloat,
+        _ relation: NSLayoutConstraint.Relation, to width: CGFloat,
         priority: UILayoutPriority = .required
     ) -> Self {
         self.width(width, usingRelation: relation, priority: priority)
@@ -57,7 +104,7 @@ public extension UIView {
     @available(*, deprecated, renamed: "height(_:usingRelation:priority:)")
     @discardableResult
     func height(
-        _ relation: NSLayoutRelation, to height: CGFloat,
+        _ relation: NSLayoutConstraint.Relation, to height: CGFloat,
         priority: UILayoutPriority = .required
     ) -> Self {
         self.height(height, usingRelation: relation, priority: priority)
@@ -66,18 +113,32 @@ public extension UIView {
     
     @available(*, deprecated, renamed: "size(_:usingRelation:priority:)")
     @discardableResult
-    func size(_ relation: NSLayoutRelation, to size: CGSize, priority: UILayoutPriority = .required) -> Self {
+    func size(_ relation: NSLayoutConstraint.Relation, to size: CGSize, priority: UILayoutPriority = .required) -> Self {
         self.size(size, usingRelation: relation, priority: priority)
     }
     
     @available(*, deprecated, renamed: "size(toSquareWithSide:usingRelation:priority:)")
     @discardableResult
     func size(
-        _ relation: NSLayoutRelation,
+        _ relation: NSLayoutConstraint.Relation,
         toSquareWithSide side: CGFloat,
         priority: UILayoutPriority = .required
     ) -> Self {
         size(toSquareWithSide: side, usingRelation: relation, priority: priority)
         return self
+    }
+}
+
+// MARK: - Center Methods
+
+public extension UIView {
+    
+    @available(*, deprecated, renamed: "centerInSuperview(axis:withOffset:priority:)")
+    func centerInSuperview(
+        _ axis: ESLAxis,
+        withOffset offset: CGFloat = .zero,
+        priority: UILayoutPriority = .required
+    ) {
+        centerInSuperview(axis: axis)
     }
 }

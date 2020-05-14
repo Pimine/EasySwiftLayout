@@ -3,7 +3,7 @@
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
-//  Copyright (c) 2019 Denis Andreychuk
+//  Copyright (c) 2019-2020 Denis Andreychuk
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -46,7 +46,7 @@ public extension UIView {
     @discardableResult
     func width(
         _ size: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         guard size != 0 else { return self }
@@ -54,7 +54,7 @@ public extension UIView {
         
         let constraint = NSLayoutConstraint(
             item: self, attribute: .width,
-            relatedBy: .equal,
+            relatedBy: relation,
             toItem: nil, attribute: .notAnAttribute,
             multiplier: 1.0, constant: size
         )
@@ -82,18 +82,18 @@ public extension UIView {
     ///
     @discardableResult
     func height(
-        _ height: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        _ size: CGFloat,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard height != 0 else { return self }
+        guard size != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint = NSLayoutConstraint(
             item: self, attribute: .height,
-            relatedBy: .equal,
+            relatedBy: relation,
             toItem: nil, attribute: .notAnAttribute,
-            multiplier: 1.0, constant: height
+            multiplier: 1.0, constant: size
         )
         constraint.priority = priority
         constraint.isActive = true
@@ -120,7 +120,7 @@ public extension UIView {
     @discardableResult
     func size(
         _ size: CGSize,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         height(size.height, priority: priority)
@@ -149,7 +149,7 @@ public extension UIView {
     @discardableResult
     func size(
         toSquareWithSide side: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         size(CGSize(width: side, height: side), usingRelation: relation, priority: priority)
@@ -178,9 +178,9 @@ public extension UIView {
     ///
     @discardableResult
     func width(
-        to anotherView: UIView,
+        match anotherView: UIView,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
@@ -214,9 +214,9 @@ public extension UIView {
     ///
     @discardableResult
     func height(
-        to anotherView: UIView,
+        match anotherView: UIView,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
@@ -250,13 +250,13 @@ public extension UIView {
     ///
     @discardableResult
     func size(
-        to anotherView: UIView,
-        withInsets insets: ESL2DimensionalInsets = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        match anotherView: UIView,
+        withInsets insets: ESLSizeInsets = .zero,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        width(to: anotherView, withInset: insets.width, usingRelation: relation, priority: priority)
-        height(to: anotherView, withInset: insets.height, usingRelation: relation, priority: priority)
+        width(match: anotherView, withInset: insets.horizontal, usingRelation: relation, priority: priority)
+        height(match: anotherView, withInset: insets.vertical, usingRelation: relation, priority: priority)
         
         return self
     }
@@ -278,18 +278,16 @@ public extension UIView {
     ///
     @discardableResult
     func size(
-        to anotherView: UIView,
+        match anotherView: UIView,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
         size(
-            to: anotherView,
-            withInsets: ESL2DimensionalInsets(width: inset, height: inset),
+            match: anotherView,
+            withInsets: ESLSizeInsets(horizontal: inset, vertical: inset),
             usingRelation: relation,
             priority: priority
         )
-        
-        return self
     }
 }

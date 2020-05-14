@@ -3,7 +3,7 @@
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
-//  Copyright (c) 2019 Denis Andreychuk
+//  Copyright (c) 2019-2020 Denis Andreychuk
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -46,6 +46,9 @@ public extension UIView {
     /// - Parameter insets: The insets between the edges.
     /// - Parameter priority: The priority of the constraints.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pin(
         topTo top: NSLayoutYAxisAnchor? = nil,
         leftTo left: NSLayoutXAxisAnchor? = nil,
@@ -53,8 +56,8 @@ public extension UIView {
         rightTo right : NSLayoutXAxisAnchor? = nil,
         withInsets insets: UIEdgeInsets = .zero,
         priority: UILayoutPriority = .required
-    ) {
-        guard top != nil || left != nil || bottom != nil || right != nil else { return }
+    ) -> Self {
+        guard top != nil || left != nil || bottom != nil || right != nil else { return self }
         translatesAutoresizingMaskIntoConstraints = false
 
         if let top = top {
@@ -80,6 +83,8 @@ public extension UIView {
             constaint.priority = priority
             constaint.isActive = true
         }
+        
+        return self
     }
     
     // MARK: - Pin Methods | Edge(s) to View
@@ -106,14 +111,17 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdge(
         _ edge: ESLEdge,
         toEdge pinningEdge: ESLEdge,
         ofView anotherView: UIView,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint = NSLayoutConstraint(
@@ -124,6 +132,8 @@ public extension UIView {
         )
         constraint.priority = priority
         constraint.isActive = true
+        
+        return self
     }
     
     /// Pins the given edge of the view using the specified type of relation to
@@ -143,13 +153,16 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdge(
         _ edge: ESLEdge,
         toSameEdgeOfView anotherView: UIView,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdge(edge,
             toEdge: edge, ofView: anotherView,
             withInset: inset,
@@ -180,13 +193,16 @@ public extension UIView {
     ///
     /// - Tag: toSameEdgesOfView_insets
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
         toSameEdgesOfView anotherView: UIView,
         withInsets insets: UIEdgeInsets = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         for edge in edges {
             switch edge {
             case .left:
@@ -219,6 +235,7 @@ public extension UIView {
                 )
             }
         }
+        return self
     }
     
     /// Pins the given edges of the view using the specified type of relation to
@@ -243,13 +260,16 @@ public extension UIView {
     ///
     /// - Tag: toSameEdgesOfView_inset
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
         toSameEdgesOfView anotherView: UIView,
         withInset inset: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdges(edges,
              toSameEdgesOfView: anotherView,
              withInsets: UIEdgeInsets(inset: inset),
@@ -275,13 +295,16 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdges(
         ofGroup edgeGroup: ESLEdgeGroup,
         toSameEdgesOfView anotherView: UIView,
         withInset inset: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdges(edgeGroup.edges,
              toSameEdgesOfView: anotherView,
              withInset: inset,
@@ -311,15 +334,18 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     /// - Tag: excludingEdge_insets
     ///
+    @discardableResult
     func pinEdges(
         toSameEdgesOfView anotherView: UIView,
         excludingEdge excludedEdge: ESLEdge,
         withInsets insets: UIEdgeInsets = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         let edges = ESLEdge.all.filter { $0 != excludedEdge }
         pinEdges(edges,
              toSameEdgesOfView: anotherView,
@@ -327,6 +353,7 @@ public extension UIView {
              usingRelation: relation,
              priority: priority
         )
+        return self
     }
     
     /// Pins the edges of the view using the specified type of relation to the
@@ -349,15 +376,18 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     /// - Tag: excludingEdge_inset
     ///
+    @discardableResult
     func pinEdges(
         toSameEdgesOfView anotherView: UIView,
         excludingEdge excludedEdge: ESLEdge,
         withInset inset: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdges(
             toSameEdgesOfView: anotherView,
             excludingEdge: excludedEdge,
@@ -388,14 +418,17 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdge(
         _ edge: ESLEdge,
         toEdge pinningEdge: ESLEdge,
         ofGuide guide: ESLGuide,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         
         let layoutGuide = guide.layoutGuide
@@ -407,6 +440,8 @@ public extension UIView {
         )
         constraint.priority = priority
         constraint.isActive = true
+        
+        return self
     }
     
     /// Pins the given edge of the view using the specified type of relation to
@@ -423,13 +458,16 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdge(
         _ edge: ESLEdge,
         toSameEdgeOfGuide guide: ESLGuide,
         withInset inset: CGFloat = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdge(edge,
             toEdge: edge,
             ofGuide: guide,
@@ -456,15 +494,18 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     /// - Tag: toSameEdgesOfGuide_insets
     ///
+    @discardableResult
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
         toSameEdgesOfGuide guide: ESLGuide,
         withInsets insets: UIEdgeInsets = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         for edge in edges {
             switch edge {
             case .left:
@@ -497,6 +538,7 @@ public extension UIView {
                 )
             }
         }
+        return self
     }
     
     /// Pins the given edges of the view using the specified type of relation to
@@ -516,15 +558,18 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     /// - Tag: toSameEdgesOfGuide_inset
     ///
+    @discardableResult
     func pinEdges(
         _ edges: [ESLEdge] = ESLEdge.all,
         toSameEdgesOfGuide guide: ESLGuide,
         withInset inset: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdges(edges,
              toSameEdgesOfGuide: guide,
              withInsets: UIEdgeInsets(inset: inset),
@@ -548,13 +593,16 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
     func pinEdges(
         ofGroup edgeGroup: ESLEdgeGroup,
         toSameEdgesOfGuide guide: ESLGuide,
         withInset inset: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdges(edgeGroup.edges,
              toSameEdgesOfGuide: guide,
              withInset: inset,
@@ -580,15 +628,18 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     /// - Tag: toSameEdgesOfGuide_excludingEdge_insets
     ///
+    @discardableResult
     func pinEdges(
         toSameEdgesOfGuide guide: ESLGuide,
         excludingEdge excludedEdge: ESLEdge,
         withInsets insets: UIEdgeInsets = .zero,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         let edges = ESLEdge.all.filter { $0 != excludedEdge }
         pinEdges(edges,
              toSameEdgesOfGuide: guide,
@@ -596,6 +647,7 @@ public extension UIView {
              usingRelation: relation,
              priority: priority
         )
+        return self
     }
     
     /// Pins the edges of the view using the specified type of relation to the
@@ -615,15 +667,18 @@ public extension UIView {
     /// - Parameter relation: The type of relationship for the constraints.
     /// - Parameter priority: The priority of the constraint.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     /// - Tag: toSameEdgesOfGuide_excludingEdge_inset
     ///
+    @discardableResult
     func pinEdges(
         toSameEdgesOfGuide guide: ESLGuide,
         excludingEdge excludedEdge: ESLEdge,
         withInset inset: CGFloat,
-        usingRelation relation: NSLayoutRelation = .equal,
+        usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         pinEdges(
             toSameEdgesOfGuide: guide,
             excludingEdge: excludedEdge,

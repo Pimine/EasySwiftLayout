@@ -46,7 +46,7 @@ public enum ESLEdge {
         }
     }
     
-    var convertedToNSLayoutAttribute: NSLayoutAttribute {
+    var convertedToNSLayoutAttribute: NSLayoutConstraint.Attribute {
         switch self {
         case .left:
             return .left
