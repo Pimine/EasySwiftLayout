@@ -38,7 +38,7 @@ public extension UIView {
     /// [pinEdgeToSuperview(_:withInset:usingRelation:priority:)](x-source-tag://superview_toSameEdgeOfView_inset)
     /// would be a better approach.
     ///
-    /// 3. To make Auto-Layout works properly, it automatically sets view's
+    /// 3. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition:
@@ -94,7 +94,7 @@ public extension UIView {
     /// the constraint. Optionally respects one of pre-defined Apple's layout
     /// guides.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -149,7 +149,7 @@ public extension UIView {
     /// 1. If you don't need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(_:withInset:usingRelation:priority:)](x-source-tag://superview_toSameEdgesOfView_inset).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's property
+    /// 2. To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -204,7 +204,7 @@ public extension UIView {
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(_:withInsets:usingRelation:priority:)](x-source-tag://superview_toSameEdgesOfView_insets).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -242,7 +242,7 @@ public extension UIView {
     /// insets and priority of the constraints. Optionally respects one of
     /// pre-defined Apple's layout guides.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -281,7 +281,7 @@ public extension UIView {
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(excludingEdge:withInset:usingRelation:priority:)](x-source-tag://superview_excludingEdge_inset).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -324,7 +324,7 @@ public extension UIView {
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdgesToSuperview(excludingEdge:withInsets:usingRelation:priority:)](x-source-tag://superview_excludingEdge_insets).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: The view should have the superview, otherwise this method

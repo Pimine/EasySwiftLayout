@@ -33,7 +33,7 @@ public extension UIView {
     /// 1. Compact version of default Swift layout. Allows you to pin edges to
     /// specific `NSLayoutAxisAnchor`.
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: You should pass at least one anchor, otherwise this method
@@ -96,7 +96,7 @@ public extension UIView {
     /// [Apple's documentation](https://apple.co/2PFH9f2), you cannot pin edges
     /// with different axis, otherwise it will throw fatal error.
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition:
@@ -140,7 +140,7 @@ public extension UIView {
     /// the corresponding margin of another view with the inset and priority of
     /// the constraint.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -178,7 +178,7 @@ public extension UIView {
     /// 1. If you don't need to customize the insets based on the edge, use
     /// [pinEdges(_:toSameEdgesOfView:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfView_inset).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -245,7 +245,7 @@ public extension UIView {
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdges(_:toSameEdgesOfView:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfView_insets).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property`translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -282,7 +282,7 @@ public extension UIView {
     /// relation to the corresponding margins of another view with the equal
     /// insets and priority of the constraints.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -321,7 +321,7 @@ public extension UIView {
     /// 1. If you don't need to customize the insets based on the edge, use
     /// [pinEdges(toSameEdgesOfView:excludingEdge:withInset:usingRelation:priority:)](x-source-tag://excludingEdge_inset).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -363,7 +363,7 @@ public extension UIView {
     /// 1. If you need to customize the inset based on the edge, use
     /// [pinEdges(toSameEdgesOfView:excludingEdge:withInsets:usingRelation:priority:)](x-source-tag://excludingEdge_insets).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -405,7 +405,7 @@ public extension UIView {
     /// [Apple's documentation](https://apple.co/2PFH9f2), you cannot pin edges
     /// with different axis, otherwise it will throw fatal error.
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Pin edges with same axis or method will throw fatal error.
@@ -448,7 +448,7 @@ public extension UIView {
     /// the corresponding margin of guide with the inset and priority of
     /// the constraint.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Parameter edge: The edge of this view to pin to.
@@ -484,7 +484,7 @@ public extension UIView {
     /// 1. If you don't need to customize the insets based on the edge, use
     /// [pinEdges(_:toSameEdgesOfGuide:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_inset).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Parameter edges: The edges of this view to pin to.
@@ -548,7 +548,7 @@ public extension UIView {
     /// 1. If you need to customize the insets based on the edge, use
     /// [pinEdges(_:toSameEdgesOfGuide:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_insets).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property`translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Parameter edges: The edges of this view to pin to.
@@ -583,7 +583,7 @@ public extension UIView {
     /// relation to the corresponding margins of guide with the equal
     /// insets and priority of the constraints.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Parameter edgeGroup: The group of edges of this view to pin to.
@@ -618,7 +618,7 @@ public extension UIView {
     /// 1. If you don't need to customize the insets based on the edge, use
     /// [pinEdges(toSameEdgesOfGuide:excludingEdge:withInset:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_excludingEdge_inset).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Parameter guide: The guide to pin to.
@@ -657,7 +657,7 @@ public extension UIView {
     /// 1. If you need to customize the inset based on the edge, use
     /// [pinEdges(toSameEdgesOfView:excludingEdge:withInsets:usingRelation:priority:)](x-source-tag://toSameEdgesOfGuide_excludingEdge_insets).
     ///
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`.
     ///
     /// - Parameter guide: The guide to pin to.

@@ -30,7 +30,7 @@ public extension UIView {
     /// Centers the axis of this view in another view with the offset and priority
     /// of the constraint.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -80,7 +80,7 @@ public extension UIView {
     /// Centers the view in another view with the offset and priority of the
     /// constraint.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Another view must be in the same view hierarchy as this
@@ -109,7 +109,7 @@ public extension UIView {
     /// Centers the view in its superview view with the offset and priority of the
     /// constraint.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: The view should have the superview, otherwise this method
@@ -130,7 +130,7 @@ public extension UIView {
     /// Centers the axis of this view in its superview with the offset and priority
     /// of the constraint.
     ///
-    /// To make Auto-Layout works properly, it automatically sets view's property
+    /// To make Auto-Layout works properly, it automatically sets view property
     /// `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: The view should have the superview, otherwise this method

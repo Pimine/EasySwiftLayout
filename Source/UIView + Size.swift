@@ -31,13 +31,13 @@ public extension UIView {
     /// given size with the priority of the constraint.
     ///
     /// 1. Constraints the width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter size: The size to set this view's width to.
+    /// - Parameter width: The value to set this view width to.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -45,18 +45,18 @@ public extension UIView {
     ///
     @discardableResult
     func width(
-        _ size: CGFloat,
+        _ width: CGFloat,
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard size != 0 else { return self }
+        guard width != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint = NSLayoutConstraint(
             item: self, attribute: .width,
             relatedBy: relation,
             toItem: nil, attribute: .notAnAttribute,
-            multiplier: 1.0, constant: size
+            multiplier: 1.0, constant: width
         )
         constraint.priority = priority
         constraint.isActive = true
@@ -68,13 +68,13 @@ public extension UIView {
     /// given size with the priority of the constraint.
     ///
     /// 1. Constraints the height anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter size: The size to set this view's height to.
+    /// - Parameter height: The size to set this view height to.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -82,18 +82,18 @@ public extension UIView {
     ///
     @discardableResult
     func height(
-        _ size: CGFloat,
+        _ height: CGFloat,
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard size != 0 else { return self }
+        guard height != 0 else { return self }
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint = NSLayoutConstraint(
             item: self, attribute: .height,
             relatedBy: relation,
             toItem: nil, attribute: .notAnAttribute,
-            multiplier: 1.0, constant: size
+            multiplier: 1.0, constant: height
         )
         constraint.priority = priority
         constraint.isActive = true
@@ -105,13 +105,13 @@ public extension UIView {
     /// the given size with the priority of the constraint.
     ///
     /// 1. Constraints the height and width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Pass size greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter size: The size to set this view's dimensions to.
+    /// - Parameter size: The size to set this view dimensions to.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -134,13 +134,13 @@ public extension UIView {
     ///
     /// 1. Constraints the height and width anchor using `NSLayoutConstraint`
     /// to match square size.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Precondition: Pass side greater than zero, otherwise this method will
     /// have no effect.
     ///
-    /// - Parameter side: The side of the square to set this view's dimensions to.
+    /// - Parameter side: The side of the square to set this view dimensions to.
     /// - Parameter relation: The type of relationship for constraint.
     /// - Parameter priority: The priority of the constraint.
     ///
@@ -165,7 +165,7 @@ public extension UIView {
     /// width of another view with the inset and priority of the constraint.
     ///
     /// 1. Constraints the width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Parameter anotherView: Another view to set this view width to.
@@ -201,7 +201,7 @@ public extension UIView {
     /// height of another view with the inset and priority of the constraint.
     ///
     /// 1. Constraints the width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Parameter anotherView: Another view to set this view height to.
@@ -237,7 +237,7 @@ public extension UIView {
     /// size of another view with the insets and priority of the constraints.
     ///
     /// 1. Constraints the width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Parameter anotherView: Another view to set this view size to.
@@ -265,7 +265,7 @@ public extension UIView {
     /// size of another view with the equal insets and priority of the constraints.
     ///
     /// 1. Constraints the width anchor using `NSLayoutConstraint`.
-    /// 2. To make Auto-Layout works properly, it automatically sets view's
+    /// 2. To make Auto-Layout works properly, it automatically sets view
     /// property `translatesAutoresizingMaskIntoConstraints` to `false`
     ///
     /// - Parameter anotherView: Another view to set this view size to.
