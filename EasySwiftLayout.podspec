@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name 		= 'EasySwiftLayout'
-  s.version 		= '1.4.0'
+  s.version 		= '1.5.0'
   s.license 		= 'MIT'
   s.summary 		= 'Lightweight Swift framework for Auto-Layout. Helps you write readable and compact UI code using simple API.'
   s.homepage 		= 'https://github.com/denandreychuk/EasySwiftLayout'
@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.source 		= { :git => 'https://github.com/denandreychuk/EasySwiftLayout.git', :tag => s.version.to_s }
 
   s.source_files = 'Source/*.swift'
-  s.swift_version = '4.0'
+  s.swift_version = '5.0'
   s.platform = :ios, "9.0"
 end

@@ -1,9 +1,9 @@
 //
-//  ESL2DimentionsInsets.swift
+//  ESLSizeInsets.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
-//  Copyright (c) 2019 Denis Andreychuk
+//  Copyright (c) 2020 Denis Andreychuk
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,5 +23,4 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-
-public typealias ESL2DimensionalInsets = CGSize
+public typealias ESLSizeInsets = UIOffset
