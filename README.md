@@ -26,7 +26,7 @@ If you want to report bug or request new feature - open a ticket. I will try my 
 
 - iOS 9.0+
 - Xcode 9.0+
-- Swift 4+
+- Swift 5+
 
 ## Documentation
 
