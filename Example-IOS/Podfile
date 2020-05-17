@@ -1,8 +1,0 @@
-platform :ios, '13.4'
-
-target 'EasySwiftLayout-Example' do
-  use_frameworks!
-
-  pod 'EasySwiftLayout'
-
-end
