@@ -125,20 +125,20 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		B7847718234B37DD002386DC /* EasySwiftLayoutTests */ = {
+		B7847718234B37DD002386DC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				B7847719234B37DD002386DC /* EasySwiftLayoutTests.swift */,
 				B784771B234B37DD002386DC /* Info.plist */,
 			);
-			path = EasySwiftLayoutTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		B7B6605822FF122B006FDD7E = {
 			isa = PBXGroup;
 			children = (
 				B7B6606422FF122B006FDD7E /* Source */,
-				B7847718234B37DD002386DC /* EasySwiftLayoutTests */,
+				B7847718234B37DD002386DC /* Tests */,
 				B7B6606322FF122B006FDD7E /* Products */,
 				B7F431AD234A5CF700C7E7C7 /* Frameworks */,
 			);
@@ -350,7 +350,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
-				INFOPLIST_FILE = EasySwiftLayoutTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayoutTests;
@@ -365,7 +365,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F79SZ7VU87;
-				INFOPLIST_FILE = EasySwiftLayoutTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.denandreychuk.EasySwiftLayoutTests;
