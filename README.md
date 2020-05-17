@@ -98,7 +98,7 @@ class ViewController: UIViewController {
 
 ### Example
 
-![Example](https://github.com/denandreychuk/EasySwiftLayout/blob/denis_example/Resources/example.jpg?raw=true =125x)
+<img src="https://github.com/denandreychuk/EasySwiftLayout/blob/denis_example/Resources/example.jpg?raw=true" width="125">
 
 EasySwiftLayout comes with project example. You can check out how easily you can create screens like this with ESL.
 
