@@ -1,6 +1,7 @@
 
 
 
+
 ![EasySwiftLayout](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Resources/Logo.png?raw=true)
 
 [![Platform](https://img.shields.io/cocoapods/p/EasySwiftLayout.svg?color=yellow)](https://github.com/denandreychuk/EasySwiftLayout)
@@ -72,6 +73,8 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ## Usage
 
+### Quick Start
+
 ```swift
 import EasySwiftLayout
 
@@ -92,6 +95,15 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+### Example
+
+![Example](https://github.com/denandreychuk/EasySwiftLayout/blob/denis_example/Resources/example.jpg?raw=true =125x)
+
+EasySwiftLayout comes with project example. You can check out how easily you can create screens like this with ESL.
+
+- Navigate to the project folder and open `EasySwiftLayout.xcodeproj`.
+- Select scheme `Example-IOS` by pressing `^ + 0` and just run it on any device.
 
 ## API Cheat Sheet
 
