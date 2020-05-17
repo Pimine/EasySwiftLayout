@@ -44,6 +44,7 @@
 		B7DB42432471A106001FE565 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42412471A106001FE565 /* Utilities.swift */; };
 		B7DB424A2471A216001FE565 /* UIStackView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42482471A216001FE565 /* UIStackView+Utilities.swift */; };
 		B7DB424B2471A216001FE565 /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42492471A216001FE565 /* UIView+Utilities.swift */; };
+		B7DB424D2471B038001FE565 /* UIView + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB424C2471B038001FE565 /* UIView + Helpers.swift */; };
 		B7E52714236EFE0C006760A0 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52713236EFE0C006760A0 /* Deprecated.swift */; };
 		B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		B7DB42412471A106001FE565 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B7DB42482471A216001FE565 /* UIStackView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utilities.swift"; sourceTree = "<group>"; };
 		B7DB42492471A216001FE565 /* UIView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
+		B7DB424C2471B038001FE565 /* UIView + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helpers.swift"; sourceTree = "<group>"; };
 		B7E52713236EFE0C006760A0 /* Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
 		B7F431AE234A5CF700C7E7C7 /* EasySwiftLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasySwiftLayout.framework; path = ../ContentProtectorKit/EasySwiftLayout.framework; sourceTree = "<group>"; };
 		B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin(Superview).swift"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		B74F8CB823784CCD00C67F28 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B7DB424C2471B038001FE565 /* UIView + Helpers.swift */,
 				B74F8CB52378292C00C67F28 /* UIEdgeInsets + Helpers.swift */,
 			);
 			name = Helpers;
@@ -443,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7DB424D2471B038001FE565 /* UIView + Helpers.swift in Sources */,
 				B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */,
 				B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */,
 				B7735CF9245C62E7007C6DAD /* ESLSizeInsets.swift in Sources */,
