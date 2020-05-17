@@ -31,6 +31,8 @@ public extension UIView {
     ///
     /// - Parameter superview: The superview to which add subview.
     ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
     @discardableResult
     func add(toSuperview superview: UIView) -> Self {
         superview.addSubview(self)

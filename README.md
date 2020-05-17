@@ -109,6 +109,36 @@ EasySwiftLayout comes with [project example](https://github.com/denandreychuk/Ea
 
 ### `UIView` Extenstions:
 
+#### Helpers
+
+<details>
+<summary><code>add(toSuperview:)</code></summary>
+  
+##### Summary
+
+Adds the view as a subview of specified superview.
+
+##### Declaration
+
+```swift
+func add(toSuperview superview: UIView) -> Self
+```
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+superview | `UIView` | The superview to which add subview.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Helpers.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Sources/UIView%20%2B%20Helpers.swift)
+
+</details>
+
 #### Size Methods (Constants)
 
 <details>
