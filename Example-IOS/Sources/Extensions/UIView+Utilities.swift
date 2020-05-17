@@ -27,12 +27,6 @@ import UIKit
 
 extension UIView {
     
-    @discardableResult
-    func add(toSuperview superview: UIView) -> Self {
-        superview.addSubview(self)
-        return self
-    }
-    
     func addShadow(ofColor color: UIColor = .black, radius: CGFloat = 3, offset: CGSize = .zero, opacity: Float = 0.5) {
         layer.shadowColor = color.cgColor
         layer.shadowOffset = offset

@@ -70,7 +70,7 @@ final class HomeController: UIViewController {
         $0.text = "Join a community dedicated \nto keeping each other safe"
     }
     
-    private let startButton = configure(RoundedButton(type: .system)) {
+    private let nextButton = configure(RoundedButton(type: .system)) {
         $0.tintColor = .white
         $0.backgroundColor = #colorLiteral(red: 0.8078431373, green: 0.3882352941, blue: 1, alpha: 1)
         $0.setTitle("Next", for: .normal)
@@ -120,9 +120,9 @@ private extension HomeController {
             .add(toSuperview: view)
             .pinEdgesToSuperview(excludingEdge: .bottom, withInset: 25, respectingGuide: .safeAreaLayout)
         
-        // Start button
+        // Next button
         
-        startButton
+        nextButton
             .add(toSuperview: view)
             .centerInSuperview(axis: .x)
             .size(CGSize(width: 150, height: 55))

@@ -100,7 +100,7 @@ class ViewController: UIViewController {
 
 <img src="https://github.com/denandreychuk/EasySwiftLayout/blob/master/Resources/Example.jpg?raw=true" width="140">
 
-EasySwiftLayout comes with [project example](https://github.com/denandreychuk/EasySwiftLayout/tree/master/Example-IOS). You can check out how easily you can create screens like this with ESL.
+EasySwiftLayout comes with [project example](https://github.com/denandreychuk/EasySwiftLayout/tree/master/Example-IOS). You can check out how easily you can create screens like this with ESL:
 
 - Navigate to the project folder and open `EasySwiftLayout.xcodeproj`.
 - Select scheme `Example-IOS` by pressing `^ + 0` and just run it on any device.
@@ -108,6 +108,36 @@ EasySwiftLayout comes with [project example](https://github.com/denandreychuk/Ea
 ## API Cheat Sheet
 
 ### `UIView` Extenstions:
+
+#### Helpers
+
+<details>
+<summary><code>add(toSuperview:)</code></summary>
+  
+##### Summary
+
+Adds the view as a subview of specified superview.
+
+##### Declaration
+
+```swift
+func add(toSuperview superview: UIView) -> Self
+```
+
+##### Parameters
+
+Parameter  | Type | Description
+---------- | ---- |------------
+superview | `UIView` | The superview to which add subview.
+
+##### Returns
+
+`self`  with attribute  `@discardableResult`.
+
+##### Declared In
+[UIView + Helpers.swift](https://github.com/denandreychuk/EasySwiftLayout/blob/master/Sources/UIView%20%2B%20Helpers.swift)
+
+</details>
 
 #### Size Methods (Constants)
 

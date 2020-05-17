@@ -1,9 +1,9 @@
 //
-//  UIView + Pin.swift
+//  UIView + Helpers.swift
 //  https://github.com/denandreychuk/EasySwiftLayout
 //
 //  This code is distributed under the terms and conditions of the MIT license.
-//  Copyright (c) 2019-2020 Denis Andreychuk
+//  Copyright (c) 2020 Denis Andreychuk
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,10 +25,17 @@
 
 import UIKit
 
-extension UIEdgeInsets {
+public extension UIView {
     
-    /// Creates equal insets for all 4 edges.
-    init(inset: CGFloat) {
-        self.init(top: inset, left: inset, bottom: inset, right: inset)
+    /// Adds the view as a subview of specified superview.
+    ///
+    /// - Parameter superview: The superview to which add subview.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
+    func add(toSuperview superview: UIView) -> Self {
+        superview.addSubview(self)
+        return self
     }
 }
