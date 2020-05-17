@@ -86,10 +86,9 @@ class ViewController: UIViewController {
         addAndLayoutSubviews()
     }
     
-    private func addAndLayoutSubviews() {
-        view.addSubview(boxView)
-        
+    private func addAndLayoutSubviews() {        
         boxView
+            .add(toSuperview: view)
             .centerInSuperview()
             .size(toSquareWithSide: 50)
     }
