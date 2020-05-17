@@ -98,9 +98,9 @@ class ViewController: UIViewController {
 
 ### Example
 
-<img src="https://github.com/denandreychuk/EasySwiftLayout/blob/denis_example/Resources/Example.jpg?raw=true" width="125">
+<img src="https://github.com/denandreychuk/EasySwiftLayout/blob/denis_example/Resources/Example.jpg?raw=true" width="140">
 
-EasySwiftLayout comes with project example. You can check out how easily you can create screens like this with ESL.
+EasySwiftLayout comes with [project example](https://github.com/denandreychuk/EasySwiftLayout/tree/master/Example-IOS). You can check out how easily you can create screens like this with ESL.
 
 - Navigate to the project folder and open `EasySwiftLayout.xcodeproj`.
 - Select scheme `Example-IOS` by pressing `^ + 0` and just run it on any device.
