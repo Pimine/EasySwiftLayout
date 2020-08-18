@@ -38,7 +38,7 @@ class EasySwiftLayoutTests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: Helpers
+    // MARK: - Helpers
     
     func testAddToSuperview() {
         let anotherView = UIView()
@@ -48,13 +48,24 @@ class EasySwiftLayoutTests: XCTestCase {
         XCTAssertEqual(anotherView.superview!, container)
     }
     
-    func verify(_ constraint: NSLayoutConstraint, anotherView: UIView) {
-        XCTAssertTrue(constraint.firstItem === anotherView && constraint.secondItem === anotherView.superview)
-        XCTAssertTrue(constraint.priority == .defaultLow)
-        XCTAssertEqual(constraint.constant, 10)
+    func verify(
+        _ constraint: NSLayoutConstraint,
+        firstItem: UIView,
+        secondItem: UIView? = nil,
+        constant: CGFloat = 10,
+        relation: NSLayoutConstraint.Relation = .greaterThanOrEqual,
+        priority: UILayoutPriority = .defaultLow
+    ) {
+        XCTAssertTrue(constraint.firstItem === firstItem)
+        if let secondItem = secondItem {
+            XCTAssertTrue(constraint.secondItem === secondItem)
+        }
+        XCTAssertEqual(constraint.constant, constant)
+        XCTAssertEqual(constraint.relation, relation)
+        XCTAssertEqual(constraint.priority, priority)
     }
     
-    //MARK: Center in the given view
+    //MARK: - Center in the given view
     
     func testCenterAxisInView() {
         let anotherView = UIView()
@@ -65,16 +76,16 @@ class EasySwiftLayoutTests: XCTestCase {
         anotherView.centerInView(container, axis: .horizontal, withOffset: 10, priority: .defaultLow)
         XCTAssertTrue(container.constraints.count == 1)
         
-        verify(container.constraints[0], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[0].firstAttribute == .centerX)
+        verify(container.constraints[0], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .centerX)
         
         // 2
         
         anotherView.centerInView(container, axis: .vertical, withOffset: 10, priority: .defaultLow)
         XCTAssertTrue(container.constraints.count == 2)
         
-        verify(container.constraints[1], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[1].firstAttribute == .centerY)
+        verify(container.constraints[1], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .centerY)
     }
     
     func testCenterInView() {
@@ -86,14 +97,16 @@ class EasySwiftLayoutTests: XCTestCase {
         
         // 1
         
-        verify(container.constraints[0], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[0].firstAttribute == .centerX)
+        verify(container.constraints[0], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .centerX)
         
         // 2
         
-        verify(container.constraints[1], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[1].firstAttribute == .centerY)
+        verify(container.constraints[1], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .centerY)
     }
+    
+    //MARK: - Center in superview
     
     func testCenterAxisInSuperview() {
         let anotherView = UIView()
@@ -104,16 +117,16 @@ class EasySwiftLayoutTests: XCTestCase {
         anotherView.centerInSuperview(axis: .horizontal, withOffset: 10, priority: .defaultLow)
         XCTAssertTrue(container.constraints.count == 1)
         
-        verify(container.constraints[0], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[0].firstAttribute == .centerX)
+        verify(container.constraints[0], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .centerX)
         
         // 2
         
         anotherView.centerInSuperview(axis: .vertical, withOffset: 10, priority: .defaultLow)
         XCTAssertTrue(container.constraints.count == 2)
         
-        verify(container.constraints[1], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[1].firstAttribute == .centerY)
+        verify(container.constraints[1], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .centerY)
     }
     
     func testCenterInSuperview() {
@@ -121,17 +134,56 @@ class EasySwiftLayoutTests: XCTestCase {
         anotherView.add(toSuperview: container)
         
         anotherView.centerInSuperview(withOffset: UIOffset(horizontal: 10, vertical: 10), priority: .defaultLow)
-
         XCTAssertTrue(container.constraints.count == 2)
         
         // 1
         
-        verify(container.constraints[0], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[0].firstAttribute == .centerX)
+        verify(container.constraints[0], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .centerX)
         
         // 2
         
-        verify(container.constraints[1], anotherView: anotherView)
-        XCTAssertTrue(container.constraints[1].firstAttribute == .centerY)
+        verify(container.constraints[1], firstItem: anotherView, secondItem: anotherView.superview, relation: .equal)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .centerY)
+    }
+    
+    // MARK: - Size using constants
+    
+    func testWidthUsingConstants() {
+        container.width(10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 1)
+        
+        verify(container.constraints[0], firstItem: container)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .width)
+    }
+    
+    func testHeightUsingConstants() {
+        container.height(10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 1)
+        
+        verify(container.constraints[0], firstItem: container)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .height)
+    }
+    
+    func testSizeUsingConstants() {
+        container.size(CGSize(width: 10, height: 10), usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 2)
+        
+        verify(container.constraints[0], firstItem: container)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .height)
+        
+        verify(container.constraints[1], firstItem: container)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .width)
+    }
+    
+    func testSizeToSquareWithSide() {
+        container.size(toSquareWithSide: 10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 2)
+        
+        verify(container.constraints[0], firstItem: container)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .height)
+        
+        verify(container.constraints[1], firstItem: container)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .width)
     }
 }
