@@ -169,8 +169,12 @@ class EasySwiftLayoutTests: XCTestCase {
         container.size(CGSize(width: 10, height: 10), usingRelation: .greaterThanOrEqual, priority: .defaultLow)
         XCTAssertTrue(container.constraints.count == 2)
         
+        // 1
+        
         verify(container.constraints[0], firstItem: container)
         XCTAssertEqual(container.constraints[0].firstAttribute, .height)
+        
+        // 2
         
         verify(container.constraints[1], firstItem: container)
         XCTAssertEqual(container.constraints[1].firstAttribute, .width)
@@ -180,10 +184,56 @@ class EasySwiftLayoutTests: XCTestCase {
         container.size(toSquareWithSide: 10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
         XCTAssertTrue(container.constraints.count == 2)
         
+        // 1
+        
         verify(container.constraints[0], firstItem: container)
         XCTAssertEqual(container.constraints[0].firstAttribute, .height)
         
+        // 2
+        
         verify(container.constraints[1], firstItem: container)
         XCTAssertEqual(container.constraints[1].firstAttribute, .width)
+    }
+    
+    // MARK: - Size using another view
+    
+    func testWidthUsingAnotherView() {
+        let anotherView = UIView()
+        anotherView.add(toSuperview: container)
+
+        anotherView.width(match: container, withInset: 10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 1)
+        
+        verify(container.constraints[0], firstItem: anotherView, secondItem: container, constant: -10)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .width)
+    }
+    
+    func testHeightUsingAnotherView() {
+        let anotherView = UIView()
+        anotherView.add(toSuperview: container)
+
+        anotherView.height(match: container, withInset: 10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 1)
+        
+        verify(container.constraints[0], firstItem: anotherView, secondItem: container, constant: -10)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .height)
+    }
+    
+    func testSizeUsingAnotherView() {
+        let anotherView = UIView()
+        anotherView.add(toSuperview: container)
+
+        anotherView.size(match: container, withInset: 10, usingRelation: .greaterThanOrEqual, priority: .defaultLow)
+        XCTAssertTrue(container.constraints.count == 2)
+        
+        // 1
+        
+        verify(container.constraints[0], firstItem: anotherView, secondItem: container, constant: -10)
+        XCTAssertEqual(container.constraints[0].firstAttribute, .width)
+        
+        // 2
+        
+        verify(container.constraints[1], firstItem: anotherView, secondItem: container, constant: -10)
+        XCTAssertEqual(container.constraints[1].firstAttribute, .height)
     }
 }
