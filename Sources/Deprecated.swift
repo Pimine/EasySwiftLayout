@@ -157,11 +157,11 @@ public extension UIView {
         centerInSuperview(axis: axis)
     }
     
-    @available(*, deprecated, message: "")
+    @available(*, deprecated)
     @discardableResult
     func centerInView(
         _ anotherView: UIView,
-        withOffset offset: ESLOffset = .zero,
+        withOffset offset: ESLOffset,
         priority: UILayoutPriority = .required
     ) -> Self {
         centerInView(anotherView, axis: .horizontal, withOffset: offset.x, priority: priority)
@@ -172,7 +172,7 @@ public extension UIView {
     
     @available(*, deprecated)
     @discardableResult
-    func centerInSuperview(withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self {
+    func centerInSuperview(withOffset offset: ESLOffset, priority: UILayoutPriority = .required) -> Self {
         guard let superview = superview else { return self }
         centerInView(superview, withOffset: offset, priority: priority)
         return self
