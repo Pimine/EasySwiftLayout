@@ -9,13 +9,13 @@ let package = Package(
     products: [
         .library(
             name: "EasySwiftLayout",
-            targets: ["EasySwiftLayoutTarget"]
+            targets: ["EasySwiftLayout"]
         )
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "EasySwiftLayoutTarget",
+            name: "EasySwiftLayout",
             path: "Sources",
             exclude: ["Info.plist"]
         )
