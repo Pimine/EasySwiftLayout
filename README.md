@@ -59,7 +59,7 @@ Once you have your Swift package set up, adding EasySwiftLayout as a dependency 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Pimine/EasySwiftLayout.git", .upToNextMajor(from: "1.7.0"))
+    .package(url: "https://github.com/Pimine/EasySwiftLayout.git", .upToNextMajor(from: "1.6.0"))
 ]
 ```
 
