@@ -51,6 +51,18 @@ pod 'EasySwiftLayout'
 github "denandreychuk/EasySwiftLayout"
 ```
 
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It is in early development, but EasySwiftLayout does support its use on supported platforms.
+
+Once you have your Swift package set up, adding EasySwiftLayout as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/Pimine/EasySwiftLayout.git", .upToNextMajor(from: "1.7.0"))
+]
+```
+
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate EasySwiftLayout into your project manually.
@@ -1369,7 +1381,7 @@ Centers the view in another view with the offset and priority of the constraint.
 ##### Declaration
 
 ```swift
-func centerInView(_ anotherView: UIView, withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self
+func centerInView(_ anotherView: UIView, withOffset offset: UIOffset = .zero, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -1385,7 +1397,7 @@ Another view must be in the same view hierarchy as this view.
 Parameter  | Type | Description
 ---------- | ---- |------------
 anotherView | `UIView` | Another view to center in.
-offset | `ESLOffset` | Axis offset.
+offset | `UIOffset` | Axis offset.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -1424,7 +1436,7 @@ Parameter  | Type | Description
 ---------- | ---- |------------
 anotherView | `UIView` | View to center in.
 axis | `ESLAxis` | Axis to center
-offset | `ESLOffset` | Axis offset.
+offset | `UIOffset` | Axis offset.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -1446,7 +1458,7 @@ Centers the view in its superview view with the offset and priority of the const
 ##### Declaration
 
 ```swift
-func centerInSuperview(withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self
+func centerInSuperview(withOffset offset: UIOffset = .zero, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -1461,7 +1473,7 @@ The view should have the superview, otherwise this method will have no effect.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-offset | `ESLOffset` | Axis offset.
+offset | `UIOffset` | Axis offset.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns

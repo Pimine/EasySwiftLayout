@@ -23,6 +23,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+import UIKit
+
 public extension UIView {
     
     /// Pins the edge of the view using the specified type of relation to the
@@ -65,7 +67,10 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard let superview = superview else { return self }
+        guard let superview = superview else {
+            assertionFailure("Expected superview but found nil when attempting to make constraint.")
+            return self
+        }
         
         switch guide {
         case .none:
@@ -119,7 +124,10 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard let superview = superview else { return self }
+        guard let superview = superview else {
+            assertionFailure("Expected superview but found nil when attempting to make constraint.")
+            return self
+        }
         
         switch guide {
         case .none:
@@ -174,7 +182,10 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard let superview = superview else { return self }
+        guard let superview = superview else {
+            assertionFailure("Expected superview but found nil when attempting to make constraint.")
+            return self
+        }
         
         switch guide {
         case .none:

@@ -23,10 +23,24 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
+import UIKit
 
-@available(*, deprecated, message: "Use `ESLSizeOffset` instead")
+@available(*, deprecated, message: "`ESL2DimensionalInsets` deprecated and replaced with `ESLSizeInsets`")
 typealias ESL2DimensionalInsets = CGSize
+
+@available(*, deprecated, message: "`ESLOffset` deprecated and replaced with `UIOffset`")
+public struct ESLOffset {
+
+    public let x: CGFloat
+    public let y: CGFloat
+
+    public static let zero = ESLOffset(x: 0, y: 0)
+
+    public init(x: CGFloat, y: CGFloat) {
+        self.x = x
+        self.y = y
+    }
+}
 
 // MARK: - Pin Methods
 
@@ -134,11 +148,33 @@ public extension UIView {
 public extension UIView {
     
     @available(*, deprecated, renamed: "centerInSuperview(axis:withOffset:priority:)")
+    @discardableResult
     func centerInSuperview(
         _ axis: ESLAxis,
         withOffset offset: CGFloat = .zero,
         priority: UILayoutPriority = .required
-    ) {
+    ) -> Self {
         centerInSuperview(axis: axis)
+    }
+    
+    @available(*, deprecated, message: "")
+    @discardableResult
+    func centerInView(
+        _ anotherView: UIView,
+        withOffset offset: ESLOffset = .zero,
+        priority: UILayoutPriority = .required
+    ) -> Self {
+        centerInView(anotherView, axis: .horizontal, withOffset: offset.x, priority: priority)
+        centerInView(anotherView, axis: .vertical, withOffset: offset.y, priority: priority)
+        
+        return self
+    }
+    
+    @available(*, deprecated)
+    @discardableResult
+    func centerInSuperview(withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self {
+        guard let superview = superview else { return self }
+        centerInView(superview, withOffset: offset, priority: priority)
+        return self
     }
 }
