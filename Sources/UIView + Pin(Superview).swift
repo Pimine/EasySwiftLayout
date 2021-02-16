@@ -65,7 +65,10 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard let superview = superview else { return self }
+        guard let superview = superview else {
+            assertionFailure("Expected superview but found nil when attempting to make constraint.")
+            return self
+        }
         
         switch guide {
         case .none:
@@ -119,7 +122,10 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard let superview = superview else { return self }
+        guard let superview = superview else {
+            assertionFailure("Expected superview but found nil when attempting to make constraint.")
+            return self
+        }
         
         switch guide {
         case .none:
@@ -174,7 +180,10 @@ public extension UIView {
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
-        guard let superview = superview else { return self }
+        guard let superview = superview else {
+            assertionFailure("Expected superview but found nil when attempting to make constraint.")
+            return self
+        }
         
         switch guide {
         case .none:
