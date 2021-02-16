@@ -51,6 +51,18 @@ pod 'EasySwiftLayout'
 github "denandreychuk/EasySwiftLayout"
 ```
 
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It is in early development, but EasySwiftLayout does support its use on supported platforms.
+
+Once you have your Swift package set up, adding EasySwiftLayout as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/Pimine/EasySwiftLayout.git", .upToNextMajor(from: "1.7.0"))
+]
+```
+
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate EasySwiftLayout into your project manually.

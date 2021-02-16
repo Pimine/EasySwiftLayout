@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
+import UIKit
 
 @available(*, deprecated, message: "`ESL2DimensionalInsets` deprecated and replaced with `ESLSizeInsets`")
 typealias ESL2DimensionalInsets = CGSize
