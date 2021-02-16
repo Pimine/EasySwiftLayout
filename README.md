@@ -1369,7 +1369,7 @@ Centers the view in another view with the offset and priority of the constraint.
 ##### Declaration
 
 ```swift
-func centerInView(_ anotherView: UIView, withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self
+func centerInView(_ anotherView: UIView, withOffset offset: UIOffset = .zero, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -1385,7 +1385,7 @@ Another view must be in the same view hierarchy as this view.
 Parameter  | Type | Description
 ---------- | ---- |------------
 anotherView | `UIView` | Another view to center in.
-offset | `ESLOffset` | Axis offset.
+offset | `UIOffset` | Axis offset.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -1424,7 +1424,7 @@ Parameter  | Type | Description
 ---------- | ---- |------------
 anotherView | `UIView` | View to center in.
 axis | `ESLAxis` | Axis to center
-offset | `ESLOffset` | Axis offset.
+offset | `UIOffset` | Axis offset.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns
@@ -1446,7 +1446,7 @@ Centers the view in its superview view with the offset and priority of the const
 ##### Declaration
 
 ```swift
-func centerInSuperview(withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self
+func centerInSuperview(withOffset offset: UIOffset = .zero, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
@@ -1461,7 +1461,7 @@ The view should have the superview, otherwise this method will have no effect.
 
 Parameter  | Type | Description
 ---------- | ---- |------------
-offset | `ESLOffset` | Axis offset.
+offset | `UIOffset` | Axis offset.
 priority | `UILayoutPriority` | The priority of the constraint.
 
 ##### Returns

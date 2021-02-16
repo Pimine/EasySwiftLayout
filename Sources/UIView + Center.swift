@@ -23,6 +23,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+import UIKit
+
 public extension UIView {
     
     //MARK: Center in the given view
@@ -52,7 +54,7 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         switch axis {
-        case .x:
+        case .x, .horizontal:
             let constraint = NSLayoutConstraint(
                 item: self, attribute: .centerX,
                 relatedBy: .equal,
@@ -63,7 +65,7 @@ public extension UIView {
             constraint.priority = priority
             constraint.isActive = true
             
-        case .y:
+        case .y, .vertical:
             let constraint = NSLayoutConstraint(
                 item: self, attribute: .centerY,
                 relatedBy: .equal,
@@ -95,37 +97,16 @@ public extension UIView {
     @discardableResult
     func centerInView(
         _ anotherView: UIView,
-        withOffset offset: ESLOffset = .zero,
+        withOffset offset: UIOffset = .zero,
         priority: UILayoutPriority = .required
     ) -> Self {
-        centerInView(anotherView, axis: .x, withOffset: offset.x, priority: priority)
-        centerInView(anotherView, axis: .y, withOffset: offset.y, priority: priority)
+        centerInView(anotherView, axis: .horizontal, withOffset: offset.horizontal, priority: priority)
+        centerInView(anotherView, axis: .vertical, withOffset: offset.vertical, priority: priority)
         
         return self
     }
     
     //MARK: Center in superview
-    
-    /// Centers the view in its superview view with the offset and priority of the
-    /// constraint.
-    ///
-    /// To make Auto-Layout works properly, it automatically sets view property
-    /// `translatesAutoresizingMaskIntoConstraints` to `false`
-    ///
-    /// - Precondition: The view should have the superview, otherwise this method
-    /// will have no effect.
-    ///
-    /// - Parameter offset: Axis offset.
-    /// - Parameter priority: The priority of the constraint.
-    ///
-    /// - Returns: `self` with attribute `@discardableResult`.
-    ///
-    @discardableResult
-    func centerInSuperview(withOffset offset: ESLOffset = .zero, priority: UILayoutPriority = .required) -> Self {
-        guard let superview = superview else { return self }
-        centerInView(superview, withOffset: offset, priority: priority)
-        return self
-    }
     
     /// Centers the axis of this view in its superview with the offset and priority
     /// of the constraint.
@@ -150,6 +131,27 @@ public extension UIView {
     ) -> Self {
         guard let superview = superview else { return self }
         centerInView(superview, axis: axis, withOffset: offset, priority: priority)
+        return self
+    }
+    
+    /// Centers the view in its superview view with the offset and priority of the
+    /// constraint.
+    ///
+    /// To make Auto-Layout works properly, it automatically sets view property
+    /// `translatesAutoresizingMaskIntoConstraints` to `false`
+    ///
+    /// - Precondition: The view should have the superview, otherwise this method
+    /// will have no effect.
+    ///
+    /// - Parameter offset: Axis offset.
+    /// - Parameter priority: The priority of the constraint.
+    ///
+    /// - Returns: `self` with attribute `@discardableResult`.
+    ///
+    @discardableResult
+    func centerInSuperview(withOffset offset: UIOffset = .zero, priority: UILayoutPriority = .required) -> Self {
+        guard let superview = superview else { return self }
+        centerInView(superview, withOffset: offset, priority: priority)
         return self
     }
 }
