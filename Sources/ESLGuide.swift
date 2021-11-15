@@ -35,7 +35,6 @@ public enum ESLGuide {
     
     case readableContent(of: UIView)
     
-    @available(iOS 11.0, *)
     case safeAreaLayout(of: UIView)
     
     // MARK: - Properties
