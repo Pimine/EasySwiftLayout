@@ -34,15 +34,6 @@
 		B7B6608922FF61EE006FDD7E /* ESLAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608822FF61EE006FDD7E /* ESLAxis.swift */; };
 		B7B6608B22FF6AAF006FDD7E /* UIView + Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */; };
 		B7B6608E22FF6B02006FDD7E /* ESLEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */; };
-		B7DB422D2471A096001FE565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB422C2471A096001FE565 /* AppDelegate.swift */; };
-		B7DB422F2471A096001FE565 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB422E2471A096001FE565 /* SceneDelegate.swift */; };
-		B7DB42312471A096001FE565 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42302471A096001FE565 /* HomeController.swift */; };
-		B7DB42362471A098001FE565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7DB42352471A098001FE565 /* Assets.xcassets */; };
-		B7DB42392471A098001FE565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DB42372471A098001FE565 /* LaunchScreen.storyboard */; };
-		B7DB42422471A106001FE565 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42402471A106001FE565 /* RoundedView.swift */; };
-		B7DB42432471A106001FE565 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42412471A106001FE565 /* Utilities.swift */; };
-		B7DB424A2471A216001FE565 /* UIStackView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42482471A216001FE565 /* UIStackView+Utilities.swift */; };
-		B7DB424B2471A216001FE565 /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB42492471A216001FE565 /* UIView+Utilities.swift */; };
 		B7DB424D2471B038001FE565 /* UIView + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB424C2471B038001FE565 /* UIView + Helpers.swift */; };
 		B7E52714236EFE0C006760A0 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E52713236EFE0C006760A0 /* Deprecated.swift */; };
 		B7FC923523422CAA009947A3 /* UIView + Pin(Superview).swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC923423422CAA009947A3 /* UIView + Pin(Superview).swift */; };
@@ -75,17 +66,6 @@
 		B7B6608822FF61EE006FDD7E /* ESLAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLAxis.swift; sourceTree = "<group>"; };
 		B7B6608A22FF6AAF006FDD7E /* UIView + Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin.swift"; sourceTree = "<group>"; };
 		B7B6608D22FF6B02006FDD7E /* ESLEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESLEdge.swift; sourceTree = "<group>"; };
-		B7DB422A2471A096001FE565 /* Example-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7DB422C2471A096001FE565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7DB422E2471A096001FE565 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B7DB42302471A096001FE565 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		B7DB42352471A098001FE565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B7DB42382471A098001FE565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B7DB423A2471A098001FE565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		B7DB42402471A106001FE565 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		B7DB42412471A106001FE565 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		B7DB42482471A216001FE565 /* UIStackView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utilities.swift"; sourceTree = "<group>"; };
-		B7DB42492471A216001FE565 /* UIView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		B7DB424C2471B038001FE565 /* UIView + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Helpers.swift"; sourceTree = "<group>"; };
 		B7E52713236EFE0C006760A0 /* Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
 		B7F431AE234A5CF700C7E7C7 /* EasySwiftLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasySwiftLayout.framework; path = ../ContentProtectorKit/EasySwiftLayout.framework; sourceTree = "<group>"; };
@@ -102,13 +82,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B7B6605F22FF122B006FDD7E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7DB42272471A096001FE565 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,7 +139,6 @@
 			children = (
 				B7B6606422FF122B006FDD7E /* Sources */,
 				B7847718234B37DD002386DC /* Tests */,
-				B7DB422B2471A096001FE565 /* Example-IOS */,
 				B7B6606322FF122B006FDD7E /* Products */,
 				B7F431AD234A5CF700C7E7C7 /* Frameworks */,
 			);
@@ -177,7 +149,6 @@
 			children = (
 				B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */,
 				B7847717234B37DD002386DC /* EasySwiftLayoutTests.xctest */,
-				B7DB422A2471A096001FE565 /* Example-IOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,71 +163,6 @@
 				B7B6606622FF122B006FDD7E /* Info.plist */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		B7DB422B2471A096001FE565 /* Example-IOS */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB42462471A1A2001FE565 /* Resources */,
-				B7DB42452471A188001FE565 /* Sources */,
-			);
-			path = "Example-IOS";
-			sourceTree = "<group>";
-		};
-		B7DB423E2471A0C6001FE565 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB422C2471A096001FE565 /* AppDelegate.swift */,
-				B7DB422E2471A096001FE565 /* SceneDelegate.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		B7DB423F2471A0EB001FE565 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB42402471A106001FE565 /* RoundedView.swift */,
-				B7DB42412471A106001FE565 /* Utilities.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		B7DB42442471A15C001FE565 /* Support files */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB42372471A098001FE565 /* LaunchScreen.storyboard */,
-				B7DB423A2471A098001FE565 /* Info.plist */,
-			);
-			path = "Support files";
-			sourceTree = "<group>";
-		};
-		B7DB42452471A188001FE565 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB423E2471A0C6001FE565 /* App */,
-				B7DB423F2471A0EB001FE565 /* Common */,
-				B7DB42472471A216001FE565 /* Extensions */,
-				B7DB42442471A15C001FE565 /* Support files */,
-				B7DB42302471A096001FE565 /* HomeController.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		B7DB42462471A1A2001FE565 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB42352471A098001FE565 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		B7DB42472471A216001FE565 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B7DB42482471A216001FE565 /* UIStackView+Utilities.swift */,
-				B7DB42492471A216001FE565 /* UIView+Utilities.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B7F431AD234A5CF700C7E7C7 /* Frameworks */ = {
@@ -317,23 +223,6 @@
 			productReference = B7B6606222FF122B006FDD7E /* EasySwiftLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B7DB42292471A096001FE565 /* Example-IOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7DB423D2471A098001FE565 /* Build configuration list for PBXNativeTarget "Example-IOS" */;
-			buildPhases = (
-				B7DB42262471A096001FE565 /* Sources */,
-				B7DB42272471A096001FE565 /* Frameworks */,
-				B7DB42282471A096001FE565 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Example-IOS";
-			productName = "Example-IOS";
-			productReference = B7DB422A2471A096001FE565 /* Example-IOS.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -357,10 +246,6 @@
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
-					B7DB42292471A096001FE565 = {
-						CreatedOnToolsVersion = 11.4.1;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = B7B6605C22FF122B006FDD7E /* Build configuration list for PBXProject "EasySwiftLayout" */;
@@ -379,7 +264,6 @@
 				B7B6606122FF122B006FDD7E /* EasySwiftLayout */,
 				B7B06934230C274B00CB6386 /* Build Framework */,
 				B7847716234B37DD002386DC /* EasySwiftLayoutTests */,
-				B7DB42292471A096001FE565 /* Example-IOS */,
 			);
 		};
 /* End PBXProject section */
@@ -396,15 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7DB42282471A096001FE565 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7DB42392471A098001FE565 /* LaunchScreen.storyboard in Resources */,
-				B7DB42362471A098001FE565 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,20 +334,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7DB42262471A096001FE565 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7DB424B2471A216001FE565 /* UIView+Utilities.swift in Sources */,
-				B7DB42422471A106001FE565 /* RoundedView.swift in Sources */,
-				B7DB42312471A096001FE565 /* HomeController.swift in Sources */,
-				B7DB424A2471A216001FE565 /* UIStackView+Utilities.swift in Sources */,
-				B7DB422D2471A096001FE565 /* AppDelegate.swift in Sources */,
-				B7DB42432471A106001FE565 /* Utilities.swift in Sources */,
-				B7DB422F2471A096001FE565 /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -482,17 +343,6 @@
 			targetProxy = B784771D234B37DD002386DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B7DB42372471A098001FE565 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B7DB42382471A098001FE565 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B784771F234B37DD002386DC /* Debug */ = {
@@ -719,40 +569,6 @@
 			};
 			name = Release;
 		};
-		B7DB423B2471A098001FE565 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = AV7VG9QBYZ;
-				INFOPLIST_FILE = "Example-IOS/Sources/Support files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.denandreychuk.Example-IOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		B7DB423C2471A098001FE565 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = AV7VG9QBYZ;
-				INFOPLIST_FILE = "Example-IOS/Sources/Support files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.denandreychuk.Example-IOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -788,15 +604,6 @@
 			buildConfigurations = (
 				B7B6606B22FF122B006FDD7E /* Debug */,
 				B7B6606C22FF122B006FDD7E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B7DB423D2471A098001FE565 /* Build configuration list for PBXNativeTarget "Example-IOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B7DB423B2471A098001FE565 /* Debug */,
-				B7DB423C2471A098001FE565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
