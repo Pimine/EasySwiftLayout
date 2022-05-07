@@ -102,7 +102,7 @@ private extension HomeController {
         backgroundView
             .add(toSuperview: view)
             .height(400)
-            .centerInSuperview(axis: .y)
+            .centerInSuperview(axis: .vertical)
             .pinEdgesToSuperview(ofGroup: .horizontal, withInset: 25)
         
         // Container
@@ -124,7 +124,7 @@ private extension HomeController {
         
         nextButton
             .add(toSuperview: view)
-            .centerInSuperview(axis: .x)
+            .centerInSuperview(axis: .horizontal)
             .size(CGSize(width: 150, height: 55))
             .pinEdgeToSuperview(.bottom, withInset: 25, respectingGuide: .safeAreaLayout)
     }

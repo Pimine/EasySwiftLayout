@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:EasySwiftLayout-Example.xcodeproj">
+      location = "self:/Users/denandreychuk/Desktop/Work/EasySwiftLayout/Example Apps/Example.xcodeproj">
    </FileRef>
 </Workspace>
