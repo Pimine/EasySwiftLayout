@@ -24,7 +24,7 @@
 //  SOFTWARE.
 
 import XCTest
-import EasySwiftLayout
+@testable import EasySwiftLayout
 
 class EasySwiftLayoutTests: XCTestCase {
     
@@ -63,6 +63,36 @@ class EasySwiftLayoutTests: XCTestCase {
         XCTAssertEqual(constraint.constant, constant)
         XCTAssertEqual(constraint.relation, relation)
         XCTAssertEqual(constraint.priority, priority)
+    }
+    
+    func verify(
+        _ anotherView: UIView,
+        hasPinnedEdges edges: [ESLEdge],
+        to container: UIView,
+        withInsets edgeInsets: UIEdgeInsets,
+        relation: NSLayoutConstraint.Relation = .greaterThanOrEqual,
+        priority: UILayoutPriority = .defaultLow
+    ) {
+        let insets: [ESLEdge: CGFloat] = [
+            .top: edgeInsets.top,
+            .left: edgeInsets.left,
+            .bottom: edgeInsets.bottom,
+            .right: edgeInsets.right
+        ]
+        for (index, edge) in edges.enumerated() {
+            verify(
+                container.constraints[index],
+                firstItem: anotherView,
+                secondItem: container,
+                constant: insets[edge]! * edge.directionalMultiplier,
+                relation: relation,
+                priority: priority
+            )
+            XCTAssertNotNil(container.constraints.first {
+                $0.firstAttribute == edge.convertedToNSLayoutAttribute &&
+                $0.secondAttribute == edge.convertedToNSLayoutAttribute
+            })
+        }
     }
     
     //MARK: - Center in the given view
@@ -235,5 +265,207 @@ class EasySwiftLayoutTests: XCTestCase {
         
         verify(container.constraints[1], firstItem: anotherView, secondItem: container, constant: -10)
         XCTAssertEqual(container.constraints[1].firstAttribute, .height)
+    }
+    
+    // MARK: - Pin view to another view
+    
+    func testPinEdgesToSameEdgesOfViewExcludingEdgeWithInset() {
+        for excludedEdge in ESLEdge.all {
+            let edges = ESLEdge.all.filter { $0 != excludedEdge }
+            
+            let anotherView = UIView()
+            anotherView.add(toSuperview: container)
+            
+            anotherView.pinEdges(
+                toSameEdgesOfView: container,
+                excludingEdge: excludedEdge,
+                withInset: 10,
+                usingRelation: .greaterThanOrEqual,
+                priority: .defaultLow
+            )
+            XCTAssertTrue(container.constraints.count == 3)
+            
+            // 1
+            
+            verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: UIEdgeInsets(inset: 10))
+            
+            // Finally
+            
+            anotherView.removeFromSuperview()
+        }
+    }
+    
+    func testPinEdgesToSameEdgesOfViewExcludingEdgeWithInsets() {
+        let insets = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+        for excludedEdge in ESLEdge.all {
+            let anotherView = UIView()
+            anotherView.add(toSuperview: container)
+            
+            anotherView.pinEdges(
+                toSameEdgesOfView: container,
+                excludingEdge: excludedEdge,
+                withInsets: insets,
+                usingRelation: .greaterThanOrEqual,
+                priority: .defaultLow
+            )
+            XCTAssertTrue(container.constraints.count == 3)
+            
+            // 1
+            
+            let edges = ESLEdge.all.filter { $0 != excludedEdge }
+            verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: insets)
+            
+            // Finally
+            
+            anotherView.removeFromSuperview()
+        }
+    }
+    
+    func testPinEdgesOfGroupToSameEdgesOfViewWithInset() {
+        for group in [ESLEdgeGroup.horizontal, ESLEdgeGroup.vertical] {
+            let anotherView = UIView()
+            anotherView.add(toSuperview: container)
+            
+            anotherView.pinEdges(
+                ofGroup: group,
+                toSameEdgesOfView: container,
+                withInset: 10,
+                usingRelation: .greaterThanOrEqual,
+                priority: .defaultLow
+            )
+            XCTAssertTrue(container.constraints.count == 2)
+            
+            // 1
+            
+            let edges = group.edges
+            verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: UIEdgeInsets(inset: 10))
+            
+            // Finally
+            
+            anotherView.removeFromSuperview()
+        }
+    }
+    
+    func testPinEdgesToSameEdgesOfViewWithInset() {
+        let anotherView = UIView()
+        anotherView.add(toSuperview: container)
+        
+        anotherView.pinEdges(
+            toSameEdgesOfView: container,
+            withInset: 10,
+            usingRelation: .greaterThanOrEqual,
+            priority: .defaultLow
+        )
+        XCTAssertTrue(container.constraints.count == 4)
+        
+        verify(anotherView, hasPinnedEdges: ESLEdge.all, to: container, withInsets: UIEdgeInsets(inset: 10))
+    }
+    
+    func testPin() {
+        let anotherView = UIView()
+        anotherView.add(toSuperview: container)
+        
+        let insets = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+        anotherView.pin(
+            topTo: container.topAnchor,
+            leftTo: container.leftAnchor,
+            bottomTo: container.bottomAnchor,
+            rightTo: container.rightAnchor,
+            withInsets: insets,
+            priority: .defaultLow
+        )
+        XCTAssertTrue(container.constraints.count == 4)
+        let edges: [ESLEdge] = [.top, .left, .bottom, .right]
+        verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: insets, relation: .equal)
+    }
+    
+    // MARK: - Pin view to superview
+    
+    func testPinEdgesToSuperviewExcludingEdgeWithInset() {
+        for excludedEdge in ESLEdge.all {
+            let edges = ESLEdge.all.filter { $0 != excludedEdge }
+            
+            let anotherView = UIView()
+            anotherView.add(toSuperview: container)
+            
+            anotherView.pinEdgesToSuperview(
+                excludingEdge: excludedEdge,
+                withInset: 10,
+                usingRelation: .greaterThanOrEqual,
+                priority: .defaultLow
+            )
+            XCTAssertTrue(container.constraints.count == 3)
+            
+            // 1
+            
+            verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: UIEdgeInsets(inset: 10))
+            
+            // Finally
+            
+            anotherView.removeFromSuperview()
+        }
+    }
+    
+    func testPinEdgesToSuperviewExcludingEdgeWithInsets() {
+        let insets = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+        for excludedEdge in ESLEdge.all {
+            let anotherView = UIView()
+            anotherView.add(toSuperview: container)
+            
+            anotherView.pinEdgesToSuperview(
+                excludingEdge: excludedEdge,
+                withInsets: insets,
+                usingRelation: .greaterThanOrEqual,
+                priority: .defaultLow
+            )
+            XCTAssertTrue(container.constraints.count == 3)
+            
+            // 1
+            
+            let edges = ESLEdge.all.filter { $0 != excludedEdge }
+            verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: insets)
+            
+            // Finally
+            
+            anotherView.removeFromSuperview()
+        }
+    }
+    
+    func testPinEdgesToSuperviewOfGroupWithInset() {
+        for group in [ESLEdgeGroup.horizontal, ESLEdgeGroup.vertical] {
+            let anotherView = UIView()
+            anotherView.add(toSuperview: container)
+            
+            anotherView.pinEdgesToSuperview(
+                ofGroup: group,
+                withInset: 10,
+                usingRelation: .greaterThanOrEqual,
+                priority: .defaultLow
+            )
+            XCTAssertTrue(container.constraints.count == 2)
+            
+            // 1
+            
+            let edges = group.edges
+            verify(anotherView, hasPinnedEdges: edges, to: container, withInsets: UIEdgeInsets(inset: 10))
+            
+            // Finally
+            
+            anotherView.removeFromSuperview()
+        }
+    }
+    
+    func testPinEdgesToSuperviewWithInset() {
+        let anotherView = UIView()
+        anotherView.add(toSuperview: container)
+        
+        anotherView.pinEdgesToSuperview(
+            withInset: 10,
+            usingRelation: .greaterThanOrEqual,
+            priority: .defaultLow
+        )
+        XCTAssertTrue(container.constraints.count == 4)
+        
+        verify(anotherView, hasPinnedEdges: ESLEdge.all, to: container, withInsets: UIEdgeInsets(inset: 10))
     }
 }
