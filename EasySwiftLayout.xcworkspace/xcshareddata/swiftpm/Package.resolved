@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "easyswiftlayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Pimine/EasySwiftLayout",
+      "state" : {
+        "revision" : "c82596fc028a98235a3ec09e1d0228f8bd8a298e",
+        "version" : "1.6.2"
+      }
+    }
+  ],
+  "version" : 2
+}
