@@ -18,6 +18,11 @@ let package = Package(
             name: "EasySwiftLayout",
             path: "Sources",
             exclude: ["Info.plist"]
+        ),
+        .testTarget(
+            name: "EasySwiftLayoutTests",
+            path: "Tests",
+            exclude: ["Info.plist"]
         )
     ]
 )
