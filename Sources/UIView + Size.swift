@@ -281,7 +281,7 @@ public extension UIView {
     @discardableResult
     func size(
         match anotherView: UIView,
-        withInset inset: CGFloat = .zero,
+        withInset inset: CGFloat,
         usingRelation relation: NSLayoutConstraint.Relation = .equal,
         priority: UILayoutPriority = .required
     ) -> Self {
