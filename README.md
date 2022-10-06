@@ -437,7 +437,7 @@ Sets the size of the view using the specified type of relation to the size of an
 ##### Declaration
 
 ```swift
-func size(match anotherView: UIView, withInset inset: CGFloat = .zero, usingRelation relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required) -> Self
+func size(match anotherView: UIView, withInset inset: CGFloat, usingRelation relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required) -> Self
 ```
 
 ##### Discussion
